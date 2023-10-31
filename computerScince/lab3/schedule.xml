@@ -1,0 +1,94 @@
+<schedule>
+	<Monday>
+		<ComputerScince>
+			<time>8:20-9:50</time>
+			<teacher>Boldyreva Elena Aleksandrovna</teacher>
+			<place>Online</place>
+		</ComputerScince>
+		<ComputerScince>
+			<time>10:00-11:30</time>
+			<teacher>Boldyreva Elena Aleksandrovna</teacher>
+			<place>Online</place>
+		</ComputerScince>
+		<English>
+			<time>11:40-13:10</time>
+			<teacher>Abdullina Nailya Zufarovna</teacher>
+			<place>Lomonosova 9</place>
+			<classroom>3225</classroom>
+		</English>
+		<English>
+			<time>13:30-15:00</time>
+			<teacher>Abdullina Nailya Zufarovna</teacher>
+			<place>Lomonosova 9</place>
+			<classroom>3225</classroom>
+		</English>
+	</Monday>
+	<Tuesday>
+		<FundamentalsOfDiscreteMath>
+			<time>10:00-11:30</time>
+			<teacher>Lisicyna Lybov Sergeevna</teacher>
+			<place>Kronverksky avenue 49</place>
+			<classroom>2435/7</classroom>
+		</FundamentalsOfDiscreteMath>
+		<MathAnalys>
+			<time>13:30-15:00</time>
+			<teacher>Pravdin Konstantyn Vladymirovich</teacher>
+			<place>Online</place>
+		</MathAnalys>
+		<MathAnalys>
+			<time>15:20-16:50</time>
+			<teacher>Isaeva Tatyana Tinofeevna</teacher>
+			<place>Online</place>
+		</MathAnalys>
+	</Tuesday>
+	<Wednesday>
+		<FundamentalsOfProfessionalActivity>
+			<time>10:00-11:30</time>
+			<teacher>Klimenkov Sergey Viktorovych</teacher>
+			<place>Lomonosova 9</place>
+			<classroom>1216</classroom>
+		</FundamentalsOfProfessionalActivity>
+	</Wednesday>
+	<Thursday>
+		<History>
+			<time>13:30-15:00</time>
+			<teacher>Bogomazov Nikolay Ivanovich</teacher>
+			<place>Kronverksky avenue 49</place>
+			<classroom>1419</classroom>
+		</History>
+		<History>
+			<time>15:20-16:50</time>
+			<teacher>Pavlovsky Alexey Fedorovich</teacher>
+			<place>Kronverksky avenue 49</place>
+			<classroom>2426</classroom>
+		</History>
+	</Thursday>
+	<Friday>
+		<LinearAlgebra>
+			<time>8:20-9:50</time>
+			<teacher>Lapin Ivan Aleksandrovich</teacher>
+			<place>Kronverksky avenue 49</place>
+			<classroom>1405</classroom>
+		</LinearAlgebra>
+		<LinearAlgebra>
+			<time>10:00-11:30</time>
+			<teacher>Lapin Ivan Aleksandrovich</teacher>
+			<place>Kronverksky avenue 49</place>
+			<classroom>2201</classroom>
+		</LinearAlgebra>
+	</Friday>
+	<Saturday>
+		<Programming>
+			<time>10:00-11:30</time>
+			<teacher>Danilov Pavel Yurievich</teacher>
+			<place>Kronverksky avenue 49</place>
+			<classroom>2112</classroom>
+		</Programming>
+		<Programming>
+			<time>11:40-13:10</time>
+			<teacher>Danilov Pavel Yurievich</teacher>
+			<place>Kronverksky avenue 49</place>
+			<classroom>2112</classroom>
+		</Programming>
+	</Saturday>
+</schedule>

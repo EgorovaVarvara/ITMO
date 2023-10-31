@@ -1,0 +1,73 @@
+schedule: 
+	-Monday: 
+		-ComputerScince: 
+			-time: 8:20-9:50
+			-teacher: Boldyreva Elena Aleksandrovna
+			-place: Online
+		-ComputerScince: 
+			-time: 10:00-11:30
+			-teacher: Boldyreva Elena Aleksandrovna
+			-place: Online
+		-English: 
+			-time: 11:40-13:10
+			-teacher: Abdullina Nailya Zufarovna
+			-place: Lomonosova 9
+			-classroom: 3225
+		-English: 
+			-time: 13:30-15:00
+			-teacher: Abdullina Nailya Zufarovna
+			-place: Lomonosova 9
+			-classroom: 3225
+	-Tuesday: 
+		-FundamentalsOfDiscreteMath: 
+			-time: 10:00-11:30
+			-teacher: Lisicyna Lybov Sergeevna
+			-place: Kronverksky avenue 49
+			-classroom: 24357
+		-MathAnalys: 
+			-time: 13:30-15:00
+			-teacher: Pravdin Konstantyn Vladymirovich
+			-place: Online
+		-MathAnalys: 
+			-time: 15:20-16:50
+			-teacher: Isaeva Tatyana Tinofeevna
+			-place: Online
+	-Wednesday: 
+		-FundamentalsOfProfessionalActivity: 
+			-time: 10:00-11:30
+			-teacher: Klimenkov Sergey Viktorovych
+			-place: Lomonosova 9
+			-classroom: 1216
+	-Thursday: 
+		-History: 
+			-time: 13:30-15:00
+			-teacher: Bogomazov Nikolay Ivanovich
+			-place: Kronverksky avenue 49
+			-classroom: 1419
+		-History: 
+			-time: 15:20-16:50
+			-teacher: Pavlovsky Alexey Fedorovich
+			-place: Kronverksky avenue 49
+			-classroom: 2426
+	-Friday: 
+		-LinearAlgebra: 
+			-time: 8:20-9:50
+			-teacher: Lapin Ivan Aleksandrovich
+			-place: Kronverksky avenue 49
+			-classroom: 1405
+		-LinearAlgebra: 
+			-time: 10:00-11:30
+			-teacher: Lapin Ivan Aleksandrovich
+			-place: Kronverksky avenue 49
+			-classroom: 2201
+	-Saturday: 
+		-Programming: 
+			-time: 10:00-11:30
+			-teacher: Danilov Pavel Yurievich
+			-place: Kronverksky avenue 49
+			-classroom: 2112
+		-Programming: 
+			-time: 11:40-13:10
+			-teacher: Danilov Pavel Yurievich
+			-place: Kronverksky avenue 49
+			-classroom: 2112
