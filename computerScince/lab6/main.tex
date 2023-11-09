@@ -1,0 +1,27 @@
+\documentclass{article}
+\usepackage[english, russian]{babel}
+
+\usepackage{enumitem}%можно делать {0.44\textwidth}
+\usepackage{multirow}%для таблиц
+\usepackage{diagbox}%разделяет клетку в таблице по диагонали
+\usepackage{fancyhdr}%колонтитулы
+\usepackage{graphicx, geometry}%для включения картинок и задания ширны полей
+\usepackage{colortbl}%задает цвет
+\graphicspath{{images/}}
+
+\pagestyle{fancy}
+\fancyhf{}%нумерация страниц не ведется
+\renewcommand{\headrulewidth}{0pt}%верхний колонтитул
+
+\geometry{a4paper,total={170mm,257mm},left=20mm,top=20mm,} %лист А4
+\setlist{nolistsep}%без отступов в нижних элементах
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+\graphicspath{{pics/}}
+\pagecolor{white}
+
+\begin{document}
+{\large \input{titul_list.tex}
+\input{page1.tex}
+\input{page2.tex}
+\input{page3.tex}\par}
+\end{document}
