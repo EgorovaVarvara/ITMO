@@ -10,8 +10,8 @@ public class LavaPlume extends SpecialMove {
     @Override
     protected void applyOppEffects(Pokemon p) {
         super.applyOppEffects(p);
-        Effect e = new Effect().chance(0.3);
-        e.burn(p);
+        Effect e = new Effect().chance(0.3).condition(Status.BURN).turns(1);
+        p.setCondition(e);
     }
 
     @Override
