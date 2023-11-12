@@ -11,8 +11,8 @@ public class Thunderbolt extends SpecialMove {
     @Override
     protected void applyOppEffects(Pokemon p) {
         super.applyOppEffects(p);
-        Effect e = new Effect().chance(0.1);
-        e.paralyze(p);
+        Effect e = new Effect().chance(0.1).condition(Status.PARALYZE).turns(1);
+        p.setCondition(e);
         }
 
     @Override
