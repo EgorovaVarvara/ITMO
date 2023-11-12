@@ -11,8 +11,8 @@ public class Thunder extends SpecialMove {
     @Override
     protected void applyOppEffects(Pokemon p) {
         super.applyOppEffects(p);
-        Effect e = new Effect().chance(0.3);
-        e.paralyze(p);
+        Effect e = new Effect().chance(0.3).condition(Status.PARALYZE).turns(1);
+        p.setCondition(e);
         }
 
     @Override
