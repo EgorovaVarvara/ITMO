@@ -10,7 +10,7 @@ public class Flatter extends SpecialMove {
     @Override
     protected void applyOppEffects(Pokemon p) {
         super.applyOppEffects(p);
-        Effect EffectObject = new Effect().stat(Stat.SPECIAL_ATTACK, 1);
+        Effect EffectObject = new Effect().stat(Stat.SPECIAL_ATTACK, 1).turns(1);
         p.addEffect(EffectObject);
         Effect.confuse(p);
     }
