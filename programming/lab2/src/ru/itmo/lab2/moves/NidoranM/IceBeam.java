@@ -11,8 +11,8 @@ public class IceBeam extends SpecialMove {
     @Override
     protected void applyOppEffects(Pokemon p) {
         super.applyOppEffects(p);
-        Effect e = new Effect().chance(0.1);
-        e.freeze(p);
+        Effect e = new Effect().chance(0.1).condition(Status.FREEZE).turns(1);
+        p.setCondition(e);
         }
 
     @Override
