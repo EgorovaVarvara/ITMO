@@ -11,8 +11,7 @@ public class Rest extends StatusMove {
     protected void applySelfEffects(Pokemon p) {
         int health = (int) Math.floor(p.getHP());
         super.applySelfEffects(p);
-        Effect.sleep(p);
-        Effect EffectObject = new Effect().stat(Stat.HP, health - 46);
+        Effect EffectObject = new Effect().condition(Status.SLEEP).stat(Stat.HP, health-46).turns(1);
         p.addEffect(EffectObject);
     }
 
