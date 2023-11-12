@@ -9,7 +9,7 @@ public class RockPolish extends StatusMove{
     @Override
     protected void applySelfEffects(Pokemon p){
         super.applySelfEffects(p);
-        Effect EffectObject = new Effect().stat(Stat.SPEED, 2);
+        Effect EffectObject = new Effect().stat(Stat.SPEED, 2).turns(1);
         p.addEffect(EffectObject);
     }
     @Override
