@@ -37,8 +37,8 @@ class Moves {
         getFriendliness(a);
     }
 
-    static boolean areFriends(int a, int b){
-        if (a >= 3 & b >= 3){
+    static boolean areFriends(Entity a, Entity b){
+        if (a.friendliness >= 3 & b.friendliness >= 3){
             System.out.println("\nПерсонажи дружат.");
             return true;
         }else{
@@ -47,9 +47,9 @@ class Moves {
         }
     }
 
-    static boolean areArgue(int f1, int f2){
+    static boolean areArgue(Entity a, Entity b){
         double var = Math.random();
-        if ((var > 0.1 & (f1 >= 5 & f2 >= 5)) | (var > 0.5 & (f1 < 5 | f2 < 5))){
+        if ((var > 0.1 & (a.friendliness >= 5 & b.friendliness >= 5)) | (var > 0.5 & (a.friendliness < 5 | b.friendliness < 5))){
             System.out.println("\nПерсонажи спорят.");
             return true;
         }else{
@@ -57,9 +57,9 @@ class Moves {
         }
     }
 
-    static boolean areFight(int f1, int f2){
+    static boolean areFight(Entity a, Entity b){
         double var = Math.random();
-        if (((f1 >= 6 & f1 >= 6) & var > 0.05) | ((f1 < 6 | f2 < 6) & var > 0.4)){
+        if (((a.friendliness >= 6 & b.friendliness >= 6) & var > 0.05) | ((a.friendliness < 6 | b.friendliness < 6) & var > 0.4)){
             System.out.println("\nПерсонажи дерутся.");
             return true;
         }else{
@@ -67,14 +67,14 @@ class Moves {
         }
     }
 
-    static boolean areColleagues(int f1, int f2) {
-        if (areArgue(f1, f2)) {
-            f1--;
-            f2--;
-            if (areFight(f1, f2)) {
-                f1--;
-                f2--;
-                if (!areFriends(f1, f2)) {
+    static boolean areColleagues(Entity a, Entity b) {
+        if (areArgue(a, b)) {
+            a.friendliness--;
+            b.friendliness--;
+            if (areFight(a, b)) {
+                a.friendliness--;
+                b.friendliness--;
+                if (!areFriends(a, b)) {
                     return false;
                 } else {
                     return true;
