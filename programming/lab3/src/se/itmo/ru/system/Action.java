@@ -8,10 +8,8 @@ public class Action {
         Zvezdochkin zvezdochkin = new Zvezdochkin();
         Neznayka neznayka = new Neznayka();
         MoonStone moonStone = new MoonStone();
-        String name1 = znayka.name;
-        String name2 = zvezdochkin.name;
 
-        System.out.println(name1 + " делится мыслями с " + name2 + ".");
+        System.out.println(znayka.name + " делится мыслями с " + zvezdochkin.name + ".");
         Moves.getFriendliness(znayka);
         Moves.getFriendliness(zvezdochkin);
 
@@ -20,27 +18,27 @@ public class Action {
         }else{
 
             if (!Moves.areColleagues(znayka, zvezdochkin)){
-                System.out.println(name1 + " и " + name2 + " не смогли найти общий язык.");
+                System.out.println(znayka.name + " и " + zvezdochkin.name + " не смогли найти общий язык.");
             }else{
                 Moves.upFriendliness(znayka);
                 Moves.upFriendliness(zvezdochkin);
-                System.out.println(name1 + " и " + name2 + " нашли общий язык и продолжают исследования.");
+                System.out.println(znayka.name + " и " + zvezdochkin.name + " нашли общий язык и продолжают исследования.");
 
                 if (Moves.areArgue(znayka, zvezdochkin)){
                     System.out.println("Они не теряют уважения друг к другу.");
                     Moves.upFriendliness(znayka);
                     Moves.upFriendliness(zvezdochkin);
-                    System.out.println("Как любил говорить " + name1 + ": " + znayka.favQuote());
+                    System.out.println("Как любил говорить " + znayka.name + ": " + znayka.favQuote());
                 }
 
                 Moves.getInterest(znayka, znayka);
                 if (!Moves.getKnowledge(znayka, moonStone)){
-                    System.out.println(name1 + " продолжает изучать " + moonStone.name);
+                    System.out.println(znayka.name + " продолжает изучать " + moonStone.name);
                 }else{
                     if (Moves.isFlewAway(moonStone, neznayka)){
-                        System.out.println(name1 + " и " + name2 + " продолжают исследования только со слов " + name1);
+                        System.out.println(znayka.name + " и " + zvezdochkin.name + " продолжают исследования только со слов " + znayka.name);
                     }else{
-                        System.out.println(name1 + " и " + name2 + " продолжают исследования.");
+                        System.out.println(znayka.name + " и " + zvezdochkin.name + " продолжают исследования.");
                     }
                 }
             }
