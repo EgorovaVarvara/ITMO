@@ -2,17 +2,14 @@ package se.itmo.ru.stuff;
 
 public class Znayka extends Entity implements Professor {
     public Znayka(){
-        this.dna = 11;
-        this.name = Types.PROFESSOR.getType() + " Знайка";
-        this.friendliness = (int) (Math.random() * 9 + 1);
+        super.setFriendliness((int) (Math.random() * 9 + 1));
+        super.setDna(11);
+        super.setName(Types.PROFESSOR.getType() + " Знайка");
+        super.setInterest("Луна");
+        super.setFavQuote("Истина рождается в споре.");
     }
     @Override
-    public String interests() {
-        return "Луна";
-    }
-
-    @Override
-    public String favQuote(){
-        return "Истина рождается в споре.";
+    public String learn(){
+        return " изучает ";
     }
 }
