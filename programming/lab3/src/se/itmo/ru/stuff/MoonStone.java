@@ -6,6 +6,6 @@ public class MoonStone {
         return (Math.random() >= 0.2);
     }
     public boolean isFly(){
-        return (Math.random() >= 0.5);
+        return (Math.random() >= 0.3);
     }
 }
