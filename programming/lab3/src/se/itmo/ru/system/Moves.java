@@ -5,7 +5,7 @@ import se.itmo.ru.stuff.*;
 class Moves {
     static boolean isFlewAway(MoonStone m, Neznayka n){
         if(m.isFly()){
-            if (n.lucky() < 0.8){
+            if (n.lucky() < 8){
                 System.out.println("\nПо неосторожности " + n.name + " " + m.name + " унёсся на Луну.");
                 return true;
             }else{
@@ -50,7 +50,11 @@ class Moves {
     static boolean areArgue(Entity a, Entity b){
         double var = Math.random();
         if ((var > 0.1 & (a.friendliness >= 5 & b.friendliness >= 5)) | (var > 0.5 & (a.friendliness < 5 | b.friendliness < 5))){
-            System.out.println("\nПерсонажи спорят.");
+            a.friendliness--;
+            b.friendliness--;
+            System.out.println("\nПерсонажи спорят.\nПонижен уровень дружелюбности.");
+            getFriendliness(a);
+            getFriendliness(b);
             return true;
         }else{
             return false;
@@ -60,7 +64,11 @@ class Moves {
     static boolean areFight(Entity a, Entity b){
         double var = Math.random();
         if (((a.friendliness >= 6 & b.friendliness >= 6) & var > 0.05) | ((a.friendliness < 6 | b.friendliness < 6) & var > 0.4)){
-            System.out.println("\nПерсонажи дерутся.");
+            a.friendliness--;
+            b.friendliness--;
+            System.out.println("\nПерсонажи дерутся.\nПонижен уровень дружелюбности.");
+            getFriendliness(a);
+            getFriendliness(b);
             return true;
         }else{
             return false;
@@ -69,11 +77,7 @@ class Moves {
 
     static boolean areColleagues(Entity a, Entity b) {
         if (areArgue(a, b)) {
-            a.friendliness--;
-            b.friendliness--;
             if (areFight(a, b)) {
-                a.friendliness--;
-                b.friendliness--;
                 if (!areFriends(a, b)) {
                     return false;
                 } else {
