@@ -48,7 +48,7 @@ def execute_read_query(connection, query):
         print(f"The error '{e}' occurred")
 
 
-connection = create_connection("localhost", "root", "v156727122005V", "infLab4")
+connection = create_connection("localhost", "root", "########", "infLab4")
 
 create_authors_table = """
 CREATE TABLE IF NOT EXISTS authors(
