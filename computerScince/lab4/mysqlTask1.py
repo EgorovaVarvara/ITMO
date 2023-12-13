@@ -48,7 +48,7 @@ def execute_read_query(connection, query):
         print(f"The error '{e}' occurred")
 
 
-connection = create_connection("localhost", "root", "v156727122005V", "sm_app")
+connection = create_connection("localhost", "root", "########", "sm_app")
 
 create_users_table = """
 CREATE TABLE IF NOT EXISTS users (
