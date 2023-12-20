@@ -6,22 +6,26 @@ import se.itmo.ru.stuff.*;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public final class Action {
-    private final Queue<Entity> entities = new LinkedList<>();
-    private MoonStone moonStone;
-    public void setMoonStone(MoonStone m){this.moonStone = m;}
-    public void addCharacter(Entity e){this.entities.add(e);}
+public class Action {
+    private static final Queue<Entity> entities = new LinkedList<>();
+    private static MoonStone moonStone;
+    public class Settings{
+        public static void setMoonStone(MoonStone m){moonStone = m;}
+        public static void addCharacter(Entity e){entities.add(e);}
+    }
+
+
+
     public void go(){
         try{
-            Moves.Check.checkAmountOfEntities(this.entities);
+            Moves.Check.checkAmountOfEntities(entities);
         }catch(WrongAmountOfEntitiesException e){
             System.err.println(e.getMessage());
             System.exit(0);
         }
-        Entity znayka = this.entities.poll();
-        Entity zvezdochkin = this.entities.poll();
-        Entity neznayka = this.entities.poll();
-        MoonStone moonStone = this.moonStone;
+        Entity znayka = entities.poll();
+        Entity zvezdochkin = entities.poll();
+        Entity neznayka = entities.poll();
         moonStone.setStats();
 
         Interaction i = new Interaction(){
