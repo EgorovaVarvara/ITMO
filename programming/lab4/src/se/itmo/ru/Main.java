@@ -8,10 +8,10 @@ public class Main {
         Entity zvezdochkin = new Zvezdochkin();
         Entity neznayka = new Neznayka();
         MoonStone moonStone = new MoonStone();
-        a.addCharacter(znayka);
-        a.addCharacter(zvezdochkin);
-        a.addCharacter(neznayka);
-        a.setMoonStone(moonStone);
+        Action.Settings.addCharacter(znayka);
+        Action.Settings.addCharacter(zvezdochkin);
+        Action.Settings.addCharacter(neznayka);
+        Action.Settings.setMoonStone(moonStone);
         a.go();
     }
 }
