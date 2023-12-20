@@ -14,7 +14,7 @@ public final class Action {
     public void go(){
         try{
             Moves.Check.checkAmountOfEntities(this.entities);
-        }catch(wrongAmountOfEntitiesException e){
+        }catch(WrongAmountOfEntitiesException e){
             System.err.println(e.getMessage());
             System.exit(0);
         }
@@ -23,11 +23,12 @@ public final class Action {
         Entity neznayka = this.entities.poll();
         MoonStone moonStone = this.moonStone;
         moonStone.setStats();
+
         Interaction i = new Interaction(){
             @Override
             public void toTalk(Entity e1, Entity e2){
                 if (e1.equals(e2)) {
-                    throw new sameEntityException("sameEntityException: Сущность не может разговаривать сама с собой!");
+                    throw new SameEntityException("SameEntityException: Сущность не может разговаривать сама с собой!");
                 }
                 System.out.println(e1.getName() + " общается с " + e2.getName() + ".");
             }
@@ -38,9 +39,10 @@ public final class Action {
         };
 
 
+
         System.out.println(znayka.getName() + " изнывает от нетерпения.");
         System.out.println(znayka.getName() + ((Professor) znayka).learn() + "невесомость.");
-        System.out.println(moonStone.getEnergyInteraction());
+        System.out.println(moonStone.getEnergyInteraction() + "\n");
 
 
         System.out.println(znayka.getName() + " делится мыслями с " + zvezdochkin.getName() + ".");
@@ -84,7 +86,7 @@ public final class Action {
                     }
                 }
             }
-        }catch (sameEntityException e){
+        }catch (SameEntityException e){
             System.err.println(e.getMessage());
         }
     }

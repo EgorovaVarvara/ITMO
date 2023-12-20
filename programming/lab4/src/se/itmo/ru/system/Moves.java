@@ -7,12 +7,12 @@ import java.util.Queue;
 
 class Moves {
     protected static class Check{
-        static void checkAmountOfEntities(Queue<Entity> q) throws wrongAmountOfEntitiesException{
+        static void checkAmountOfEntities(Queue<Entity> q) throws WrongAmountOfEntitiesException {
             int len = q.size();
             if (len > 3){
-                throw new wrongAmountOfEntitiesException("wrongAmountOfEntitiesException: Слишком много сущностей!");
+                throw new WrongAmountOfEntitiesException("WrongAmountOfEntitiesException: Слишком много сущностей!");
             }else if (len < 3){
-                throw new wrongAmountOfEntitiesException("wrongAmountOfEntitiesException: Неодстаточно сущностей!");
+                throw new WrongAmountOfEntitiesException("WrongAmountOfEntitiesException: Неодстаточно сущностей!");
             }
         }
         static boolean isFlewAway(MoonStone m, Entity e){
@@ -37,9 +37,9 @@ class Moves {
                 return false;
             }
         }
-        static boolean areFriends(Entity a, Entity b) throws sameEntityException{
+        static boolean areFriends(Entity a, Entity b) throws SameEntityException {
             if (a.equals(b)) {
-                throw new sameEntityException("sameEntityException: Сущность не может дружить сама с собой!");
+                throw new SameEntityException("SameEntityException: Сущность не может дружить сама с собой!");
             }
             if (a.getFriendliness() >= 3 & b.getFriendliness() >= 3){
                 System.out.println("\nПерсонажи дружат.");
@@ -49,9 +49,9 @@ class Moves {
                 return false;
             }
         }
-        static boolean areArgue(Entity a, Entity b) throws sameEntityException{
+        static boolean areArgue(Entity a, Entity b) throws SameEntityException {
             if (a.equals(b)) {
-                throw new sameEntityException("sameEntityException: Сущность не может спорить сама с собой!");
+                throw new SameEntityException("SameEntityException: Сущность не может спорить сама с собой!");
             }
             double var = Math.random();
             if ((var > 0.1 & (a.getFriendliness() >= 5 & b.getFriendliness() >= 5)) | (var > 0.5 & (a.getFriendliness() < 5 | b.getFriendliness() < 5))){
@@ -65,9 +65,9 @@ class Moves {
                 return false;
             }
         }
-        static boolean areFight(Entity a, Entity b) throws sameEntityException{
+        static boolean areFight(Entity a, Entity b) throws SameEntityException {
             if (a.equals(b)) {
-                throw new sameEntityException("sameEntityException: Сущность не может драться сама с собой!");
+                throw new SameEntityException("SameEntityException: Сущность не может драться сама с собой!");
             }
             double var = Math.random();
             if (((a.getFriendliness() >= 6 & b.getFriendliness() >= 6) & var > 0.05) | ((a.getFriendliness() < 6 | b.getFriendliness() < 6) & var > 0.4)){
@@ -81,9 +81,9 @@ class Moves {
                 return false;
             }
         }
-        static boolean areColleagues(Entity a, Entity b) throws sameEntityException{
+        static boolean areColleagues(Entity a, Entity b) throws SameEntityException {
             if (a.equals(b)) {
-                throw new sameEntityException("sameEntityException: Сущность не может сотрудничать сама с собой!");
+                throw new SameEntityException("SameEntityException: Сущность не может сотрудничать сама с собой!");
             }
             if (areArgue(a, b)) {
                 if (areFight(a, b)) {
@@ -98,7 +98,7 @@ class Moves {
     }
 
 
-    protected class Doing{
+    protected static class Doing{
         static void getKnowleges(Entity n){
             System.out.println(n.getName() + " знает " + n.getSciences());
         }
