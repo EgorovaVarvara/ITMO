@@ -1,0 +1,91 @@
+package se.itmo.ru.system;
+
+import se.itmo.ru.errors.*;
+import se.itmo.ru.stuff.*;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+public final class Action {
+    private final Queue<Entity> entities = new LinkedList<>();
+    private MoonStone moonStone;
+    public void setMoonStone(MoonStone m){this.moonStone = m;}
+    public void addCharacter(Entity e){this.entities.add(e);}
+    public void go(){
+        try{
+            Moves.Check.checkAmountOfEntities(this.entities);
+        }catch(wrongAmountOfEntitiesException e){
+            System.err.println(e.getMessage());
+            System.exit(0);
+        }
+        Entity znayka = this.entities.poll();
+        Entity zvezdochkin = this.entities.poll();
+        Entity neznayka = this.entities.poll();
+        MoonStone moonStone = this.moonStone;
+        moonStone.setStats();
+        Interaction i = new Interaction(){
+            @Override
+            public void toTalk(Entity e1, Entity e2){
+                if (e1.equals(e2)) {
+                    throw new sameEntityException("Сущности совпадают");
+                }
+                System.out.println(e1.getName() + " общается с " + e2.getName() + ".");
+            }
+            @Override
+            public void makeConclusion(Entity e, String message){
+                System.out.println(e.getName() + " сделал вывод, что " + message);
+            }
+        };
+
+
+        System.out.println(znayka.getName() + " изнывает от нетерпения.");
+        System.out.println(znayka.getName() + ((Professor) znayka).learn() + "невесомость.");
+        System.out.println(moonStone.getEnergyInteraction());
+
+
+        System.out.println(znayka.getName() + " делится мыслями с " + zvezdochkin.getName() + ".");
+        Moves.Doing.getFriendliness(znayka);
+        Moves.Doing.getFriendliness(zvezdochkin);
+
+        System.out.println(znayka.getName() + ((Professor) znayka).learn() + " и " + zvezdochkin.getName() + ((Professor) zvezdochkin).learn());
+        try {
+            if (!(Moves.Check.areFriends(znayka, zvezdochkin))) {
+                System.out.println("Из-за напряженных отношений они перестают проводить совместные исследования.");
+            } else {
+
+                if (!Moves.Check.areColleagues(znayka, zvezdochkin)) {
+                    System.out.println(znayka.getName() + " и " + zvezdochkin.getName() + " не смогли найти общий язык.");
+                } else {
+                    Moves.Doing.upFriendliness(znayka);
+                    Moves.Doing.upFriendliness(zvezdochkin);
+                    System.out.println(znayka.getName() + " и " + zvezdochkin.getName() + " нашли общий язык и продолжают исследования.");
+
+                    if (Moves.Check.areArgue(znayka, zvezdochkin)) {
+                        System.out.println("Они не теряют уважения друг к другу.");
+                        Moves.Doing.upFriendliness(znayka);
+                        Moves.Doing.upFriendliness(zvezdochkin);
+                        System.out.println("Как любил говорить " + znayka.getName() + ": " + znayka.getFavQuote());
+                    }
+
+                    Moves.Doing.getInterest(znayka);
+                    if (!Moves.Check.getKnowledge(znayka, moonStone)) {
+                        System.out.println(znayka.getName() + " продолжает изучать " + moonStone.getName());
+                    } else {
+                        System.out.println(neznayka.getName() + ((Simp) neznayka).play());
+                        if (Moves.Check.isFlewAway(moonStone, neznayka)) {
+                            System.out.println(znayka.getName() + " и " + zvezdochkin.getName() + " продолжают исследования только со слов " + znayka.getName() + "\n");
+                        } else {
+                            System.out.println(znayka.getName() + " и " + zvezdochkin.getName() + " продолжают исследования.\n");
+                        }
+                        Moves.Doing.getKnowleges(zvezdochkin);
+                        i.makeConclusion(zvezdochkin, moonStone.getName() + " распространён на Луне");
+                        i.toTalk(zvezdochkin, znayka);
+                        i.makeConclusion(znayka, "залежи лунита могут быть использованы как на Земле, так и на Луне.");
+                    }
+                }
+            }
+        }catch (sameEntityException e){
+            System.err.println(e.getMessage());
+        }
+    }
+}
