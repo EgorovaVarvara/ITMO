@@ -27,7 +27,7 @@ public final class Action {
             @Override
             public void toTalk(Entity e1, Entity e2){
                 if (e1.equals(e2)) {
-                    throw new sameEntityException("Сущности совпадают");
+                    throw new sameEntityException("sameEntityException: Сущность не может разговаривать сама с собой!");
                 }
                 System.out.println(e1.getName() + " общается с " + e2.getName() + ".");
             }
