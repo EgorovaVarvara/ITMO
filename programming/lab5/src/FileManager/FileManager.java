@@ -9,12 +9,15 @@ public abstract class FileManager {
     private String fileName;
     public FileManager(){
     }
+    public FileManager(String fileName){
+        this.fileName = fileName;
+    }
     public String getFileName(){
         return this.fileName;
     }
     public void setFileName(String fileName){
         this.fileName = fileName;
     }
-    protected abstract void saveToJson(String fileName, HashSet<MusicBand> musicBands) throws Exception;
+    protected abstract void saveToJson(HashSet<MusicBand> musicBands) throws Exception;
     public abstract HashSet<MusicBand> loadFromJson(String fileName) throws Exception;
 }

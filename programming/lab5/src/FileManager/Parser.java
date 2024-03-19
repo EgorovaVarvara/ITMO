@@ -11,15 +11,19 @@ import java.util.HashSet;
 import java.util.Scanner;
 
 public class Parser extends FileManager{
+    private String filename;
     public Parser() {
+    }
+    public Parser(String filename){
+        this.filename = filename;
     }
 
     @Override
-    public void saveToJson(String filename, HashSet<MusicBand> musicBands) {
+    public void saveToJson(HashSet<MusicBand> musicBands) {
         GsonBuilder gsonBuilder = new GsonBuilder();
         Gson gson = gsonBuilder.create();
         String data = gson.toJson(musicBands);
-        try(BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(filename))){
+        try(BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(this.filename))){
             bufferedWriter.write(data);
         }catch (IOException e){
             System.out.println("Что-то пошло не так. Данные не сохранены. ");

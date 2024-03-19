@@ -6,8 +6,6 @@ import Console.ClientManager;
 import Console.CommandManager;
 import FileManager.Parser;
 
-import java.io.File;
-import java.io.IOException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
@@ -92,9 +90,9 @@ public class CollectionManager {
     }
 
     public void save() {
-        Parser parser = new Parser();
+        Parser parser = new Parser(this.filename);
         try {
-            parser.saveToJson(this.filename, this.musicBands);
+            parser.saveToJson(this.musicBands);
             System.out.println("Коллекция сохранена в файл. ");
         } catch (Exception e) {
             System.out.println("Что-то пошло не так. ");

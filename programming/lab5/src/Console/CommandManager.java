@@ -6,9 +6,13 @@ import Commands.*;
 import java.util.HashMap;
 import java.util.Scanner;
 
+/**
+ *
+ *
+ */
 public class CommandManager {
     private boolean isWorking = true;
-    private HashMap<String, Command> commands = new HashMap<>();
+    private static HashMap<String, Command> commands = new HashMap<>();
     private String filename;
     public CommandManager(CollectionManager collectionManager){
         commands.put("help", new HelpCommand(collectionManager));
@@ -31,8 +35,8 @@ public class CommandManager {
     public void setFilename(String filename){
         this.filename = filename;
     }
-    public HashMap<String, Command> getCommands(){
-        return this.commands;
+    public static HashMap<String, Command> getCommands(){
+        return commands;
     }
     public boolean getWork(){
         return this.isWorking;
@@ -53,7 +57,7 @@ public class CommandManager {
                 System.out.println("Команда \"" + args[0] + "\" не найдена.");
             }
         }catch (Exception e){
-            System.out.println("Something goes wrong. AAAAAAA Try again.");
+            System.out.println("Something goes wrong. " + e.getMessage() + ". Try again.");
             e.printStackTrace();
             this.isWorking = false;
             System.exit(0);
