@@ -44,7 +44,7 @@ public class ExecuteScriptCommand implements Command{
                             Long x = fileReaderManager.readCoordinateX();
                             float y = fileReaderManager.readCoordinateY();
                             int numberOfParticipants = fileReaderManager.readNumberOfParticipants();
-                            MusicGenre musicGenre = fileReaderManager.readMusicGenre();
+                            MusicGenre musicGenre = MusicGenre.valueOf(fileReaderManager.readMusicGenre());
                             long bands = fileReaderManager.readBands();
                             MusicBand musicBand = validator.getValidatedElement(new MusicBand(name, new Coordinates(x, y), numberOfParticipants, musicGenre, new Label(bands)));
                             switch (command){
