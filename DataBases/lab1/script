@@ -1,0 +1,11 @@
+CREATE TABLE IF NOT EXISTS Location(id INT AUTO_INCREMENT, name VARCHAR(250) NOT NULL, coordinate_X FLOAT, coordinate_Y FLOAT, coordinate_Z FLOAT, PRIMARY KEY(id));
+CREATE TABLE IF NOT EXISTS Attribute(id INT AUTO_INCREMENT, name VARCHAR(250) NOT NULL, PRIMARY KEY(id));
+CREATE TABLE IF NOT EXISTS Condition(id INT AUTO_INCREMENT, name VARCHAR(250) NOT NULL, PRIMARY KEY(id));
+CREATE TABLE IF NOT EXISTS Action(id INT AUTO_INCREMENT, name VARCHAR(250) NOT NULL, PRIMARY KEY(id));
+CREATE TABLE IF NOT EXISTS Way(id INT AUTO_INCREMENT, location_id INT NOT NULL, durating VARCHAR(250) NOT NULL, PRIMARY KEY(id), FOREIGN KEY fk_location_id (location_id) REFERENCES Location(id));
+CREATE TABLE IF NOT EXISTS Spaceship(id INT AUTO_INCREMENT, name VARCHAR(100) NOT NULL, way_id INT NOT NULL, PRIMARY KEY(id), FOREIGN KEY fk_way_id (way_id) REFERENCES Way(id));
+CREATE TABLE IF NOT EXISTS Person(id INT AUTO_INCREMENT, name VARCHAR(100) NOT NULL, action_id INT NOT NULL, spaceship_id INT NOT NULL, PRIMARY KEY(id), FOREIGN KEY fk_action_id (action_id) REFERENCES Action(id), FOREIGN KEY fk_spaceship_id (spaceship_id) REFERENCES Spaceship(id));
+CREATE TABLE IF NOT EXISTS Thoughts_about_future(id INT AUTO_INCREMENT, action_id INT NOT NULL, thought VARCHAR(250) NOT NULL, parent_thought_id INT, PRIMARY KEY(id), FOREIGN KEY fk_action_id (action_id) REFERENCES Action(id), FOREIGN KEY fk_parent_thought_id (parent_thought_id) REFERENCES Thoughts_about_future(id));
+CREATE TABLE IF NOT EXISTS Action_condition(condition_id INT, action_id INT, FOREIGN KEY fk_condition_id (condition_id) REFERENCES Condition(id), FOREIGN KEY fk_action_id (action_id) REFERENCES Action(id));
+CREATE TABLE IF NOT EXISTS Person_condition(person_id INT NOT NULL, condition_id INT NOT NULL, FOREIGN KEY fk_person_id (person_id) REFERENCES Perosn(id), FOREIGN KEY fk_condition_id (condition_id) REFERENCES Condition(id));
+CREATE TABLE IF NOT EXISTS Way_attribute(attribute_id INT NOT NULL, way_id INT NOT NULL, FOREIGN KEY fk_attribute_id (attribute_id) REFERENCES Attribute(id), FOREIGN KEY fk_way_id (way_id) REFERENCES Way(id));
