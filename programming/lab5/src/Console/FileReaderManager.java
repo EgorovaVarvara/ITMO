@@ -4,7 +4,6 @@ import BaseClasses.MusicGenre;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class FileReaderManager {
@@ -58,7 +57,7 @@ public class FileReaderManager {
     }
 
     public String[] readCommandAndArgument() {
-        String[] commandAndArgument = scanner.nextLine().trim().split(" ");
+        String[] commandAndArgument = scanner.nextLine().trim().toLowerCase().split(" ");
         String command = commandAndArgument[0].trim();
         if (CommandManager.getCommands().containsKey(command)) {
             if (command.equals("execute_script") || command.equals("filter_less_than_number_of_participants") || command.equals("remove_by_id") || command.equals("update")) {
