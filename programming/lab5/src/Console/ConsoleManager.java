@@ -7,43 +7,66 @@ import FileManager.*;
 
 import Collection.CollectionManager;
 
+/**
+ * The {@code ConsoleManager} class manage reading from console.
+ *
+ * @author Egorova Varvara
+ */
 public class ConsoleManager implements ReaderWriter{
+    /**
+     * Constructor that creates object of class {@code ConsoleManager}.
+     */
     public ConsoleManager(){
     }
+
+    /**
+     * @return Int value from console
+     */
     @Override
     public int readInt() {
         Scanner scanner = new Scanner(System.in);
         return Integer.parseInt(scanner.nextLine().trim());
     }
 
+    /**
+     * @return Long value from console
+     */
     @Override
     public long readLong() {
         Scanner scanner = new Scanner(System.in);
         return Long.parseLong(scanner.nextLine().trim());
     }
 
+    /**
+     * @return Float value from console
+     */
     @Override
     public float readFloat() {
         Scanner scanner = new Scanner(System.in);
         return Float.parseFloat(scanner.nextLine().trim());
     }
 
+    /**
+     * @return Line from console
+     */
     @Override
     public String readLine() {
         Scanner scanner = new Scanner(System.in);
         return scanner.nextLine().trim();
     }
 
-    @Override
-    public void writeLine(String text) {
-        System.out.println(text);
-    }
-
+    /**
+     * @param text that writes at console
+     */
     @Override
     public void write(String text) {
         System.out.print(text);
     }
 
+    /**
+     * @param message that writes at console
+     * @return validated message from console
+     */
     @Override
     public String getValidatedValue(String message) {
         write(message);
@@ -55,12 +78,9 @@ public class ConsoleManager implements ReaderWriter{
         }
     }
 
-    @Override
-    public File readFileName() {
-        Scanner scanner = new Scanner(System.in);
-        String path = scanner.nextLine();
-        return new File(String.valueOf(path));
-    }
+    /**
+     * Reads filename another time if command started without command line argument.
+     */
     public void fileRead(){
         while (true) {
             try {

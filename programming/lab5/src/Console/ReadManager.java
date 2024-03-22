@@ -4,8 +4,18 @@ import BaseClasses.MusicGenre;
 
 import java.util.Arrays;
 
+/**
+ * The {@code ReadManager} class manage reading different values from console
+ */
 public class ReadManager {
+    /**
+     * @see ConsoleManager
+     */
     ConsoleManager consoleManager = new ConsoleManager();
+
+    /**
+     * @return name for music band from console
+     */
     public String readName(){
         System.out.println("Введите название музыкальной группы: ");
         String name = consoleManager.readLine();
@@ -18,6 +28,10 @@ public class ReadManager {
             }
         }
     }
+
+    /**
+     * @return coordinate `x` for music band from console
+     */
     public Long readCoordinateX(){
         System.out.println("Введите координату X: ");
         while (true){
@@ -29,6 +43,9 @@ public class ReadManager {
         }
     }
 
+    /**
+     * @return coordinate `y` for music band from console
+     */
     public float readCoordinateY(){
         System.out.println("Введите координату Y: ");
         while (true){
@@ -39,6 +56,10 @@ public class ReadManager {
             }
         }
     }
+
+    /**
+     * @return number of participants for music band from console
+     */
     public int readNumberOfParticipants(){
         System.out.println("Введите число участников группы: ");
         while (true){
@@ -54,6 +75,10 @@ public class ReadManager {
             }
         }
     }
+
+    /**
+     * @return MusicGenre for music band from console
+     */
     public MusicGenre readMusicGenre(){
         System.out.println("Вы должны ввести один из перечисленных музыкальных жанров: " + Arrays.toString(MusicGenre.values()));
         while (true){
@@ -64,6 +89,10 @@ public class ReadManager {
             }
         }
     }
+
+    /**
+     * @return bands for music band from console
+     */
     public long readBands(){
         System.out.println("Введите количество групп у лейбла: ");
         while (true){

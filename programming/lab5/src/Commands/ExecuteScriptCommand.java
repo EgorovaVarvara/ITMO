@@ -12,21 +12,40 @@ import FileManager.FilesStack;
 
 import java.io.FileNotFoundException;
 import java.util.HashMap;
-import java.util.Scanner;
 
 import static java.lang.Integer.parseInt;
+/**
+ * Command `execute_script file_name`.
+ *
+ * @author Egorova Varvara
+ */
 
 public class ExecuteScriptCommand implements Command {
+    /**
+     * @see CollectionManager
+     */
     private final CollectionManager cm;
+    /**
+     * @see CommandManager
+     */
     private final HashMap<String, Command> commands;
-
+    /**
+     * Constructor that creates object of {@code ExecuteScriptCommand}.
+     * @param cm collection manager
+     */
     public ExecuteScriptCommand(CollectionManager cm) {
         this.cm = cm;
         this.commands = CommandManager.getCommands();
     }
 
+    /**
+     * @see Validator
+     */
     Validator validator = new Validator();
-
+    /**
+     * Executes the command.
+     * @param args arguments
+     */
     @Override
     public void execute(String[] args) {
         if (args.length == 2) {
@@ -82,7 +101,9 @@ public class ExecuteScriptCommand implements Command {
             }
         }
     }
-
+    /**
+     * @return description of command
+     */
     @Override
     public String getDescription() {
         return "execute_script file_name: считать и исполнить скрипт из указанного файла";

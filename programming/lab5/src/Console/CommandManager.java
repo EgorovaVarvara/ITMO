@@ -7,13 +7,29 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 /**
+ * The {@code CommandManager} class manage commands executing.
  *
- *
+ * @author Egorova Varvara
  */
 public class CommandManager {
+    /**
+     * Condition of program.
+     */
     private boolean isWorking = true;
+    /**
+     * HashMap with all commands.
+     */
     private static HashMap<String, Command> commands = new HashMap<>();
+    /**
+     * Name of file with main collection.
+     */
     private String filename;
+
+    /**
+     * Constructor that creates object of class {@code CommandManager} and fills commands HashMap.
+     * @param collectionManager
+     * @see CollectionManager
+     */
     public CommandManager(CollectionManager collectionManager){
         commands.put("help", new HelpCommand(collectionManager));
         commands.put("info", new InfoCommand(collectionManager));
@@ -32,15 +48,34 @@ public class CommandManager {
         commands.put("filter_less_than_number_of_participants", new FilterLessThanNumberOfParticipantsCommand(collectionManager));
         commands.put("print_descending", new PrintDescendingCommand(collectionManager));
     }
+
+    /**
+     * Use to set name of file with main collection.
+     * @param filename
+     */
     public void setFilename(String filename){
         this.filename = filename;
     }
+
+    /**
+     * Use to get commands HasMap.
+     * @return commands HashMap
+     */
     public static HashMap<String, Command> getCommands(){
         return commands;
     }
+
+    /**
+     * Returns condition of program.
+     * @return boolean
+     */
     public boolean getWork(){
         return this.isWorking;
     }
+
+    /**
+     * Read command from console and executes it.
+     */
     public void existCommand(){
         Scanner scanner = new Scanner(System.in);
         try{

@@ -10,12 +10,29 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Scanner;
 
+/**
+ * The {@code Parser} manage parsing form and to json using `GSON` library.
+ *
+ * @author Egorova Varvara
+ */
 public class Parser extends FileManager{
+    /**
+     * filename of main collection.
+     */
     private final String filename;
+
+    /**
+     * Constructor of class objects.
+     * @param filename of main collection
+     */
     public Parser(String filename){
         this.filename = filename;
     }
 
+    /**
+     * Saves the collection in file if json-format.
+     * @param musicBands HashSet with collection that should be saved
+     */
     @Override
     public void saveToJson(HashSet<MusicBand> musicBands) {
         GsonBuilder gsonBuilder = new GsonBuilder();
@@ -27,6 +44,13 @@ public class Parser extends FileManager{
             System.out.println("Что-то пошло не так. Данные не сохранены. ");
         }
     }
+
+    /**
+     * Loads collection from json file.
+     * @return HashSet with main collection
+     * @throws JsonSyntaxException if something wring in file
+     * @throws JsonIOException if something wrong with file
+     */
     @Override
     public HashSet<MusicBand> loadFromJson() throws JsonSyntaxException, JsonIOException{
         HashSet<MusicBand> musicBands = new HashSet<>();

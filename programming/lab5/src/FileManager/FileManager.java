@@ -5,6 +5,11 @@ import Collection.CollectionManager;
 
 import java.util.HashSet;
 
+/**
+ * The {@code FileManager} abstract class manage work with files
+ *
+ * @author Egorova Varvara
+ */
 public abstract class FileManager {
     private String fileName;
     public FileManager(){

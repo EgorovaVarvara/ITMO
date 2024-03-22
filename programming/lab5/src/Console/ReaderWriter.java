@@ -1,14 +1,16 @@
 package Console;
 
-import java.io.File;
 
+/**
+ * The {@code ReaderWriter} interface contains methods to read and write.
+ *
+ * @author Egorova Varvara
+ */
 public interface ReaderWriter {
     int readInt();
     long readLong();
     float readFloat();
     String readLine();
-    void writeLine(String text);
     void write(String text);
     String getValidatedValue(String message);
-    File readFileName();
 }

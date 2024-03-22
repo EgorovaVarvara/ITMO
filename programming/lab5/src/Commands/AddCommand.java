@@ -5,12 +5,29 @@ import Collection.CollectionManager;
 
 import java.util.ArrayList;
 
+/**
+ * Command `add {element}`.
+ *
+ * @author Egorova Varvara
+ */
 public class AddCommand implements Command{
+    /**
+     * @see CollectionManager
+     */
     CollectionManager cm;
 
+    /**
+     * Constructor that creates object of {@code AddCommand}.
+     * @param cm collection manager
+     */
     public AddCommand(CollectionManager cm){
         this.cm = cm;
     }
+
+    /**
+     * Executes the command.
+     * @param args arguments
+     */
     @Override
     public void execute(String[] args) {
         if (args.length == 1) {
@@ -34,6 +51,9 @@ public class AddCommand implements Command{
         }else throw new IllegalArgumentException("Неверное количество аргументов. ");
     }
 
+    /**
+     * @return description of command
+     */
     @Override
     public String getDescription() {
         return "add {element}: добавить новый элемент в коллекцию";
