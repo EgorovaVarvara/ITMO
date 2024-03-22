@@ -9,7 +9,9 @@ public class SaveCommand implements Command{
     }
     @Override
     public void execute(String[] args) {
-        cm.save();
+        if (args.length == 1){
+            cm.save();
+        } else throw new IllegalArgumentException("Неверное количество аргументов. ");
     }
 
     @Override

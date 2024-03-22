@@ -10,7 +10,7 @@ import java.io.File;
 // ToDo not unique id after add +
 // ToDo update command not found +
 // ToDo validation data in file +
-// ToDo execute_script... miss you
+// ToDo execute_script... miss you + (уничтожен)
 public class Main {
     public static void main(String[] args) {
         try{
@@ -22,8 +22,8 @@ public class Main {
                         String link = args[0];
                         File file = new File(link);
                         if (file.exists() && !file.isDirectory()){
-                            Parser parser = new Parser();
-                            collectionManager.setCollection(parser.loadFromJson(link));
+                            Parser parser = new Parser(link);
+                            collectionManager.setCollection(parser.loadFromJson());
                             CommandManager commandManager = new CommandManager(collectionManager);
                             commandManager.setFilename(link);
                             collectionManager.setFilename(link);

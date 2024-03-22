@@ -68,9 +68,9 @@ public class ConsoleManager implements ReaderWriter{
                 Scanner scanner = new Scanner(System.in);
                 String Path = scanner.nextLine();
                 CollectionManager collectionManager = new CollectionManager();
-                Parser parser = new Parser();
+                Parser parser = new Parser(Path);
                 collectionManager.setFilename(Path);
-                collectionManager.setCollection(parser.loadFromJson(Path));
+                collectionManager.setCollection(parser.loadFromJson());
                 CommandManager commandManager = new CommandManager(collectionManager);
                 commandManager.setFilename(Path);
                 while (commandManager.getWork()) {

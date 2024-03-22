@@ -58,7 +58,6 @@ public class CommandManager {
             }
         }catch (Exception e){
             System.out.println("Something goes wrong. " + e.getMessage() + ". Try again.");
-            e.printStackTrace();
             this.isWorking = false;
             System.exit(0);
         }

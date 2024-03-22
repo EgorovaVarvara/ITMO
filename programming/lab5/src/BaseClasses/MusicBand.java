@@ -85,7 +85,7 @@ public class MusicBand implements Comparable<MusicBand>, Serializable {
         }
     }
     public boolean equals(MusicBand musicBand){
-        return (this.id == musicBand.getId()) || (this.name.equals(musicBand.getName()) && this.coordinates.equals(musicBand.getCoordinates()) && this.creationDate.equals(musicBand.getCreationDate()) && this.numberOfParticipants == musicBand.getNumberOfParticipants() && this.musicGenre.equals(musicBand.getMusicGenre()) && this.label.equals(musicBand.getLabel()));
+        return (this.id == musicBand.getId()) || (this.name.equals(musicBand.getName()) && this.coordinates.equals(musicBand.getCoordinates()) && this.numberOfParticipants == musicBand.getNumberOfParticipants() && this.musicGenre.equals(musicBand.getMusicGenre()) && this.label.equals(musicBand.getLabel()));
     }
     @Override
     public String toString(){

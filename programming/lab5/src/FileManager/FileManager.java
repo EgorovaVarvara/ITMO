@@ -19,5 +19,5 @@ public abstract class FileManager {
         this.fileName = fileName;
     }
     protected abstract void saveToJson(HashSet<MusicBand> musicBands) throws Exception;
-    public abstract HashSet<MusicBand> loadFromJson(String fileName) throws Exception;
+    public abstract HashSet<MusicBand> loadFromJson() throws Exception;
 }

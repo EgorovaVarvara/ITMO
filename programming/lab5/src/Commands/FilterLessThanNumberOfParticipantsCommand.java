@@ -15,10 +15,9 @@ public class FilterLessThanNumberOfParticipantsCommand implements Command{
                 int numberOfParticipants = Integer.parseInt(args[1]);
                 cm.filterLessThanNumberOfParticipants(numberOfParticipants);
             }catch (IllegalArgumentException e){
-                System.out.println("Wrong arguments. Try again.");
+                System.out.println("Введены неверные аргументы, попробуйте еще раз");
             }
-        }else throw new IllegalArgumentException("Wrong number of arguments.");
-
+        }else throw new IllegalArgumentException("Неверное количество аргументов. ");
     }
 
     @Override

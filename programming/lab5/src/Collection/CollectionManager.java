@@ -6,9 +6,11 @@ import Console.ClientManager;
 import Console.CommandManager;
 import FileManager.Parser;
 
+import java.io.FileNotFoundException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
+
 
 public class CollectionManager {
     HashSet<MusicBand> musicBands = new HashSet<>();
@@ -51,9 +53,7 @@ public class CollectionManager {
     }
 
     public void help() {
-        CommandManager commandManager = new CommandManager(new CollectionManager());
-        HashMap<String, Command> commands = commandManager.getCommands();
-        commands.values().forEach(command -> System.out.println(command.getDescription()));
+        CommandManager.getCommands().values().forEach(command -> System.out.println(command.getDescription()));
     }
 
     public void add(MusicBand musicBand) {
@@ -94,7 +94,7 @@ public class CollectionManager {
         try {
             parser.saveToJson(this.musicBands);
             System.out.println("Коллекция сохранена в файл. ");
-        } catch (Exception e) {
+        } catch (NullPointerException e) {
             System.out.println("Что-то пошло не так. ");
         }
     }

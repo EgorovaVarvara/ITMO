@@ -11,9 +11,7 @@ import java.util.HashSet;
 import java.util.Scanner;
 
 public class Parser extends FileManager{
-    private String filename;
-    public Parser() {
-    }
+    private final String filename;
     public Parser(String filename){
         this.filename = filename;
     }
@@ -30,7 +28,7 @@ public class Parser extends FileManager{
         }
     }
     @Override
-    public HashSet<MusicBand> loadFromJson(String filename) throws JsonSyntaxException, JsonIOException{
+    public HashSet<MusicBand> loadFromJson() throws JsonSyntaxException, JsonIOException{
         HashSet<MusicBand> musicBands = new HashSet<>();
         ArrayList<MusicBand> buffer;
         Validator validator = new Validator();
