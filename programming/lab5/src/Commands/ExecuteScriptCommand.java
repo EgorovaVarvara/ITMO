@@ -70,36 +70,29 @@ public class ExecuteScriptCommand implements Command {
                                     MusicBand musicBand = validator.getValidatedElement(new MusicBand(name, new Coordinates(x, y), numberOfParticipants, musicGenre, new Label(bands)));
                                     if (musicBand != null) {
                                         switch (command) {
-                                            case "add":
+                                            case "add" -> {
                                                 cm.add(musicBand);
-                                                System.out.println("Элемент успешно добавить в коллекцию. ");
-                                                break;
-                                            case "add_if_max":
-                                                cm.addIfMax(musicBand);
-                                                break;
-                                            case "add_if_min":
-                                                cm.addIfMin(musicBand);
-                                                break;
-                                            case "remove_lower":
-                                                cm.removeLower(musicBand);
-                                                break;
-                                            case "update":
+                                                System.out.println("Элемент успешно добавлен в коллекцию. ");
+                                            }
+                                            case "add_if_max" -> cm.addIfMax(musicBand);
+                                            case "add_if_min" -> cm.addIfMin(musicBand);
+                                            case "remove_lower" -> cm.removeLower(musicBand);
+                                            case "update" -> {
                                                 cm.updateId(musicBand, parseInt(commandAndArgument[1]));
                                                 System.out.println("Элемент обновлен. ");
-                                                break;
+                                            }
                                         }
                                     }
                                 } else {
                                     commands.get(command).execute(commandAndArgument);
                                 }
                             }
-                        } catch (IllegalArgumentException | NoSuchElementException e) {
-                            System.out.println("В файле встретились неверные аргументы. Пропущено. ");
-                        }
+                        } catch (IllegalArgumentException | NoSuchElementException ignored) {}
                     }
-                    FilesStack.removeFile();
                 } catch (FileNotFoundException e) {
                     System.out.println("Файл не найден. ");
+                } finally {
+                    FilesStack.removeFile();
                 }
             }
         }

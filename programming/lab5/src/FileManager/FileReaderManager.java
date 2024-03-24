@@ -74,19 +74,14 @@ public class FileReaderManager {
      */
     public MusicGenre readMusicGenre() {
         String musicGenre = scanner.next().trim().toUpperCase();
-        switch (musicGenre){
-            case "PROGRESSIVE_ROCK":
-                return MusicGenre.PROGRESSIVE_ROCK;
-            case "BLUES":
-                return MusicGenre.BLUES;
-            case "POP":
-                return MusicGenre.POP;
-            case "MATH_ROCK":
-                return MusicGenre.MATH_ROCK;
-            case "POST_ROCK":
-                return MusicGenre.POST_ROCK;
-        }
-        return null;
+        return switch (musicGenre) {
+            case "PROGRESSIVE_ROCK" -> MusicGenre.PROGRESSIVE_ROCK;
+            case "BLUES" -> MusicGenre.BLUES;
+            case "POP" -> MusicGenre.POP;
+            case "MATH_ROCK" -> MusicGenre.MATH_ROCK;
+            case "POST_ROCK" -> MusicGenre.POST_ROCK;
+            default -> null;
+        };
     }
 
     /**

@@ -5,6 +5,7 @@ import BaseClasses.MusicBand;
 import Console.*;
 import FileManager.Parser;
 
+import java.io.FileNotFoundException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
@@ -155,7 +156,6 @@ public class CollectionManager {
         Parser parser = new Parser(this.filename);
         try {
             parser.saveToJson(this.musicBands);
-            System.out.println("Коллекция сохранена в файл. ");
         } catch (NullPointerException e) {
             System.out.println("Что-то пошло не так. ");
         }

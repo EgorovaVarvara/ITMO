@@ -43,6 +43,7 @@ public class Parser extends FileManager{
         String data = gson.toJson(musicBands);
         try(BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(this.filename))){
             bufferedWriter.write(data);
+            System.out.println("Коллекция сохранена в файл. ");
         }catch (IOException e){
             System.out.println("Что-то пошло не так. Данные не сохранены. ");
         }
@@ -82,7 +83,7 @@ public class Parser extends FileManager{
                 }
             }
             return musicBands;
-        }catch (JsonIOException e){
+        }catch (JsonIOException | NullPointerException e){
             System.out.println("Что-то не так с файлом или он пуст. Коллекция не содержит элементов. ");
             return musicBands;
         }catch (FileNotFoundException e){
