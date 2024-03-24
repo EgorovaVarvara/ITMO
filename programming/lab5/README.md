@@ -43,26 +43,26 @@
 - Поля с комментарием "Значение этого поля должно генерироваться автоматически" не должны вводиться пользователем вручную при добавлении.<br>
 
 <b>Описание хранимых в коллекции классов: </b>
-public class MusicBand {
-    private int id; //Значение поля должно быть больше 0, значение этого поля должно быть уникальным, значение этого поля должно генерироваться автоматически
-    private String name; //Поле не может быть null, строка не должна быть пустой
-    private Coordinates coordinates; //Моле не может быть null
-    private java.time.LocalDateTime creationDate; //Поле не может быть null, значение этого поля должно генерироваться автоматически
-    private int numberOfParticipants; //Значение поля должно быть больше 0
-    private MusicGenre musicGenre; //Поле не может быть null
-    private Label label; //Поле не может быть null
-}
-public class Coordinates {
-    private Long x; //Поле не может быть null
-    private float y; 
-}
-public class Label {
-    private long bands;
-}
-public enum MusicGenre {
-    PROGRESSIVE_ROCK,
-    BLUES,
-    POP,
-    MATH_ROCK,
-    POST_ROCK;
+public class MusicBand {<br>
+    private int id; //Значение поля должно быть больше 0, значение этого поля должно быть уникальным, значение этого поля должно генерироваться автоматически<br>
+    private String name; //Поле не может быть null, строка не должна быть пустой<br>
+    private Coordinates coordinates; //Моле не может быть null<br>
+    private java.time.LocalDateTime creationDate; //Поле не может быть null, значение этого поля должно генерироваться автоматически<br>
+    private int numberOfParticipants; //Значение поля должно быть больше 0<br>
+    private MusicGenre musicGenre; //Поле не может быть null<br>
+    private Label label; //Поле не может быть null<br>
+}<br>
+public class Coordinates {<br>
+    private Long x; //Поле не может быть null<br>
+    private float y; <br>
+}<br>
+public class Label {<br>
+    private long bands;<br>
+}<br>
+public enum MusicGenre {<br>
+    PROGRESSIVE_ROCK,<br>
+    BLUES,<br>
+    POP,<br>
+    MATH_ROCK,<br>
+    POST_ROCK;<br>
 }
