@@ -13,7 +13,7 @@ public class IdGenerator {
     /**
      * HashSet with used ids.
      */
-    private HashSet<Integer> generatedIds = new HashSet<>();
+    private static HashSet<Integer> generatedIds = new HashSet<>();
 
     /**
      * Generates unique id by using {@code System.currentTimeMillis}.

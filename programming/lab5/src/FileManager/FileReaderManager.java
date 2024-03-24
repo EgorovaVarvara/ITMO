@@ -1,6 +1,7 @@
-package Console;
+package FileManager;
 
 import BaseClasses.MusicGenre;
+import Console.CommandManager;
 
 import java.io.File;
 import java.io.FileNotFoundException;

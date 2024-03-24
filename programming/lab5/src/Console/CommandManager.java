@@ -86,7 +86,7 @@ public class CommandManager {
                 try{
                     commands.get(args[0]).execute(args);
                 }catch (IllegalArgumentException e){
-                    System.out.println("Что-то пошло не так. " + e.getMessage() + ". Попробуйте еще раз.");
+                    System.out.println("Что-то пошло не так. " + e.getMessage() + "Попробуйте еще раз.");
                 }
             }else{
                 System.out.println("Команда \"" + args[0] + "\" не найдена.");

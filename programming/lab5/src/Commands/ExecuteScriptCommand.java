@@ -7,11 +7,12 @@ import BaseClasses.MusicGenre;
 import Collection.CollectionManager;
 import Collection.Validator;
 import Console.CommandManager;
-import Console.FileReaderManager;
+import FileManager.FileReaderManager;
 import FileManager.FilesStack;
 
 import java.io.FileNotFoundException;
 import java.util.HashMap;
+import java.util.NoSuchElementException;
 
 import static java.lang.Integer.parseInt;
 /**
@@ -71,6 +72,7 @@ public class ExecuteScriptCommand implements Command {
                                         switch (command) {
                                             case "add":
                                                 cm.add(musicBand);
+                                                System.out.println("Элемент успешно добавить в коллекцию. ");
                                                 break;
                                             case "add_if_max":
                                                 cm.addIfMax(musicBand);
@@ -83,6 +85,7 @@ public class ExecuteScriptCommand implements Command {
                                                 break;
                                             case "update":
                                                 cm.updateId(musicBand, parseInt(commandAndArgument[1]));
+                                                System.out.println("Элемент обновлен. ");
                                                 break;
                                         }
                                     }
@@ -90,8 +93,8 @@ public class ExecuteScriptCommand implements Command {
                                     commands.get(command).execute(commandAndArgument);
                                 }
                             }
-                        } catch (IllegalArgumentException ignored) {
-                            System.out.println("В файле встретились неверные аргументы. Команда пропущена. ");
+                        } catch (IllegalArgumentException | NoSuchElementException e) {
+                            System.out.println("В файле встретились неверные аргументы. Пропущено. ");
                         }
                     }
                     FilesStack.removeFile();
