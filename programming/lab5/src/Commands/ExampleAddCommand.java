@@ -3,44 +3,26 @@ package Commands;
 import BaseClasses.MusicBand;
 import Collection.CollectionManager;
 
-import java.util.ArrayList; // TODO never used 
+// TODO пимер команды без интерфейса, если он нигде не используется 
+public class ExampleAddCommand extends AbstractCommand {
 
-/**
- * Command `add {element}`.
- *
- * @author Egorova Varvara
- */
-public class AddCommand implements Command{
-    /**
-     * @see CollectionManager
-     */
-    CollectionManager cm; // TODO модификатор доступа?
-
-    /**
-     * Constructor that creates object of {@code AddCommand}.
-     * @param cm collection manager
-     */
-    public AddCommand(CollectionManager cm){
-        this.cm = cm;
+    public ExampleAddCommand(CollectionManager collectionManager) {
+        super(collectionManager);
     }
 
-    /**
-     * Executes the command.
-     * @param args arguments
-     */
     @Override
-    public void execute(String[] args) {
-        if (args.length == 1) {
+    public void execute(String[] args) throws IllegalArgumentException {
+       if (args.length == 1) {
             try{
-                MusicBand musicBand = cm.getClientManager().getMusicBand();
+                MusicBand musicBand = this.collectionManager.getClientManager().getMusicBand();
                 boolean flag = true;
-                for (MusicBand musicBand1 : cm.getMusicBands()){
+                for (MusicBand musicBand1 : this.collectionManager.getMusicBands()){
                     if (musicBand1.equals(musicBand)) {
                         flag = false;
                     }
                 }
                 if (flag){
-                    cm.add(musicBand);
+                    this.collectionManager.add(musicBand);
                     System.out.println("Элемент успешно добавлен в коллекцию.");
                 }else{
                     System.out.println("Введеный элемент уже есть в коллекции. ");
@@ -51,11 +33,9 @@ public class AddCommand implements Command{
         }else throw new IllegalArgumentException("Неверное количество аргументов. ");
     }
 
-    /**
-     * @return description of command
-     */
     @Override
     public String getDescription() {
         return "add {element}: добавить новый элемент в коллекцию";
     }
+    
 }

@@ -11,8 +11,8 @@ public class InfoCommand implements Command{
     /**
      * @see CollectionManager
      */
-    CollectionManager cm;
-    /**
+    CollectionManager cm; // TODO модификатор доступа?
+    /** 
      * Constructor that creates object of {@code InfoCommand}.
      * @param cm collection manager
      */

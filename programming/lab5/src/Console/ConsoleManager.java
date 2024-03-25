@@ -1,6 +1,6 @@
 package Console;
 
-import java.io.File;
+import java.io.File; // TODO never used 
 import java.util.Scanner;
 
 import FileManager.*;
@@ -12,6 +12,8 @@ import Collection.CollectionManager;
  *
  * @author Egorova Varvara
  */
+
+// TODO зачем тут открывать каждый раз новый сканнер?....
 public class ConsoleManager implements ReaderWriter{
     /**
      * Constructor that creates object of class {@code ConsoleManager}.
@@ -24,6 +26,7 @@ public class ConsoleManager implements ReaderWriter{
      */
     @Override
     public int readInt() {
+        // TODO @SuppressWarnings("resource")
         Scanner scanner = new Scanner(System.in);
         return Integer.parseInt(scanner.nextLine().trim());
     }
@@ -33,6 +36,7 @@ public class ConsoleManager implements ReaderWriter{
      */
     @Override
     public long readLong() {
+        // TODO @SuppressWarnings("resource")
         Scanner scanner = new Scanner(System.in);
         return Long.parseLong(scanner.nextLine().trim());
     }
@@ -42,6 +46,7 @@ public class ConsoleManager implements ReaderWriter{
      */
     @Override
     public float readFloat() {
+        // TODO @SuppressWarnings("resource")
         Scanner scanner = new Scanner(System.in);
         return Float.parseFloat(scanner.nextLine().trim());
     }
@@ -51,6 +56,7 @@ public class ConsoleManager implements ReaderWriter{
      */
     @Override
     public String readLine() {
+        // TODO @SuppressWarnings("resource")
         Scanner scanner = new Scanner(System.in);
         return scanner.nextLine().trim();
     }
@@ -85,6 +91,7 @@ public class ConsoleManager implements ReaderWriter{
         while (true) {
             try {
                 System.out.println("Введите название файла еще раз");
+                // TODO @SuppressWarnings("resource")
                 Scanner scanner = new Scanner(System.in);
                 String Path = scanner.nextLine();
                 CollectionManager collectionManager = new CollectionManager();

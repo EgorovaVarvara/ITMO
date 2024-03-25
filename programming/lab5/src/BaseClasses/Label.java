@@ -47,5 +47,6 @@ public class Label {
      */
     public boolean equals(Label label){
         return (label.getBands() == this.bands);
+        // TODO - Джошуа Блох "Java эффективное программирование", глава 3 "Методы, общие для всех объектов", раздел 1 "Перекрывая equals, соблюдайте общий контракт"
     }
 }

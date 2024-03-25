@@ -11,7 +11,7 @@ public class AddIfMaxCommand implements Command{
     /**
      * @see CollectionManager
      */
-    CollectionManager cm;
+    CollectionManager cm; // TODO модификатор доступа?
     /**
      * Constructor that creates object of {@code AddIfMaxCommand}.
      * @param cm collection manager

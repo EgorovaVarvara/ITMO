@@ -10,7 +10,7 @@ public class SaveCommand implements Command{
     /**
      * @see CollectionManager
      */
-    CollectionManager cm;
+    CollectionManager cm; // TODO модификатор доступа?
     /**
      * Constructor that creates object of {@code SaveCommand}.
      * @param cm collection manager

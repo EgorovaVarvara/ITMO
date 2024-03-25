@@ -1,7 +1,7 @@
 package FileManager;
 
 import BaseClasses.MusicBand;
-import Collection.CollectionManager;
+import Collection.CollectionManager; // TODO never used
 
 import java.util.HashSet;
 

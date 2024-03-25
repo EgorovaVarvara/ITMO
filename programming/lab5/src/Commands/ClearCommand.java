@@ -10,7 +10,7 @@ public class ClearCommand implements Command{
     /**
      * @see CollectionManager
      */
-    CollectionManager cm;
+    CollectionManager cm; // TODO модификатор доступа?
     /**
      * Constructor that creates object of {@code CLearCommand}.
      * @param cm collection manager

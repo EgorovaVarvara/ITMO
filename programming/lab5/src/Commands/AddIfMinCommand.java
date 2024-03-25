@@ -12,7 +12,7 @@ public class AddIfMinCommand implements Command{
     /**
      * @see CollectionManager
      */
-    CollectionManager cm;
+    CollectionManager cm; // TODO модификатор доступа? 
     /**
      * Constructor that creates object of {@code AddIfMinCommand}.
      * @param cm collection manager

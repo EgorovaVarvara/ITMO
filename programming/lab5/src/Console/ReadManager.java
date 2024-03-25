@@ -11,7 +11,7 @@ public class ReadManager {
     /**
      * @see ConsoleManager
      */
-    ConsoleManager consoleManager = new ConsoleManager();
+    ConsoleManager consoleManager = new ConsoleManager(); // TODO модификатор доступа?
 
     /**
      * @return name for music band from console
