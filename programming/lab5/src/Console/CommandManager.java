@@ -92,7 +92,7 @@ public class CommandManager {
                 System.out.println("Команда \"" + args[0] + "\" не найдена.");
             }
         }catch (Exception e){
-            System.out.println("Something goes wrong. " + e.getMessage() + ". Try again.");
+            System.out.println("Something went wrong. " + e.getMessage() + ". See you next time.");
             this.isWorking = false;
             System.exit(0);
         }

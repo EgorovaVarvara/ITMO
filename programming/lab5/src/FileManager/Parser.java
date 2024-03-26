@@ -45,7 +45,11 @@ public class Parser extends FileManager{
             bufferedWriter.write(data);
             System.out.println("Коллекция сохранена в файл. ");
         }catch (IOException e){
-            System.out.println("Что-то пошло не так. Данные не сохранены. ");
+            if (!(new File(filename)).canWrite()){
+                System.out.println("Нет прав на записть в данный файл.");
+            } else {
+                System.out.println("Что-то пошло не так. Данные не сохранены. ");
+            }
         }
     }
 
@@ -83,11 +87,15 @@ public class Parser extends FileManager{
                 }
             }
             return musicBands;
-        }catch (JsonIOException | NullPointerException e){
+        }catch (JsonIOException | NullPointerException | JsonSyntaxException e){
             System.out.println("Что-то не так с файлом или он пуст. Коллекция не содержит элементов. ");
             return musicBands;
         }catch (FileNotFoundException e){
-            System.out.println("Данный файл не найден.");
+            if (!(new File(filename).canRead())){
+                System.out.println("Нет прав на чтение данного файла.");
+            } else {
+                System.out.println("Данный файл не найден.");
+            }
             return musicBands;
         }
     }
