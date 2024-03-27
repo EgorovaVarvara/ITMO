@@ -42,7 +42,7 @@ public class ExecuteScriptCommand implements Command {
     /**
      * @see Validator
      */
-    Validator validator = new Validator();
+    Validator validator = new Validator(); // TODO модификатор доступа?
     /**
      * Executes the command.
      * @param args arguments

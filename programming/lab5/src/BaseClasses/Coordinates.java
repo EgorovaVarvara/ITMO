@@ -1,5 +1,7 @@
 package BaseClasses;
 
+import java.util.Objects;
+
 /**
  * The {@code Coordinates} class represents the coordinates of music band.
  *
@@ -67,9 +69,27 @@ public class Coordinates {
      */
     public boolean equals(Coordinates c){
         return c.getX() == this.x && c.getY() == this.y;
+
+        // TODO - Джошуа Блох "Java эффективное программирование", глава 3 "Методы, общие для всех объектов", раздел 1 "Перекрывая equals, соблюдайте общий контракт"
+        // boolean equals (Object obj)
+        // if (this == obj)
+        //     return true;
+        // if (obj == null)
+        //     return false;
+        // if (this.getClass() != obj.getClass())
+        //     return false;
+
+        // Coordinates c = (Coordinates) obj;
+        // if (!(c.getX() == this.x))
+        //     return false;
+        // if (!(c.getY() == this.y))
+        //     return false;
+        
+        //     return true;
     }
     @Override
     public String toString(){
         return "(" + x + "; " + y + ")";
+        // TODO return String.format("(%s; %s)", x, y); ? ? ?? 
     }
 }

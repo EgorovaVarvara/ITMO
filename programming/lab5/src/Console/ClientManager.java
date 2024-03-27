@@ -14,7 +14,7 @@ public class ClientManager {
     /**
      * @see ReadManager
      */
-    ReadManager readManager = new ReadManager();
+    ReadManager readManager = new ReadManager(); // TODO модификатор доступа?
 
     /**
      * @return MusicBand from console

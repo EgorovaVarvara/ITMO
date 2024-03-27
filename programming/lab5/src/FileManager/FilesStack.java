@@ -16,7 +16,7 @@ public class FilesStack {
     /**
      * Constructor for class objects.
      */
-    public FilesStack(){
+    public FilesStack(){ // TODO зачем конструктор когда все static + 0 объявлений
     }
 
     /**
@@ -30,14 +30,14 @@ public class FilesStack {
      * Adds new file to stack.
      * @param filename of new file
      */
-    public static void addFile(String filename){
+    public static void addFile(String filename){ //TODO -> FilesStack.getFilesStack().push(filename)
         filesStack.push(filename);
     }
 
     /**
      * Deletes file from stack.
      */
-    public static void removeFile(){
+    public static void removeFile(){ //TODO -> FilesStack.getFilesStack().pop()
         filesStack.pop();
     }
 }

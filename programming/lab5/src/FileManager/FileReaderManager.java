@@ -51,7 +51,7 @@ public class FileReaderManager {
         if (numberOfParticipants > 0) {
             return numberOfParticipants;
         } else {
-            throw new IllegalArgumentException("");
+            throw new IllegalArgumentException(""); // TODO message?
         }
     }
 
@@ -73,7 +73,7 @@ public class FileReaderManager {
      * @return MusicGenre for music band from file or null
      */
     public MusicGenre readMusicGenre() {
-        String musicGenre = scanner.next().trim().toUpperCase();
+        String musicGenre = scanner.next().trim().toUpperCase(); // TODO а в остальных трим не надо тогда?...
         return switch (musicGenre) {
             case "PROGRESSIVE_ROCK" -> MusicGenre.PROGRESSIVE_ROCK;
             case "BLUES" -> MusicGenre.BLUES;

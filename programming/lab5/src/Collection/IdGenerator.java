@@ -41,6 +41,6 @@ public class IdGenerator {
      * @return used ids
      */
     public HashSet<Integer> getGeneratedIds(){
-        return this.generatedIds;
+        return this.generatedIds; // TODO static -> return IdGenerator.generatedIds
     }
 }

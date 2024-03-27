@@ -1,7 +1,7 @@
 package Commands;
 
 import Collection.CollectionManager;
-import Console.ConsoleManager;
+import Console.ConsoleManager; // TODO never used 
 /**
  * Command `filter_less_than_number_of_participants numberOfParticipants`.
  *

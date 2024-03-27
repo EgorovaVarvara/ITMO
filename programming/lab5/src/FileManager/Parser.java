@@ -67,6 +67,7 @@ public class Parser extends FileManager{
         IdGenerator idGenerator = validator.getIdGenerator();
         try{
             File file = new File(filename);
+            // TODO @SuppressWarnings("resource")
             Scanner sc = new Scanner(file);
             Type itemsArrayType = new TypeToken<ArrayList<MusicBand>>() {}.getType();
             GsonBuilder gsonBuilder = new GsonBuilder();

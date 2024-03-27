@@ -23,7 +23,7 @@ public class CommandManager {
     /**
      * Name of file with main collection.
      */
-    private String filename;
+    private String filename; // TODO never used 
 
     /**
      * Constructor that creates object of class {@code CommandManager} and fills commands HashMap.
@@ -77,6 +77,7 @@ public class CommandManager {
      * Read command from console and executes it.
      */
     public void existCommand(){
+        // TODO @SuppressWarnings("resource")
         Scanner scanner = new Scanner(System.in);
         try{
             System.out.println("Введите команду: ");

@@ -11,7 +11,7 @@ public class PrintDescendingCommand implements Command{
     /**
      * @see CollectionManager
      */
-    CollectionManager cm;
+    CollectionManager cm; // TODO модификатор доступа?
     /**
      * Constructor that creates object of {@code PrintDescendingCommand}.
      * @param cm collection manager
