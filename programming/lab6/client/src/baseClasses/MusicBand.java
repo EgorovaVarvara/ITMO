@@ -1,6 +1,7 @@
 package baseClasses;
 
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.time.format.DateTimeFormatter;
 
@@ -10,6 +11,8 @@ import java.time.format.DateTimeFormatter;
  * @author Egorova Varvara
  */
 public class MusicBand implements Comparable<MusicBand>, Serializable {
+    @Serial
+    private static final long serialVersionUID = 228L;
     /**
      * The unique id of the music band.
      * Greater than zero, generates automatically, cant be null.

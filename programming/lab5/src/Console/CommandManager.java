@@ -79,6 +79,7 @@ public class CommandManager {
     public void existCommand(){
         Scanner scanner = new Scanner(System.in);
         try{
+            System.out.flush();
             System.out.println("Введите команду: ");
             String command = scanner.nextLine().trim().toLowerCase();
             String[] args = command.split(" ");
