@@ -1,6 +1,5 @@
 package connectionUtils;
 
-import baseClasses.MusicBand;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -10,7 +9,7 @@ import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.net.SocketException;
-import java.util.Objects;
+
 
 public class Request implements Serializable {
     @Serial
@@ -36,7 +35,7 @@ public class Request implements Serializable {
     }
     public void send(byte[] bytes) throws IOException {
         DatagramPacket datagramPacket = new DatagramPacket(bytes, bytes.length, this.address, port);
-            socket.send(datagramPacket);
+        socket.send(datagramPacket);
         System.out.print("");
     }
     public String receive() throws IOException {

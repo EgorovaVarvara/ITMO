@@ -37,11 +37,10 @@ public class Server {
                             String line = scanner.readLine();
                             if (line.equals("save") || line.equals("s")) {
                                 Parser.saveToJson();
-                                ServerLogger.getLogger().info("Обекты успешно сохранены");
                             }
                             if (line.equals("exit")) {
                                 Parser.saveToJson();
-                                ServerLogger.getLogger().info("Обекты успешно сохранены. Завершаем работу сервера.");
+                                ServerLogger.getLogger().info("Завершаем работу сервера.");
                                 System.exit(0);
                             }
                         }

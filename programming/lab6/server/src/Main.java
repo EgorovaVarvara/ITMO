@@ -6,13 +6,16 @@ import utils.Parser;
 import utils.Server;
 
 
+import java.io.IOException;
+import java.net.SocketException;
+import java.net.UnknownHostException;
 import java.util.HashSet;
 
 public class Main {
     private final static Integer serverPort = 2712;
 
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException, IOException {
         HashSet<MusicBand> collection;
         try {
             collection = Parser.loadFromJson();
