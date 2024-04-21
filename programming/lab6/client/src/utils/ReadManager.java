@@ -29,7 +29,7 @@ public class ReadManager implements Readable{
         while (true) {
             console.write("Введите название группы:");
             name = scanner.nextLine().trim();
-            if (name.isEmpty() || !name.matches("^[a-zA-Z-А-Яа-я]*$")) {
+            if (name.isEmpty() || name.isBlank()) {
                 console.printError("Имя не может быть пустой строкой/иными знаками, кроме букв");
                 if (Console.isFileMode()) throw new FileModeException();
             } else {

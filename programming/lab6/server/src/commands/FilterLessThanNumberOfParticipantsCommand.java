@@ -5,6 +5,7 @@ import connectionUtils.Request;
 import connectionUtils.Response;
 import connectionUtils.ResponseStatus;
 
+import java.io.Serial;
 import java.util.Objects;
 
 /**
@@ -13,42 +14,21 @@ import java.util.Objects;
  * @author Egorova Varvara
  */
 
-public class FilterLessThanNumberOfParticipantsCommand implements Command {
-    /**
-     * @see CollectionManager
-     */
-    CollectionManager cm;
-
-    /**
-     * Constructor that creates object of {@code FilterLessThanNumberOfParticipantsCommand}.
-     *
-     * @param cm collection manager
-     */
-    public FilterLessThanNumberOfParticipantsCommand(CollectionManager cm) {
-        this.cm = cm;
+public class FilterLessThanNumberOfParticipantsCommand implements Action, Command{
+    @Serial
+    private final static long serialVersionUID = 7L;
+    private int numberOfParticipants;
+    public FilterLessThanNumberOfParticipantsCommand(Integer numberOfParticipants){
+        this.numberOfParticipants = numberOfParticipants;
     }
 
-    /**
-     * Executes the command.
-     *
-     * @param request@return
-     */
     @Override
-    public Response execute(Request request) {
-        if (request.getArgs().isBlank()) throw new IllegalArgumentException();
-        try {
-            return new Response(ResponseStatus.OK, cm.filterLessThanNumberOfParticipants(Integer.parseInt(request.getArgs())));
-        } catch (NumberFormatException e) {
-            return new Response(ResponseStatus.ERROR, "Для команды 'filter_less_than_number_of_participants' требуется целочисленный аргумента");
-        }
-
+    public Response run() {
+        return new Response(ResponseStatus.OK, CollectionManager.filterLessThanNumberOfParticipants(numberOfParticipants));
     }
 
-    /**
-     * @return description of command
-     */
     @Override
-    public String getDescription() {
-        return "filter_less_than_number_of_participants numberOfParticipants: вывести элементы, значение поля numberOfParticipants которых меньше заданного";
+    public String getCommandName() {
+        return "filter_less_than_number_of_participants";
     }
 }

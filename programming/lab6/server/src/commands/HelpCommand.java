@@ -1,9 +1,14 @@
 package commands;
 
+import baseClasses.CommandType;
 import collection.CollectionManager;
 import connectionUtils.Request;
 import connectionUtils.Response;
 import connectionUtils.ResponseStatus;
+
+import java.io.Serial;
+import java.util.Arrays;
+import java.util.stream.Collectors;
 
 /**
  * Command `help`.
@@ -11,33 +16,20 @@ import connectionUtils.ResponseStatus;
  * @author Egorova Varvara
  */
 
-public class HelpCommand implements Command{
-    /**
-     * @see CollectionManager
-     */
-    CollectionManager cm;
-    /**
-     * Constructor that creates object of {@code HelpCommand}.
-     * @param cm collection manager
-     */
-    public HelpCommand(CollectionManager cm){
-        this.cm = cm;
-    }
-    /**
-     * Executes the command.
-     *
-     * @param request@return
-     */
+public class HelpCommand implements Action, Command{
+    @Serial
+    private final static long serialVersionUID = 8L;
+
     @Override
-    public Response execute(Request request) {
-        if (!request.getArgs().isBlank()) throw new IllegalArgumentException();
-        return new Response(ResponseStatus.OK, cm.help() + "\n");
+    public Response run() {
+        return new Response(ResponseStatus.OK, Arrays.stream(CommandType.values()).
+                map(CommandType::getDescription).
+                filter(description -> !description.isEmpty()).
+                collect(Collectors.joining("\n")));
     }
-    /**
-     * @return description of command
-     */
+
     @Override
-    public String getDescription() {
-        return "help: вывести справку по доступным командам";
+    public String getCommandName() {
+        return "help";
     }
 }

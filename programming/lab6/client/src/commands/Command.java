@@ -1,13 +1,12 @@
 package commands;
 
-import connectionUtils.Response;
+import baseClasses.CommandType;
 
 import java.io.Serial;
 import java.io.Serializable;
+
 public interface Command extends Serializable {
     @Serial
-    static final long serialVersionUID = 12345L;
-    Response run();
-    String getCommandName();
+    long serialVersionUID = 12345L;
 
 }

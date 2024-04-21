@@ -5,39 +5,25 @@ import connectionUtils.Request;
 import connectionUtils.Response;
 import connectionUtils.ResponseStatus;
 
+import java.io.Serial;
+
 /**
  * Command `info`.
  *
  * @author Egorova Varvara
  */
 
-public class InfoCommand implements Command{
-    /**
-     * @see CollectionManager
-     */
-    CollectionManager cm;
-    /**
-     * Constructor that creates object of {@code InfoCommand}.
-     * @param cm collection manager
-     */
-    public InfoCommand(CollectionManager cm){
-        this.cm = cm;
-    }
-    /**
-     * Executes the command.
-     *
-     * @param request@return
-     */
+public class InfoCommand implements Action, Command{
+    @Serial
+    private final static long serialVersionUID = 9L;
+
     @Override
-    public Response execute(Request request) {
-        if (!request.getArgs().isBlank()) throw new IllegalArgumentException();
-        return new Response(ResponseStatus.OK, cm.info() + "\n");
+    public Response run() {
+        return new Response(ResponseStatus.OK, CollectionManager.info());
     }
-    /**
-     * @return description of command
-     */
+
     @Override
-    public String getDescription() {
-        return "info: вывести информацию о коллекции";
+    public String getCommandName() {
+        return "info";
     }
 }

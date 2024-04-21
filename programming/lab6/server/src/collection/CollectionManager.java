@@ -2,9 +2,6 @@ package collection;
 
 
 import baseClasses.MusicBand;
-import commands.Command;
-import console.*;
-import fileManager.Parser;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -28,7 +25,7 @@ public class CollectionManager implements Serializable {
     /**
      * Date of initialization of collection.
      */
-    private LocalDateTime localDateTime = LocalDateTime.now();
+    private static LocalDateTime localDateTime = LocalDateTime.now();
     /**
      * Filename of file with main collection.
      */
@@ -67,14 +64,14 @@ public class CollectionManager implements Serializable {
     /**
      * Shows type of collection, its date of initialisation and amount of elements.
      */
-    public String info() {
+    public static String info() {
         return "Тип коллекции: " + musicBands.getClass().getSimpleName() + "\nДата инициализации: " + localDateTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")) + "\nКоличество элементов: " + musicBands.size();
     }
 
     /**
      * Shows all collection elements.
      */
-    public String show() {
+    public static String show() {
         StringBuilder result = new StringBuilder();
         if (!musicBands.isEmpty()) {
             musicBands.forEach(musicBand -> result.append(musicBand.toString()));
@@ -84,21 +81,12 @@ public class CollectionManager implements Serializable {
         }
     }
 
-    /**
-     * Shows all available commands.
-     */
-    public String help() {
-        HashMap<String, Command> commands = CommandManager.getCommands();
-        String help = "";
-        for (Command command : commands.values()) help += command.getDescription() + "\n";
-        return help;
-    }
 
     /**
      * Add element to main collection.
      * @param musicBand that should be added to main collection
      */
-    public void add(MusicBand musicBand) {
+    public static void add(MusicBand musicBand) {
         musicBands.add(musicBand);
     }
 
@@ -107,8 +95,9 @@ public class CollectionManager implements Serializable {
      * @param newMusicBand updated music band
      * @param id of music band
      */
-    public String updateId(MusicBand newMusicBand, int id) {
+    public static String updateId(MusicBand newMusicBand) {
         boolean flag = false;
+        int id = newMusicBand.getId();
         for (MusicBand musicBand : musicBands) {
             if (musicBand.getId() == id) {
                 flag = true;
@@ -131,7 +120,7 @@ public class CollectionManager implements Serializable {
      * Deletes element of collection by its id.
      * @param id of element that must be deleted
      */
-    public String removeById(int id) {
+    public static String removeById(int id) {
         boolean flag = false;
         for (MusicBand musicBand : musicBands){
             if (musicBand.getId() == id){
@@ -150,7 +139,7 @@ public class CollectionManager implements Serializable {
     /**
      * Clears main collection.
      */
-    public void clear() {
+    public static void clear() {
         musicBands.clear();
     }
 
@@ -166,19 +155,13 @@ public class CollectionManager implements Serializable {
 //        }
 //    }
 
-    /**
-     * Finishes the work of program.
-     */
-    public void exit() {
-        System.out.println("Работа завершена, до связи!");
-        System.exit(0);
-    }
+
 
     /**
      * Adds element to collection if it max.
      * @param newMusicBand that can be added to collection
      */
-    public String addIfMax(MusicBand newMusicBand) {
+    public static String addIfMax(MusicBand newMusicBand) {
         int maxNumberOfParticipants = 0;
         for (MusicBand musicBand : musicBands) {
             if (musicBand.getNumberOfParticipants() > maxNumberOfParticipants) {
@@ -197,7 +180,7 @@ public class CollectionManager implements Serializable {
      * Adds element to collection if it min.
      * @param newMusicBand that can be added to collection
      */
-    public String addIfMin(MusicBand newMusicBand) {
+    public static String addIfMin(MusicBand newMusicBand) {
         int minNumberOfParticipants = 2147483647;
         for (MusicBand musicBand : musicBands) {
             if (musicBand.getNumberOfParticipants() < minNumberOfParticipants) {
@@ -216,7 +199,7 @@ public class CollectionManager implements Serializable {
      * Removes all elements in collection which are lower than given.
      * @param newMusicBand given music band
      */
-    public String removeLower(MusicBand newMusicBand) {
+    public static String removeLower(MusicBand newMusicBand) {
         musicBands.removeIf(musicBand -> musicBand.getNumberOfParticipants() < newMusicBand.getNumberOfParticipants());
         musicBands.add(newMusicBand);
         return "Элементы, меньшие чем заданный, удалены. ";
@@ -225,7 +208,7 @@ public class CollectionManager implements Serializable {
     /**
      * Shows the sum of field {@code NumberOfParticipants}.
      */
-    public String sumOfNumberOfParticipants() {
+    public static String sumOfNumberOfParticipants() {
         int sumOfNumberOfParticipants = 0;
         for (MusicBand musicBand : musicBands) {
             sumOfNumberOfParticipants += musicBand.getNumberOfParticipants();
@@ -237,7 +220,7 @@ public class CollectionManager implements Serializable {
      * Shows all elements which {@code NumberOfParticipants} less than given.
      * @param newNumberOfParticipants given number of participants
      */
-    public String filterLessThanNumberOfParticipants(int newNumberOfParticipants) {
+    public static String filterLessThanNumberOfParticipants(int newNumberOfParticipants) {
         StringBuilder result = new StringBuilder();
         for (MusicBand musicBand : musicBands) {
             if (musicBand.getNumberOfParticipants() < newNumberOfParticipants) {
@@ -250,11 +233,16 @@ public class CollectionManager implements Serializable {
     /**
      * Shows all elements by descending order.
      */
-    public String printDescending() {
+    public static String printDescending() {
         ArrayList<MusicBand> musicBands1 = new ArrayList<>(musicBands);
         musicBands1.sort(Comparator.reverseOrder());
         String result = "";
         for (MusicBand musicBand : musicBands1) result += musicBand.toString();
         return result;
+    }
+    public static boolean isContainsId(int id){
+        HashSet<Integer> ids = new HashSet<>();
+        musicBands.forEach(musicBand -> ids.add(musicBand.getId()));
+        return (ids.contains(id));
     }
 }

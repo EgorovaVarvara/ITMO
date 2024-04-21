@@ -5,39 +5,25 @@ import connectionUtils.Request;
 import connectionUtils.Response;
 import connectionUtils.ResponseStatus;
 
+import java.io.Serial;
+
 /**
  * Command `show`.
  *
  * @author Egorova Varvara
  */
 
-public class ShowCommand implements Command{
-    /**
-     * @see CollectionManager
-     */
-    CollectionManager cm;
-    /**
-     * Constructor that creates object of {@code ShowCommand}.
-     * @param cm collection manager
-     */
-    public ShowCommand(CollectionManager cm){
-        this.cm = cm;
-    }
-    /**
-     * Executes the command.
-     *
-     * @param request@return
-     */
+public class ShowCommand implements Action, Command {
+    @Serial
+    private final static long serialVersionUID = 14L;
+
     @Override
-    public Response execute(Request request) {
-        if (!request.getArgs().isBlank()) throw new IllegalArgumentException();
-        return new Response(ResponseStatus.OK, cm.show());
+    public Response run() {
+        return new Response(ResponseStatus.OK, CollectionManager.show());
     }
-    /**
-     * @return description of command
-     */
+
     @Override
-    public String getDescription() {
-        return "show: вывести все элементы коллекции";
+    public String getCommandName() {
+        return "show";
     }
 }

@@ -1,52 +1,35 @@
 package commands;
 
+import baseClasses.MusicBand;
 import collection.CollectionManager;
-import connectionUtils.Request;
 import connectionUtils.Response;
 import connectionUtils.ResponseStatus;
 
-import java.util.Objects;
+import java.io.Serial;
+import java.io.Serializable;
 
 /**
  * Command `add {element}`.
  *
  * @author Egorova Varvara
  */
-public class AddCommand implements Command, CollectionEditor{
-    /**
-     * @see CollectionManager
-     */
-    CollectionManager collectionManager;
+public class AddCommand implements CollectionEditor, Action, Command {
+    @Serial
+    private final static long serialVersionUID = 0L;
+    private MusicBand musicBand;
 
-    /**
-     * Constructor that creates object of {@code AddCommand}.
-     * @param cm collection manager
-     */
-    public AddCommand(CollectionManager cm){
-        this.collectionManager = cm;
+    public AddCommand(MusicBand musicBand){
+        this.musicBand = musicBand;
     }
 
-    /**
-     * Executes the command.
-     *
-     * @param request@return
-     */
     @Override
-    public Response execute(Request request) throws IllegalArgumentException{
-        if (!request.getArgs().isBlank()) throw new IllegalArgumentException();
-        if (Objects.isNull(request.getMusicBand())){
-            return new Response(ResponseStatus.ASK_OBJECT, "Для команды 'add' требуется объект");
-        } else{
-            collectionManager.add(request.getMusicBand());
-            return new Response(ResponseStatus.OK, "Объект успешно добавлен\n");
-        }
+    public Response run() {
+        CollectionManager.add(musicBand);
+        return new Response(ResponseStatus.OK, "Элемент успешно добавлен в коллекцию. ");
     }
 
-    /**
-     * @return description of command
-     */
     @Override
-    public String getDescription() {
-        return "add {element}: добавить новый элемент в коллекцию";
+    public String getCommandName() {
+        return "add";
     }
 }

@@ -1,14 +1,20 @@
 package baseClasses;
 
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.util.HashSet;
+
+import static java.lang.Math.abs;
 
 /**
  * The {@code IdGenerator} class generates unique ids to music bands.
  *
  * @author Egorova Varvara
  */
-public class IdGenerator {
+public class IdGenerator implements Serializable {
+    @Serial
+    private static final long serialVersionUID = 1020L;
     /**
      * HashSet with used ids.
      */
@@ -18,8 +24,8 @@ public class IdGenerator {
      * Generates unique id by using {@code System.currentTimeMillis}.
      * @return unique id
      */
-    public int generateId(){
-        int id = (int) System.currentTimeMillis();
+    public static int generateId(){
+        int id = abs((int) System.currentTimeMillis());
         while (generatedIds.contains(id)){
             id = (int) System.currentTimeMillis();
         }

@@ -1,34 +1,29 @@
+import baseClasses.MusicBand;
+import collection.CollectionManager;
+import com.google.gson.JsonIOException;
+import com.google.gson.JsonSyntaxException;
+import utils.Parser;
 import utils.Server;
 
-import java.io.IOException;
+
+import java.util.HashSet;
 
 public class Main {
-    public static String collectionFileName;
-    private static Integer serverPort;
+    private final static Integer serverPort = 2712;
 
-    static {
-        Config config = new Config("server.scfg");
-        collectionFileName = config.get("collection_file");
-        if (collectionFileName == null) {
-            collectionFileName = "server.xml";
-        }
-        try {
-            serverPort = Integer.parseInt(config.get("server_port"));
-        } catch (NumberFormatException e) {
-            serverPort = 5050;
-        }
-    }
 
     public static void main(String[] args) {
-        MovieCollection collection;
+        HashSet<MusicBand> collection;
         try {
-            collection = new Xml(new File(collectionFileName)).newReader().parse();
-        } catch (IOException e) {
-            System.err.println("Unable to find collection file " + collectionFileName);
-            System.err.println("New collection file will be created automatically after a few changes.");
-            collection = new MovieCollection();
+            collection = Parser.loadFromJson();
+        } catch (JsonIOException | JsonSyntaxException e) {
+            System.err.println("Не найден файл с коллекцией: " + Parser.getFilename());
+            System.err.println("Создана новая коллекция.");
+            collection = new HashSet<>();
         }
-        Server server = new Server(serverPort);
+        CollectionManager collectionManager = new CollectionManager();
+        collectionManager.setCollection(collection);
+        Server server = new Server(collectionManager, serverPort);
         server.run();
     }
 }

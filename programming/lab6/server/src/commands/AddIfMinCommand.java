@@ -2,11 +2,12 @@ package commands;
 
 import baseClasses.MusicBand;
 import collection.CollectionManager;
-import connectionUtils.Request;
 import connectionUtils.Response;
 import connectionUtils.ResponseStatus;
 
-import java.util.Objects;
+import java.io.Serial;
+import java.io.Serializable;
+
 
 /**
  * Command `add_if_min {element}`.
@@ -14,37 +15,25 @@ import java.util.Objects;
  * @author Egorova Varvara
  */
 
-public class AddIfMinCommand implements Command, CollectionEditor{
-    /**
-     * @see CollectionManager
-     */
-    CollectionManager cm;
+public class AddIfMinCommand implements CollectionEditor, Action, Command {
+    @Serial
+    private final static long serialVersionUID = 2L;
+    MusicBand musicBand;
     /**
      * Constructor that creates object of {@code AddIfMinCommand}.
      * @param cm collection manager
      */
-    public AddIfMinCommand(CollectionManager cm){
-        this.cm = cm;
+    public AddIfMinCommand(MusicBand musicBand){
+        this.musicBand = musicBand;
     }
-    /**
-     * Executes the command.
-     *
-     * @param request@return
-     */
+
     @Override
-    public Response execute(Request request) {
-        if (!request.getArgs().isBlank()) throw new IllegalArgumentException();
-        if (Objects.isNull(request.getMusicBand())){
-            return new Response(ResponseStatus.ASK_OBJECT, "Для команды 'add_if_min' требуется объект");
-        } else{
-            return new Response(ResponseStatus.OK, cm.addIfMin(request.getMusicBand()));
-        }
+    public Response run() {
+        return new Response(ResponseStatus.OK, CollectionManager.addIfMin(musicBand));
     }
-    /**
-     * @return description of command
-     */
+
     @Override
-    public String getDescription() {
-        return "add_if_min {element}: добавить новый элемент в коллекцию, если его значение меньше, чем у наименьшего элемента этой коллекции";
+    public String getCommandName() {
+        return "add_if_min";
     }
 }

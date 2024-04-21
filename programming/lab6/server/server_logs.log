@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2024-04-21T14:52:53.624404500Z</date>
+  <millis>1713711173624</millis>
+  <nanos>404500</nanos>
+  <sequence>0</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>utils.Server</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>Starting server on port 2712</message>
+</record>
+<record>
+  <date>2024-04-21T14:53:40.546144100Z</date>
+  <millis>1713711220546</millis>
+  <nanos>144100</nanos>
+  <sequence>1</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>utils.CommandManager</class>
+  <method>handlePacket</method>
+  <thread>1</thread>
+  <message>Received command execute_script from /192.168.0.8:51541</message>
+</record>
+<record>
+  <date>2024-04-21T14:53:40.548135600Z</date>
+  <millis>1713711220548</millis>
+  <nanos>135600</nanos>
+  <sequence>2</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>WARNING</level>
+  <class>utils.Server</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>java.lang.NullPointerException: Cannot invoke "java.util.ArrayList.isEmpty()" because "this.commandStack" is null</message>
+</record>
+<record>
+  <date>2024-04-21T14:55:40.510549400Z</date>
+  <millis>1713711340510</millis>
+  <nanos>549400</nanos>
+  <sequence>3</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>utils.CommandManager</class>
+  <method>handlePacket</method>
+  <thread>1</thread>
+  <message>Received command execute_script from /192.168.0.8:49208</message>
+</record>
+<record>
+  <date>2024-04-21T14:56:02.934112200Z</date>
+  <millis>1713711362934</millis>
+  <nanos>112200</nanos>
+  <sequence>4</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>WARNING</level>
+  <class>utils.Server</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>java.lang.NullPointerException: Cannot invoke "java.util.ArrayList.isEmpty()" because "this.commandStack" is null</message>
+</record>
+</log>

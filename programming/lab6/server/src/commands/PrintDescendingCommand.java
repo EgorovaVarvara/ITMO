@@ -1,9 +1,10 @@
 package commands;
 
 import collection.CollectionManager;
-import connectionUtils.Request;
 import connectionUtils.Response;
 import connectionUtils.ResponseStatus;
+
+import java.io.Serial;
 
 /**
  * Command `print_descending`.
@@ -11,34 +12,17 @@ import connectionUtils.ResponseStatus;
  * @author Egorova Varvara
  */
 
-public class PrintDescendingCommand implements Command{
-    /**
-     * @see CollectionManager
-     */
-    CollectionManager cm;
-    /**
-     * Constructor that creates object of {@code PrintDescendingCommand}.
-     * @param cm collection manager
-     */
-    public PrintDescendingCommand(CollectionManager cm){
-        this.cm = cm;
-    }
-    /**
-     * Executes the command.
-     *
-     * @param request@return
-     */
-    @Override
-    public Response execute(Request request) {
-        if (request.getArgs().isBlank()) throw  new IllegalArgumentException();
-        return new Response(ResponseStatus.OK, cm.printDescending() + "\n");
-    }
-    /**
-     * @return description of command
-     */
+public class PrintDescendingCommand implements Action, Command {
+    @Serial
+    private final static long serialVersionUID = 10L;
 
     @Override
-    public String getDescription() {
-        return "print_descending: вывести все элементы коллекции в порядке убывания";
+    public Response run() {
+        return new Response(ResponseStatus.OK, CollectionManager.printDescending());
+    }
+
+    @Override
+    public String getCommandName() {
+        return "print_descending";
     }
 }

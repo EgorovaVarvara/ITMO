@@ -1,6 +1,6 @@
 package utils;
 
-import Commands.Command;
+import commands.Command;
 import baseClasses.CommandType;
 
 import java.io.File;
@@ -33,7 +33,7 @@ public class ScriptExecutor {
             String[] args = Arrays.copyOfRange(line.split(" "), 1, line.split(" ").length);
             if (commandType == CommandType.EXECUTE_SCRIPT) {
                 if (fileMemory.contains(new File(args[0]))) {
-                    System.err.println("Recursive file execution. Skipping line: " + line);
+                    System.err.println("Обнаружена рекурсия, строка пропущена");
                     continue;
                 }
                 if (FileUtil.isFileExist(args[0])) {
@@ -43,7 +43,7 @@ public class ScriptExecutor {
             }
             if (Set.of(CommandType.UPDATE, CommandType.REMOVE_BY_ID).contains(commandType)) {
                 if (args.length < 1 || index + 6 >= lines.size()) {
-                    System.err.println("Not enough arguments/data for command " + commandType + ". Skipping line: " + line);
+                    System.err.println("Недостаточно аргументов для команды " + commandType + ". Строка пропущена");
                     continue;
                 }
                 String[] musicBandArgs = lines.subList(index + 1, index + 7).toArray(new String[0]);

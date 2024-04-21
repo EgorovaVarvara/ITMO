@@ -1,17 +1,15 @@
 package baseClasses;
 
 import commands.*;
-import console.Executable;
 
-import java.io.Serializable;
 
-public enum CommandType implements Serializable {
+public enum CommandType {
     ADD(AddCommand.class, "add {element}: добавить новый элемент в коллекцию"),
     ADD_IF_MAX(AddIfMaxCommand.class, "add_if_max {element}: добавить новый элемент в коллекцию, если его значение превышает значение наибольшего элемента этой коллекции"),
     ADD_IF_MIN(AddIfMinCommand.class, "add_if_min {element}: добавить новый элемент в коллекцию, если его значение меньше, чем у наименьшего элемента этой коллекции"),
     CLEAR(ClearCommand.class, "clear: очистить коллекцию"),
     EXECUTE_SCRIPT(ExecuteScriptCommand.class, "execute_script file_name: считать и исполнить скрипт из указанного файла"),
-    EXIT(ExitCommand.class, "exit: завершить программу (без сохранения в файл)"),
+    EXIT(null, "exit: завершить программу (без сохранения в файл)"),
     FILTER_LESS_THAN_NUMBER_OF_PARTICIPANTS(FilterLessThanNumberOfParticipantsCommand.class, "filter_less_than_number_of_participants numberOfParticipants: вывести элементы, значение поля numberOfParticipants которых меньше заданного"),
     HELP(HelpCommand.class, "help: вывести справку по доступным командам"),
     INFO(InfoCommand.class, "info: вывести информацию о коллекции"),
@@ -24,15 +22,15 @@ public enum CommandType implements Serializable {
     DEFAULT(DefaultCommand.class, ""),
     SERVICE(ServiceCommand.class, "");
 
-    private final Class<? extends Executable> executableClass;
+    private final Class<? extends Action> executableClass;
     private final String description;
 
-    CommandType(Class<? extends Executable> executableClass, String description) {
+    CommandType(Class<? extends Action> executableClass, String description) {
         this.executableClass = executableClass;
         this.description = description;
     }
 
-    public Class<? extends Executable> getExecutableClass() {
+    public Class<? extends Action> getExecutableClass() {
         return executableClass;
     }
     public String getDescription(){

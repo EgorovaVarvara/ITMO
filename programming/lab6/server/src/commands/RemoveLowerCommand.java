@@ -6,6 +6,7 @@ import connectionUtils.Request;
 import connectionUtils.Response;
 import connectionUtils.ResponseStatus;
 
+import java.io.Serial;
 import java.util.Objects;
 
 /**
@@ -13,37 +14,20 @@ import java.util.Objects;
  *
  * @author Egorova Varvara
  */
-public class RemoveLowerCommand implements Command, CollectionEditor{
-    /**
-     * @see CollectionManager
-     */
-    CollectionManager cm;
-    /**
-     * Constructor that creates object of {@code RemoveLowerCommand}.
-     * @param cm collection manager
-     */
-    public RemoveLowerCommand(CollectionManager cm){
-        this.cm = cm;
+public class RemoveLowerCommand implements CollectionEditor, Action, Command{
+    @Serial
+    private final static long serialVersionUID = 12L;
+    private MusicBand musicBand;
+    public RemoveLowerCommand(MusicBand musicBand){
+        this.musicBand = musicBand;
     }
-    /**
-     * Executes the command.
-     *
-     * @param request@return
-     */
     @Override
-    public Response execute(Request request) {
-        if (!request.getArgs().isBlank()) throw new IllegalArgumentException();
-        if (Objects.isNull(request.getMusicBand())){
-            return new Response(ResponseStatus.ASK_OBJECT, "Для команды 'remove_lower' требуется объект");
-        } else {
-            return new Response(ResponseStatus.OK, cm.removeLower(request.getMusicBand()));
-        }
+    public Response run() {
+        return new Response(ResponseStatus.OK, CollectionManager.removeLower(musicBand));
     }
-    /**
-     * @return description of command
-     */
+
     @Override
-    public String getDescription() {
-        return "remove_lower {element}: удалить из коллекции все элементы, меньшие, чем заданный";
+    public String getCommandName() {
+        return "remove_lower";
     }
 }

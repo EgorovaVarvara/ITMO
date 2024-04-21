@@ -5,38 +5,24 @@ import connectionUtils.Request;
 import connectionUtils.Response;
 import connectionUtils.ResponseStatus;
 
+import java.io.Serial;
+
 /**
  * Command `sum_of_number_of_participants`.
  *
  * @author Egorova Varvara
  */
-public class SumOfNumberOfParticipantsCommand implements Command{
-    /**
-     * @see CollectionManager
-     */
-    CollectionManager cm;
-    /**
-     * Constructor that creates object of {@code SumOfNumberOfParticipantsCommand}.
-     * @param cm collection manager
-     */
-    public SumOfNumberOfParticipantsCommand(CollectionManager cm){
-        this.cm = cm;
-    }
-    /**
-     * Executes the command.
-     *
-     * @param request@return
-     */
+public class SumOfNumberOfParticipantsCommand implements Action, Command{
+    @Serial
+    private final static long serialVersionUID = 15L;
+
     @Override
-    public Response execute(Request request) {
-        if (!request.getArgs().isBlank()) throw new IllegalArgumentException();
-        return new Response(ResponseStatus.OK, cm.sumOfNumberOfParticipants());
+    public Response run() {
+        return new Response(ResponseStatus.OK, CollectionManager.sumOfNumberOfParticipants());
     }
-    /**
-     * @return description of command
-     */
+
     @Override
-    public String getDescription() {
-        return "sum_of_number_of_participants: вывести сумму значений поля numberOfParticipants для всех элементов коллекции";
+    public String getCommandName() {
+        return "sum_of_number_of_participants";
     }
 }

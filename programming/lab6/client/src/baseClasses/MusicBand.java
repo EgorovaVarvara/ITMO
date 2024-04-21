@@ -48,7 +48,6 @@ public class MusicBand implements Comparable<MusicBand>, Serializable {
      * Cant be null.
      */
     private Label label;
-    IdGenerator idGenerator = new IdGenerator();
 
     /**
      * Constructor to create music band with given values.
@@ -70,7 +69,7 @@ public class MusicBand implements Comparable<MusicBand>, Serializable {
         if (name == null || name.isEmpty() || coordinates == null || numberOfParticipants <= 0 || musicGenre == null || label == null){
             throw new IllegalArgumentException("The fields can't be null or empty sequences.");
         }else{
-            this.id = idGenerator.generateId();
+            this.id = IdGenerator.generateId();
             this.name = name;
             this.coordinates = coordinates;
             this.numberOfParticipants = numberOfParticipants;
