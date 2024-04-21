@@ -25,19 +25,6 @@ public class CommandFactory {
                 System.exit(0);
                 yield null;
             }
-            case EXECUTE_SCRIPT -> {
-                if (args.length < 1){
-                    System.err.println("Недостаточно аргументов для команды " + CommandType.EXECUTE_SCRIPT);
-                    yield null;
-                }
-                String filePath = args[0];
-                if (!FileUtil.isFileExist(filePath)) {
-                    System.err.println("Файл не найден: " + filePath);
-                    yield null;
-                }
-                ArrayList<Command> commands = new ScriptExecutor(new File(filePath)).readScript().getCommandList();
-                yield new ExecuteScriptCommand(commands);
-            }
             case CLEAR -> new ClearCommand();
             case HELP -> new HelpCommand();
             case INFO -> new InfoCommand();
@@ -46,31 +33,31 @@ public class CommandFactory {
             case SUM_OF_NUMBER_OF_PARTICIPANTS -> new SumOfNumberOfParticipantsCommand();
             case REMOVE_BY_ID -> {
                 if (args.length < 1) {
-                    System.err.println("Недостаточно аргументов для команды " + type.name());
+                    System.out.println("Недостаточно аргументов для команды " + type.name());
                     yield null;
                 }
                 try {
                     yield new RemoveByIdCommand(Integer.parseInt(args[0]));
                 } catch (NumberFormatException e) {
-                    System.err.println("Аргумент должен быть целым числом. ");
+                    System.out.println("Аргумент должен быть целым числом. ");
                     yield null;
                 }
             }
             case FILTER_LESS_THAN_NUMBER_OF_PARTICIPANTS -> {
                 if (args.length < 1) {
-                    System.err.println("Недостаточно аргументов для команды " + type.name());
+                    System.out.println("Недостаточно аргументов для команды " + type.name());
                     yield null;
                 }
                 try {
                     yield new FilterLessThanNumberOfParticipantsCommand(Integer.parseInt(args[0]));
                 } catch (NumberFormatException e) {
-                    System.err.println("Число учатников группы должно быть целым числом. ");
+                    System.out.println("Число учатников группы должно быть целым числом. ");
                     yield null;
                 }
             }
             case UPDATE -> {
                 if (args.length < 1){
-                    System.err.println("Недостаточно аргументов для команды " + type.name());
+                    System.out.println("Недостаточно аргументов для команды " + type.name());
                     yield null;
                 }
                 try {

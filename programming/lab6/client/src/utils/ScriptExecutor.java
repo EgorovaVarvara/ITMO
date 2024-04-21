@@ -1,6 +1,8 @@
 package utils;
 
-import commands.Command;
+import baseClasses.MusicBand;
+import baseClasses.MusicBandCreator;
+import commands.*;
 import baseClasses.CommandType;
 
 import java.io.File;
@@ -20,17 +22,19 @@ public class ScriptExecutor {
         return commandQueue;
     }
     private ScriptExecutor readScript(File scriptFile) {
-        List<String> lines;
+        List<String> lines = null;
         try {
             lines = Files.readAllLines(scriptFile.toPath(), StandardCharsets.UTF_8);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            System.exit(0);
         }
         fileMemory.add(scriptFile);
         for (int index = 0; index < lines.size(); index++) {
             String line = lines.get(index);
             CommandType commandType = CommandUtils.getCommandType(line.split(" ")[0]);
             String[] args = Arrays.copyOfRange(line.split(" "), 1, line.split(" ").length);
+            Command cmd = null;
             if (commandType == CommandType.EXECUTE_SCRIPT) {
                 if (fileMemory.contains(new File(args[0]))) {
                     System.err.println("Обнаружена рекурсия, строка пропущена");
@@ -41,9 +45,9 @@ public class ScriptExecutor {
                     continue;
                 }
             }
-            if (Set.of(CommandType.UPDATE, CommandType.REMOVE_BY_ID).contains(commandType)) {
-                if (args.length < 1 || index + 6 >= lines.size()) {
-                    System.err.println("Недостаточно аргументов для команды " + commandType + ". Строка пропущена");
+            if (Set.of(CommandType.UPDATE, CommandType.REMOVE_LOWER).contains(commandType)){
+                if (args.length < 1 || index + 6 >= lines.size() || args.length > 1) {
+                    System.out.println("Неверное количество аргументов для команды " + commandType + ". Строка пропущена");
                     continue;
                 }
                 String[] musicBandArgs = lines.subList(index + 1, index + 7).toArray(new String[0]);
@@ -51,8 +55,45 @@ public class ScriptExecutor {
                 args[0] = line.split(" ")[1];
                 System.arraycopy(musicBandArgs, 0, args, 1, musicBandArgs.length);
                 index += 6;
+                MusicBand musicBand = MusicBandCreator.createMusicBand(musicBandArgs);
+                if (musicBand != null) {
+                    try{
+                        musicBand.setId(Integer.parseInt(args[0]));
+                    } catch (NumberFormatException e){
+                        System.out.println("Неверные аргументы для команды " + commandType + ". Команда пропущена");
+                        continue;
+                    }
+                    if (commandType == CommandType.UPDATE){
+                        cmd = new UpdateIdCommand(musicBand);
+                    } else {
+                        cmd = new RemoveLowerCommand(musicBand);
+                    }
+                } else {
+                    System.out.println("Неверные аргументы для команды " + commandType + ". Команда пропущена");
+                    continue;
+                }
+            } else if (Set.of(CommandType.ADD, CommandType.ADD_IF_MIN, CommandType.ADD_IF_MAX).contains(commandType)) {
+                if (args.length != 0 || index + 6 >= lines.size()){
+                    System.out.println("Неверное количество аргументов или неверные аргументы для команды " + commandType + ". Строка пропущена");
+                    continue;
+                }
+                String[] musicBandArgs = lines.subList(index + 1, index + 7).toArray(new String[0]);
+                args = new String[musicBandArgs.length + 1];
+                index += 6;
+                MusicBand musicBand = MusicBandCreator.createMusicBand(musicBandArgs);
+                if (musicBand != null){
+                    switch (commandType){
+                        case ADD -> cmd = new AddCommand(musicBand);
+                        case ADD_IF_MAX -> cmd = new AddIfMaxCommand(musicBand);
+                        case ADD_IF_MIN -> cmd = new AddIfMinCommand(musicBand);
+                    }
+                } else {
+                    System.out.println("Неверное количество аргументов или неверные аргументы для команды " + commandType + ". Строка пропущена");
+                    continue;
+                }
+            } else {
+                cmd = CommandFactory.createCommand(commandType, line.split(" "));
             }
-            Command cmd = CommandFactory.createCommand(commandType, args);
             if (cmd != null) commandQueue.add(cmd);
         }
         fileMemory.pop();

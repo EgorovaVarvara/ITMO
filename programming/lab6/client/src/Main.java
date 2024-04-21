@@ -23,7 +23,7 @@ public class Main {
             System.out.println("Для получения справки по доступным командам введите help");
             client.run();
         } catch (NoSuchElementException e) {
-            System.out.printf("Ну хорошо же все начиналось...", e.getMessage());
+            System.out.println("Ну хорошо же все начиналось...");
         }
     }
 }

@@ -68,6 +68,7 @@ public class Server {
                             }
                             byteStreams.remove(inetSocketAddress);
                         }
+                        buffer.clear();
                     }
                 }
             }

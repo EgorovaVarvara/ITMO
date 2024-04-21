@@ -4,7 +4,10 @@ import commands.Command;
 import baseClasses.CommandType;
 import connectionUtils.*;
 
+import java.io.File;
+import java.io.IOException;
 import java.net.InetAddress;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Client {
@@ -29,15 +32,35 @@ public class Client {
                 System.out.println("Введите команду: ");
                 continue;
             }
-            CommandType commandType = CommandUtils.getCommandType(userInput[0]);
-            Command command = CommandFactory.createCommand(commandType, userInput);
-            if (command == null) continue;
-            try {
-                request.send(CommandSerializer.serialize(command));
-                String response = request.receive();
-                if (!response.isEmpty()) System.out.println(response);
-            } catch (Exception e) {
-                System.err.println("Невозможно отправить запрос/получить ответ сервера: " + e.getMessage());
+            if (!userInput[0].equals("execute_script")) {
+                CommandType commandType = CommandUtils.getCommandType(userInput[0]);
+                Command command = CommandFactory.createCommand(commandType, userInput);
+                if (command == null) continue;
+                try {
+                    request.send(CommandSerializer.serialize(command));
+                    String response = request.receive();
+                    if (!response.isEmpty()) System.out.println(response);
+                } catch (Exception e) {
+                    System.err.println("Невозможно отправить запрос/получить ответ сервера: " + e.getMessage());
+                }
+            } else if (userInput.length == 2){
+                try {
+                    ScriptExecutor se = new ScriptExecutor(new File(userInput[1])).readScript();
+                    ArrayList<Command> commands = se.getCommandList();
+                    commands.forEach(command -> {
+                        try {
+                            request.send(CommandSerializer.serialize(command));
+                            String response = request.receive();
+                            if (!response.isEmpty()) System.out.println(response);
+                        } catch (IOException e) {
+                            System.out.println("Невозможно отправить запрос/получить ответ сервера: " + e.getMessage());
+                        }
+                    });
+                } catch (Exception e){
+                    System.out.println(e.getMessage());
+                }
+            } else {
+                System.out.println("Неверное количество аргументов для команды execute_script");
             }
         }
     }
