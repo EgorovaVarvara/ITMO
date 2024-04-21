@@ -2,45 +2,45 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
-  <date>2024-04-21T18:30:03.910792700Z</date>
-  <millis>1713724203910</millis>
-  <nanos>792700</nanos>
+  <date>2024-04-21T19:01:59.983262500Z</date>
+  <millis>1713726119983</millis>
+  <nanos>262500</nanos>
   <sequence>0</sequence>
   <logger>utils.ServerLogger</logger>
   <level>INFO</level>
   <class>utils.Server</class>
   <method>run</method>
   <thread>1</thread>
-  <message>Starting server on port 2712</message>
+  <message>Сервер запущен на порте 2712</message>
 </record>
 <record>
-  <date>2024-04-21T18:30:44.586907700Z</date>
-  <millis>1713724244586</millis>
-  <nanos>907700</nanos>
+  <date>2024-04-21T19:02:06.084164500Z</date>
+  <millis>1713726126084</millis>
+  <nanos>164500</nanos>
   <sequence>1</sequence>
   <logger>utils.ServerLogger</logger>
   <level>INFO</level>
   <class>utils.CommandManager</class>
   <method>handlePacket</method>
   <thread>1</thread>
-  <message>Received command HELP from /192.168.0.8:52913</message>
+  <message>Получена команда HELP от /192.168.0.8:62945</message>
 </record>
 <record>
-  <date>2024-04-21T18:30:44.586907700Z</date>
-  <millis>1713724244586</millis>
-  <nanos>907700</nanos>
+  <date>2024-04-21T19:02:06.100802400Z</date>
+  <millis>1713726126100</millis>
+  <nanos>802400</nanos>
   <sequence>2</sequence>
   <logger>utils.ServerLogger</logger>
   <level>INFO</level>
   <class>utils.CommandManager</class>
   <method>handlePacket</method>
   <thread>1</thread>
-  <message>Sending output to /192.168.0.8:52913</message>
+  <message>Отправляется результат на /192.168.0.8:62945</message>
 </record>
 <record>
-  <date>2024-04-21T18:30:44.595372200Z</date>
-  <millis>1713724244595</millis>
-  <nanos>372200</nanos>
+  <date>2024-04-21T19:02:06.108808800Z</date>
+  <millis>1713726126108</millis>
+  <nanos>808800</nanos>
   <sequence>3</sequence>
   <logger>utils.ServerLogger</logger>
   <level>INFO</level>
@@ -50,33 +50,33 @@
   <message>Коллекция сохранена в файл. </message>
 </record>
 <record>
-  <date>2024-04-21T18:30:58.907711900Z</date>
-  <millis>1713724258907</millis>
-  <nanos>711900</nanos>
+  <date>2024-04-21T19:02:24.843687100Z</date>
+  <millis>1713726144843</millis>
+  <nanos>687100</nanos>
   <sequence>4</sequence>
   <logger>utils.ServerLogger</logger>
   <level>INFO</level>
   <class>utils.CommandManager</class>
   <method>handlePacket</method>
   <thread>1</thread>
-  <message>Received command HELP from /192.168.0.8:52913</message>
+  <message>Получена команда SHOW от /192.168.0.8:62945</message>
 </record>
 <record>
-  <date>2024-04-21T18:30:58.907711900Z</date>
-  <millis>1713724258907</millis>
-  <nanos>711900</nanos>
+  <date>2024-04-21T19:02:24.859630200Z</date>
+  <millis>1713726144859</millis>
+  <nanos>630200</nanos>
   <sequence>5</sequence>
   <logger>utils.ServerLogger</logger>
   <level>INFO</level>
   <class>utils.CommandManager</class>
   <method>handlePacket</method>
   <thread>1</thread>
-  <message>Sending output to /192.168.0.8:52913</message>
+  <message>Отправляется результат на /192.168.0.8:62945</message>
 </record>
 <record>
-  <date>2024-04-21T18:30:58.907711900Z</date>
-  <millis>1713724258907</millis>
-  <nanos>711900</nanos>
+  <date>2024-04-21T19:02:24.868116500Z</date>
+  <millis>1713726144868</millis>
+  <nanos>116500</nanos>
   <sequence>6</sequence>
   <logger>utils.ServerLogger</logger>
   <level>INFO</level>
@@ -85,3 +85,28 @@
   <thread>1</thread>
   <message>Коллекция сохранена в файл. </message>
 </record>
+<record>
+  <date>2024-04-21T19:02:24.868116500Z</date>
+  <millis>1713726144868</millis>
+  <nanos>116500</nanos>
+  <sequence>7</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>utils.Parser</class>
+  <method>saveToJson</method>
+  <thread>1</thread>
+  <message>Коллекция сохранена в файл. </message>
+</record>
+<record>
+  <date>2024-04-21T19:02:24.868116500Z</date>
+  <millis>1713726144868</millis>
+  <nanos>116500</nanos>
+  <sequence>8</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>utils.Server</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>Обекты успешно сохранены. Завершаем работу сервера.</message>
+</record>
+</log>

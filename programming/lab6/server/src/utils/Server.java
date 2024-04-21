@@ -2,6 +2,7 @@ package utils;
 
 import collection.CollectionManager;
 
+import java.io.*;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -9,10 +10,7 @@ import java.nio.ByteBuffer;
 import java.nio.channels.DatagramChannel;
 import java.nio.channels.SelectionKey;
 import java.nio.channels.Selector;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Stack;
+import java.util.*;
 
 import static utils.CommandManager.handlePacket;
 import static utils.CommandManager.setChannel;
@@ -23,31 +21,44 @@ public class Server {
     private DatagramChannel datagramChannel;
     private Selector selector;
     private static CollectionManager collectionManager;
-    public Server(CollectionManager collectionManager, int port){
+
+    public Server(CollectionManager collectionManager, int port) {
         Server.collectionManager = collectionManager;
         this.port = port;
     }
-    public void run(){
-        Thread thread = new Thread();
-        thread.start();
-        try{
+
+    public void run() {
+        try {
             datagramChannel = DatagramChannel.open();
             datagramChannel.configureBlocking(false);
             datagramChannel.socket().bind(new InetSocketAddress(port));
             selector = Selector.open();
             datagramChannel.register(selector, SelectionKey.OP_READ);
-            ServerLogger.getLogger().info("Starting server on port " + port);
-            Map<InetSocketAddress , ByteArrayOutputStream> byteStreams = new HashMap<>();
-            while (true){
+            ServerLogger.getLogger().info("Сервер запущен на порте " + port);
+            Map<InetSocketAddress, ByteArrayOutputStream> byteStreams = new HashMap<>();
+            BufferedReader scanner = new BufferedReader(new InputStreamReader(new BufferedInputStream(System.in)));
+            while (true) {
+                if (scanner.ready()) {
+                    String line = scanner.readLine();
+                    if (line.equals("save") || line.equals("s")) {
+                        Parser.saveToJson();
+                        ServerLogger.getLogger().info("Обекты успешно сохранены");
+                    }
+                    if (line.equals("exit")) {
+                        Parser.saveToJson();
+                        ServerLogger.getLogger().info("Обекты успешно сохранены. Завершаем работу сервера.");
+                        System.exit(0);
+                    }
+                }
                 selector.select();
                 Iterator<SelectionKey> keys = selector.selectedKeys().iterator();
-                while (keys.hasNext()){
+                while (keys.hasNext()) {
                     SelectionKey key = keys.next();
                     keys.remove();
                     if (!key.isValid()) {
                         continue;
                     }
-                    if (key.isReadable()){
+                    if (key.isReadable()) {
                         DatagramChannel keyChannel = (DatagramChannel) key.channel();
                         setChannel(keyChannel);
                         ByteBuffer buffer = ByteBuffer.allocate(1025);
@@ -63,7 +74,7 @@ public class Server {
                             try {
                                 handlePacket(inetSocketAddress, byteStream.toByteArray());
                             } catch (Exception e) {
-                                keyChannel.send(ByteBuffer.wrap("ERROR: Something went wrong...".getBytes()), inetSocketAddress);
+                                keyChannel.send(ByteBuffer.wrap("ERROR: Что-то пошло не так...".getBytes()), inetSocketAddress);
                                 ServerLogger.getLogger().warning(e.toString());
                             }
                             byteStreams.remove(inetSocketAddress);
@@ -72,14 +83,14 @@ public class Server {
                     }
                 }
             }
-        } catch (IOException e){
-            ServerLogger.getLogger().warning("Exception: " + e.getMessage());
-        }finally {
+        } catch (IOException e) {
+            ServerLogger.getLogger().warning("Ошибка: " + e.getMessage());
+        } finally {
             try {
                 selector.close();
                 datagramChannel.close();
             } catch (IOException e) {
-                ServerLogger.getLogger().warning("Exception while closing channel or selector: " + e.getMessage());
+                ServerLogger.getLogger().warning("Не получилось закрыть канал или селектор: " + e.getMessage());
             }
         }
     }
