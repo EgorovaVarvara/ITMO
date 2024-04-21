@@ -12,7 +12,7 @@ public class Main {
     private final static Integer serverPort = 2712;
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         HashSet<MusicBand> collection;
         try {
             collection = Parser.loadFromJson();

@@ -2,9 +2,9 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
-  <date>2024-04-21T19:01:59.983262500Z</date>
-  <millis>1713726119983</millis>
-  <nanos>262500</nanos>
+  <date>2024-04-21T20:19:00.402505500Z</date>
+  <millis>1713730740402</millis>
+  <nanos>505500</nanos>
   <sequence>0</sequence>
   <logger>utils.ServerLogger</logger>
   <level>INFO</level>
@@ -14,99 +14,51 @@
   <message>Сервер запущен на порте 2712</message>
 </record>
 <record>
-  <date>2024-04-21T19:02:06.084164500Z</date>
-  <millis>1713726126084</millis>
-  <nanos>164500</nanos>
+  <date>2024-04-21T20:19:05.758490400Z</date>
+  <millis>1713730745758</millis>
+  <nanos>490400</nanos>
   <sequence>1</sequence>
   <logger>utils.ServerLogger</logger>
   <level>INFO</level>
   <class>utils.CommandManager</class>
   <method>handlePacket</method>
-  <thread>1</thread>
+  <thread>32</thread>
   <message>Получена команда HELP от /192.168.0.8:62945</message>
 </record>
 <record>
-  <date>2024-04-21T19:02:06.100802400Z</date>
-  <millis>1713726126100</millis>
-  <nanos>802400</nanos>
+  <date>2024-04-21T20:19:05.766489600Z</date>
+  <millis>1713730745766</millis>
+  <nanos>489600</nanos>
   <sequence>2</sequence>
   <logger>utils.ServerLogger</logger>
   <level>INFO</level>
   <class>utils.CommandManager</class>
   <method>handlePacket</method>
-  <thread>1</thread>
+  <thread>32</thread>
   <message>Отправляется результат на /192.168.0.8:62945</message>
 </record>
 <record>
-  <date>2024-04-21T19:02:06.108808800Z</date>
-  <millis>1713726126108</millis>
-  <nanos>808800</nanos>
+  <date>2024-04-21T20:19:08.997545800Z</date>
+  <millis>1713730748997</millis>
+  <nanos>545800</nanos>
   <sequence>3</sequence>
   <logger>utils.ServerLogger</logger>
   <level>INFO</level>
   <class>utils.Parser</class>
   <method>saveToJson</method>
-  <thread>1</thread>
+  <thread>31</thread>
   <message>Коллекция сохранена в файл. </message>
 </record>
 <record>
-  <date>2024-04-21T19:02:24.843687100Z</date>
-  <millis>1713726144843</millis>
-  <nanos>687100</nanos>
+  <date>2024-04-21T20:19:08.998548400Z</date>
+  <millis>1713730748998</millis>
+  <nanos>548400</nanos>
   <sequence>4</sequence>
   <logger>utils.ServerLogger</logger>
   <level>INFO</level>
-  <class>utils.CommandManager</class>
-  <method>handlePacket</method>
-  <thread>1</thread>
-  <message>Получена команда SHOW от /192.168.0.8:62945</message>
-</record>
-<record>
-  <date>2024-04-21T19:02:24.859630200Z</date>
-  <millis>1713726144859</millis>
-  <nanos>630200</nanos>
-  <sequence>5</sequence>
-  <logger>utils.ServerLogger</logger>
-  <level>INFO</level>
-  <class>utils.CommandManager</class>
-  <method>handlePacket</method>
-  <thread>1</thread>
-  <message>Отправляется результат на /192.168.0.8:62945</message>
-</record>
-<record>
-  <date>2024-04-21T19:02:24.868116500Z</date>
-  <millis>1713726144868</millis>
-  <nanos>116500</nanos>
-  <sequence>6</sequence>
-  <logger>utils.ServerLogger</logger>
-  <level>INFO</level>
-  <class>utils.Parser</class>
-  <method>saveToJson</method>
-  <thread>1</thread>
-  <message>Коллекция сохранена в файл. </message>
-</record>
-<record>
-  <date>2024-04-21T19:02:24.868116500Z</date>
-  <millis>1713726144868</millis>
-  <nanos>116500</nanos>
-  <sequence>7</sequence>
-  <logger>utils.ServerLogger</logger>
-  <level>INFO</level>
-  <class>utils.Parser</class>
-  <method>saveToJson</method>
-  <thread>1</thread>
-  <message>Коллекция сохранена в файл. </message>
-</record>
-<record>
-  <date>2024-04-21T19:02:24.868116500Z</date>
-  <millis>1713726144868</millis>
-  <nanos>116500</nanos>
-  <sequence>8</sequence>
-  <logger>utils.ServerLogger</logger>
-  <level>INFO</level>
   <class>utils.Server</class>
-  <method>run</method>
-  <thread>1</thread>
+  <method>lambda$run$0</method>
+  <thread>31</thread>
   <message>Обекты успешно сохранены. Завершаем работу сервера.</message>
 </record>
 </log>

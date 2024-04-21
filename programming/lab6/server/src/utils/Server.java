@@ -26,64 +26,83 @@ public class Server {
         Server.collectionManager = collectionManager;
         this.port = port;
     }
+    BufferedReader scanner = new BufferedReader(new InputStreamReader(new BufferedInputStream(System.in)));
 
-    public void run() {
+    public void run() throws InterruptedException {
         try {
+            Thread consoleThread = new Thread(() -> {
+                while (true){
+                    try {
+                        if (scanner.ready()) {
+                            String line = scanner.readLine();
+                            if (line.equals("save") || line.equals("s")) {
+                                Parser.saveToJson();
+                                ServerLogger.getLogger().info("Обекты успешно сохранены");
+                            }
+                            if (line.equals("exit")) {
+                                Parser.saveToJson();
+                                ServerLogger.getLogger().info("Обекты успешно сохранены. Завершаем работу сервера.");
+                                System.exit(0);
+                            }
+                        }
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+            });
             datagramChannel = DatagramChannel.open();
-            datagramChannel.configureBlocking(false);
             datagramChannel.socket().bind(new InetSocketAddress(port));
+            datagramChannel.configureBlocking(false);
             selector = Selector.open();
             datagramChannel.register(selector, SelectionKey.OP_READ);
             ServerLogger.getLogger().info("Сервер запущен на порте " + port);
             Map<InetSocketAddress, ByteArrayOutputStream> byteStreams = new HashMap<>();
-            BufferedReader scanner = new BufferedReader(new InputStreamReader(new BufferedInputStream(System.in)));
-            while (true) {
-                if (scanner.ready()) {
-                    String line = scanner.readLine();
-                    if (line.equals("save") || line.equals("s")) {
-                        Parser.saveToJson();
-                        ServerLogger.getLogger().info("Обекты успешно сохранены");
-                    }
-                    if (line.equals("exit")) {
-                        Parser.saveToJson();
-                        ServerLogger.getLogger().info("Обекты успешно сохранены. Завершаем работу сервера.");
-                        System.exit(0);
-                    }
-                }
-                selector.select();
-                Iterator<SelectionKey> keys = selector.selectedKeys().iterator();
-                while (keys.hasNext()) {
-                    SelectionKey key = keys.next();
-                    keys.remove();
-                    if (!key.isValid()) {
-                        continue;
-                    }
-                    if (key.isReadable()) {
-                        DatagramChannel keyChannel = (DatagramChannel) key.channel();
-                        setChannel(keyChannel);
-                        ByteBuffer buffer = ByteBuffer.allocate(1025);
-                        InetSocketAddress inetSocketAddress = (InetSocketAddress) keyChannel.receive(buffer);
-                        ByteArrayOutputStream byteStream = byteStreams.get(inetSocketAddress);
-                        if (byteStream == null) {
-                            byteStream = new ByteArrayOutputStream();
-                            byteStreams.put(inetSocketAddress, byteStream);
-                        }
-                        boolean hasNext = buffer.array()[buffer.limit() - 1] == 1;
-                        byteStream.write(buffer.array(), 0, buffer.limit() - 1);
-                        if (!hasNext) {
-                            try {
-                                handlePacket(inetSocketAddress, byteStream.toByteArray());
-                            } catch (Exception e) {
-                                keyChannel.send(ByteBuffer.wrap("ERROR: Что-то пошло не так...".getBytes()), inetSocketAddress);
-                                ServerLogger.getLogger().warning(e.toString());
+            Thread clientThread = new Thread(() -> {
+                while (true) {
+                    try {
+                        selector.select();
+                        Iterator<SelectionKey> keys = selector.selectedKeys().iterator();
+                        while (keys.hasNext()) {
+                            SelectionKey key = keys.next();
+                            keys.remove();
+                            if (!key.isValid()) {
+                                continue;
                             }
-                            byteStreams.remove(inetSocketAddress);
+                            if (key.isReadable()) {
+                                DatagramChannel keyChannel = (DatagramChannel) key.channel();
+                                keyChannel.configureBlocking(false);
+                                setChannel(keyChannel);
+                                ByteBuffer buffer = ByteBuffer.allocate(1025);
+                                InetSocketAddress inetSocketAddress = (InetSocketAddress) keyChannel.receive(buffer);
+                                ByteArrayOutputStream byteStream = byteStreams.get(inetSocketAddress);
+                                if (byteStream == null) {
+                                    byteStream = new ByteArrayOutputStream();
+                                    byteStreams.put(inetSocketAddress, byteStream);
+                                }
+                                boolean hasNext = buffer.array()[buffer.limit() - 1] == 1;
+                                byteStream.write(buffer.array(), 0, buffer.limit() - 1);
+                                if (!hasNext) {
+                                    try {
+                                        handlePacket(inetSocketAddress, byteStream.toByteArray());
+                                    } catch (Exception e) {
+                                        keyChannel.send(ByteBuffer.wrap("ERROR: Что-то пошло не так...".getBytes()), inetSocketAddress);
+                                        ServerLogger.getLogger().warning(e.toString());
+                                    }
+                                    byteStreams.remove(inetSocketAddress);
+                                }
+                                buffer.clear();
+                            }
                         }
-                        buffer.clear();
+                    } catch (Exception e){
+                        ServerLogger.getLogger().warning("Ошибка: " + e.getMessage());
                     }
                 }
-            }
-        } catch (IOException e) {
+            });
+            consoleThread.start();
+            clientThread.start();
+            consoleThread.join();
+            clientThread.join();
+        } catch (IOException | InterruptedException e) {
             ServerLogger.getLogger().warning("Ошибка: " + e.getMessage());
         } finally {
             try {
