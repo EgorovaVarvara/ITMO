@@ -1,12 +1,6 @@
 package commands;
 
-import baseClasses.CommandType;
 import baseClasses.MusicBand;
-import connectionUtils.Response;
-import console.Executable;
-import errors.CommandRuntimeException;
-import errors.ExitObligedException;
-
 import java.io.Serial;
 
 /**
@@ -14,17 +8,19 @@ import java.io.Serial;
  *
  * @author Egorova Varvara
  */
-public class RemoveLowerCommand  implements Command, Executable {
+public class RemoveLowerCommand  implements Command {
     @Serial
     private final static long serialVersionUID = 12L;
+    /**
+     * Music band for adding to collection with deleting lower elements
+     */
     private MusicBand musicBand;
+    /**
+     * Constructor of class
+     * @param musicBand
+     */
 
     public RemoveLowerCommand(MusicBand musicBand) {
         this.musicBand = musicBand;
-    }
-
-    @Override
-    public Response execute() throws IllegalArgumentException, CommandRuntimeException, ExitObligedException {
-        return null;
     }
 }

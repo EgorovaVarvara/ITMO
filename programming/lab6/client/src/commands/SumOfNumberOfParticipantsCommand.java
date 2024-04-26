@@ -1,11 +1,5 @@
 package commands;
 
-import baseClasses.CommandType;
-import connectionUtils.Response;
-import console.Executable;
-import errors.CommandRuntimeException;
-import errors.ExitObligedException;
-
 import java.io.Serial;
 
 /**
@@ -13,15 +7,12 @@ import java.io.Serial;
  *
  * @author Egorova Varvara
  */
-public class SumOfNumberOfParticipantsCommand implements Command, Executable {
+public class SumOfNumberOfParticipantsCommand implements Command {
     @Serial
     private final static long serialVersionUID = 15L;
-
+    /**
+     * Constructor of class
+     */
     public SumOfNumberOfParticipantsCommand() {
-    }
-
-    @Override
-    public Response execute() throws IllegalArgumentException, CommandRuntimeException, ExitObligedException {
-        return null;
     }
 }

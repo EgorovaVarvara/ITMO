@@ -5,11 +5,15 @@ import baseClasses.Label;
 import baseClasses.MusicBand;
 import baseClasses.MusicGenre;
 import console.*;
-import errors.InvalidFormException;
 import utils.ExecuteFileManager;
 import utils.ReadManager;
 
-import java.time.LocalDateTime;
+/**
+ * Class {@code MusicBandForm} needs to create music band
+ * @see forms.Form
+ * @see MusicBand
+ * @author Egorova Varvara
+ */
 
 public class MusicBandForm extends Form<MusicBand> {
     private final ReaderWriter console;
@@ -23,9 +27,8 @@ public class MusicBandForm extends Form<MusicBand> {
                 : new ConsoleInput();
     }
     @Override
-    public MusicBand build() throws InvalidFormException {
+    public MusicBand build() {
         ReadManager readManager = new ReadManager(console);
-        LocalDateTime localDateTime = LocalDateTime.now();
         return new MusicBand(
                 readManager.readName(),
                 readCoordinates(),
@@ -34,13 +37,13 @@ public class MusicBandForm extends Form<MusicBand> {
                 readLabel()
         );
     }
-    private Coordinates readCoordinates() throws InvalidFormException {
+    private Coordinates readCoordinates() {
         return new CoordinatesForm(console).build();
     }
-    private MusicGenre readMusicGenre() throws InvalidFormException {
+    private MusicGenre readMusicGenre() {
         return new MusicGenreForm(console).build();
     }
-    private Label readLabel() throws InvalidFormException{
+    private Label readLabel() {
         return new LabelForm(console).build();
     }
 }

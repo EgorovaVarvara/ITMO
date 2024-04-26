@@ -2,10 +2,15 @@ package forms;
 
 import baseClasses.Coordinates;
 import console.*;
-import errors.InvalidFormException;
 import utils.ExecuteFileManager;
 import utils.ReadManager;
 
+/**
+ * Class {@code CoordinatesForm} needs to create coordinates field
+ * @see forms.Form
+ * @see Coordinates
+ * @author Egorova Varvara
+ */
 public class CoordinatesForm extends Form<Coordinates>{
     private final ReaderWriter console;
     private final UserInput scanner;
@@ -18,7 +23,7 @@ public class CoordinatesForm extends Form<Coordinates>{
                 : new ConsoleInput();
     }
     @Override
-    public Coordinates build() throws InvalidFormException {
+    public Coordinates build() {
         ReadManager readManager = new ReadManager(console);
         return new Coordinates(
                 readManager.readCoordinateX(),

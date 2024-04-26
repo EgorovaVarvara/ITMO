@@ -1,6 +1,16 @@
 package baseClasses;
 
+/**
+ * Class {@code MusicBandCreator} need to create music band
+ *
+ * @author Egorova Varvara
+ */
 public class MusicBandCreator {
+    /**
+     * Method creates music band from array of string arguments
+     * @param fields array of arguments for music band
+     * @return Music band or null
+     */
     public static MusicBand createMusicBand(String[] fields){
         try{
             String name = fields[0];

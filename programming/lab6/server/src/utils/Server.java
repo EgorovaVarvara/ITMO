@@ -44,9 +44,7 @@ public class Server {
                                 System.exit(0);
                             }
                         }
-                    } catch (IOException e) {
-                        throw new RuntimeException(e);
-                    }
+                    } catch (Exception ignored) {}
                 }
             });
             datagramChannel = DatagramChannel.open();

@@ -1,5 +1,12 @@
 package console;
 
+/**
+ * Class {@code BlankConsole} represents instruments for reading different types and implements ReaderWriter interface.
+ * All methods return null or do nothing.
+ * @author Egorova Varvara
+ * @see baseClasses.MusicBand
+ * @see console.ReaderWriter
+ */
 public class BlankConsole implements ReaderWriter{
 
     @Override

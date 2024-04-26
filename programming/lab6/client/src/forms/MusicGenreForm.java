@@ -1,11 +1,16 @@
 package forms;
 
+import baseClasses.Coordinates;
 import baseClasses.MusicGenre;
 import console.*;
-import errors.InvalidFormException;
 import utils.ExecuteFileManager;
 import utils.ReadManager;
-
+/**
+ * Class {@code MusicGenreForm} needs to create music genre field
+ * @see forms.Form
+ * @see MusicGenre
+ * @author Egorova Varvara
+ */
 public class MusicGenreForm extends Form<MusicGenre> {
     private final ReaderWriter console;
     private final UserInput scanner;
@@ -18,7 +23,7 @@ public class MusicGenreForm extends Form<MusicGenre> {
                 : new ConsoleInput();
     }
     @Override
-    public MusicGenre build() throws InvalidFormException {
+    public MusicGenre build() {
         ReadManager readManager = new ReadManager(console);
         return readManager.readMusicGenre();
     }

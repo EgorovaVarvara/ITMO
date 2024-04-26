@@ -1,11 +1,21 @@
-package utils;
+package connectionUtils;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
+/**
+ * Class {@code CommandSerializer} with one method needs to serialize commands that sens to server
+ * @author Egorova Varvara
+ */
 public final class CommandSerializer {
+    /**
+     * Method that serialize command
+     * @param object serializable command
+     * @param <T>
+     * @return bytes of serialized command
+     */
     public static <T extends Serializable> byte[] serialize(T object) {
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         ObjectOutputStream objectOutputStream;

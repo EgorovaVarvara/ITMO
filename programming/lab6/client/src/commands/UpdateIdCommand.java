@@ -1,14 +1,8 @@
 package commands;
 
-import baseClasses.CommandType;
 import baseClasses.MusicBand;
-import connectionUtils.Response;
-import console.Executable;
-import errors.CommandRuntimeException;
-import errors.ExitObligedException;
 
 import java.io.Serial;
-import java.util.Map;
 
 /**
  * Command `update id {element}`.
@@ -16,16 +10,17 @@ import java.util.Map;
  * @author Egorova Varvara
  */
 
-public class UpdateIdCommand implements Command, Executable {
+public class UpdateIdCommand implements Command {
     @Serial
     private final static long serialVersionUID = 16L;
+    /**
+     * Music band for updating in collection
+     */
     private MusicBand musicBand;
+    /**
+     * Constructor of class
+     */
     public UpdateIdCommand(MusicBand musicBand) {
         this.musicBand = musicBand;
-    }
-
-    @Override
-    public Response execute() throws IllegalArgumentException, CommandRuntimeException, ExitObligedException {
-        return null;
     }
 }

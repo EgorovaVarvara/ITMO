@@ -1,8 +1,10 @@
-package utils;
+package connectionUtils;
 
 import commands.Command;
 import baseClasses.CommandType;
-import connectionUtils.*;
+import utils.CommandFactory;
+import utils.CommandUtils;
+import utils.ScriptExecutor;
 
 import java.io.File;
 import java.io.IOException;
@@ -10,9 +12,21 @@ import java.net.InetAddress;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Class {@code Client} represents client working
+ * @author Egorova Varvara
+ */
 public class Client {
+    /**
+     * @see Request
+     */
     private final Request request;
 
+    /**
+     * Constructor of class with given server address and server port
+     * @param address server address
+     * @param port server port
+     */
     public Client(InetAddress address, int port) {
         try {
             request = new Request(address, port);
@@ -22,6 +36,9 @@ public class Client {
         }
     }
 
+    /**
+     * Method that starts client work
+     */
     public void run() {
         Scanner scanner = new Scanner(System.in);
         String[] userInput;
@@ -38,10 +55,15 @@ public class Client {
                 if (command == null) continue;
                 try {
                     request.send(CommandSerializer.serialize(command));
+                } catch (IOException e) {
+                    System.out.println("Невозможно отправить запрос серверу: " + e.getMessage());
+                    continue;
+                }
+                try {
                     String response = request.receive();
                     if (!response.isEmpty()) System.out.println(response);
-                } catch (Exception e) {
-                    System.err.println("Невозможно отправить запрос/получить ответ сервера: " + e.getMessage());
+                } catch (IOException e){
+                    System.out.println("Невозможно получить ответ от сервера: " + e.getMessage());
                 }
             } else if (userInput.length == 2){
                 try {
@@ -50,10 +72,14 @@ public class Client {
                     commands.forEach(command -> {
                         try {
                             request.send(CommandSerializer.serialize(command));
+                        } catch (IOException e) {
+                            System.out.println("Невозможно отправить запрос серверу: " + e.getMessage());
+                        }
+                        try {
                             String response = request.receive();
                             if (!response.isEmpty()) System.out.println(response);
-                        } catch (IOException e) {
-                            System.out.println("Невозможно отправить запрос/получить ответ сервера: " + e.getMessage());
+                        } catch (IOException e){
+                            System.out.println("Невозможно получить ответ сервера: " + e.getMessage());
                         }
                     });
                 } catch (Exception e){

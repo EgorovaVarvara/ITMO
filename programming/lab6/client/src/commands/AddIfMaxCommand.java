@@ -1,12 +1,6 @@
 package commands;
 
-import baseClasses.CommandType;
 import baseClasses.MusicBand;
-import connectionUtils.Response;
-import console.Executable;
-import errors.CommandRuntimeException;
-import errors.ExitObligedException;
-
 import java.io.Serial;
 
 /**
@@ -14,17 +8,19 @@ import java.io.Serial;
  *
  * @author Egorova Varvara
  */
-public class AddIfMaxCommand implements Command, Executable {
+public class AddIfMaxCommand implements Command {
     @Serial
     private final static long serialVersionUID = 1L;
+    /**
+     * Music band for adding to collection
+     */
     private MusicBand musicBand;
-
+    /**
+     * Constructor of class
+     * @param musicBand
+     */
     public AddIfMaxCommand(MusicBand musicBand) {
         this.musicBand = musicBand;
     }
 
-    @Override
-    public Response execute() throws IllegalArgumentException, CommandRuntimeException, ExitObligedException {
-        return null;
-    }
 }

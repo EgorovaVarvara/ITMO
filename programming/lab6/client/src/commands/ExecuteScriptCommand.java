@@ -1,9 +1,5 @@
 package commands;
 
-import connectionUtils.Response;
-import console.Executable;
-import errors.CommandRuntimeException;
-import errors.ExitObligedException;
 
 import java.io.Serial;
 import java.util.ArrayList;
@@ -14,16 +10,19 @@ import java.util.ArrayList;
  * @author Egorova Varvara
  */
 
-public class ExecuteScriptCommand implements Command, Executable {
+public class ExecuteScriptCommand implements Command {
     @Serial
     private final static long serialVersionUID = 5L;
+    /**
+     * List of commands for executing
+     */
     private ArrayList<Command> commands;
+    /**
+     * Constructor of class
+     * @param commands ArrayList of commands
+     */
     public ExecuteScriptCommand(ArrayList<Command> commands) {
         this.commands = commands;
     }
 
-    @Override
-    public Response execute() throws IllegalArgumentException, CommandRuntimeException, ExitObligedException {
-        return null;
-    }
 }

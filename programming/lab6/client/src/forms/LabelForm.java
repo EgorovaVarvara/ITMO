@@ -1,10 +1,16 @@
 package forms;
+import baseClasses.Coordinates;
 import baseClasses.Label;
 import console.*;
-import errors.InvalidFormException;
 import utils.ExecuteFileManager;
 import utils.ReadManager;
 
+/**
+ * Class {@code LabelForm} needs to create label field
+ * @see forms.Form
+ * @see Label
+ * @author Egorova Varvara
+ */
 public class LabelForm extends Form<Label>{
     private final ReaderWriter console;
     private final UserInput scanner;
@@ -17,7 +23,7 @@ public class LabelForm extends Form<Label>{
                 : new ConsoleInput();
     }
     @Override
-    public Label build() throws InvalidFormException {
+    public Label build() {
         ReadManager readManager = new ReadManager(console);
         return new Label(
                 readManager.readBands()

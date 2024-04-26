@@ -22,12 +22,12 @@ public class ScriptExecutor {
         return commandQueue;
     }
     private ScriptExecutor readScript(File scriptFile) {
-        List<String> lines = null;
+        List<String> lines;
         try {
             lines = Files.readAllLines(scriptFile.toPath(), StandardCharsets.UTF_8);
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-            System.exit(0);
+        } catch (IOException e) {
+            System.out.println("Невозможно исполнить скрипт:" + ((!scriptFile.exists()) ? " файл не найден" : " нет прав на чтение файла"));
+            return this;
         }
         fileMemory.add(scriptFile);
         for (int index = 0; index < lines.size(); index++) {
@@ -78,7 +78,6 @@ public class ScriptExecutor {
                     continue;
                 }
                 String[] musicBandArgs = lines.subList(index + 1, index + 7).toArray(new String[0]);
-                args = new String[musicBandArgs.length + 1];
                 index += 6;
                 MusicBand musicBand = MusicBandCreator.createMusicBand(musicBandArgs);
                 if (musicBand != null){

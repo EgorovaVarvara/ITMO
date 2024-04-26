@@ -1,22 +1,18 @@
 package commands;
 
-import baseClasses.CommandType;
-import connectionUtils.Response;
-import console.Executable;
-import errors.CommandRuntimeException;
-import errors.ExitObligedException;
-
 import java.io.Serial;
 
-public class ServiceCommand implements Command, Executable {
+/**
+ * `ServiceCommand` class.
+ *
+ * @author Egorova Varvara
+ */
+public class ServiceCommand implements Command {
     @Serial
     private final static long serialVersionUID = 13L;
-
+    /**
+     * Constructor of class
+     */
     public ServiceCommand() {
-    }
-
-    @Override
-    public Response execute() throws IllegalArgumentException, CommandRuntimeException, ExitObligedException {
-        return null;
     }
 }

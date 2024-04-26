@@ -1,10 +1,5 @@
 package commands;
 
-import baseClasses.CommandType;
-import connectionUtils.Response;
-import console.Executable;
-import errors.CommandRuntimeException;
-import errors.ExitObligedException;
 
 import java.io.Serial;
 
@@ -14,15 +9,12 @@ import java.io.Serial;
  * @author Egorova Varvara
  */
 
-public class ExitCommand implements Command, Executable {
+public class ExitCommand implements Command {
     @Serial
     private final static long serialVersionUID = 6L;
-
+    /**
+     * Constructor of class
+     */
     public ExitCommand() {
-    }
-
-    @Override
-    public Response execute() throws IllegalArgumentException, CommandRuntimeException, ExitObligedException {
-        return null;
     }
 }

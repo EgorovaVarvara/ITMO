@@ -1,11 +1,13 @@
 package baseClasses;
 
 import commands.*;
-import console.Executable;
 
-import java.io.Serializable;
-
-public enum CommandType implements Serializable {
+/**
+ * The {@code CommandType} enum is a list of possible commands
+ *
+ * @author Egorova Varvara
+ */
+public enum CommandType{
     ADD(AddCommand.class, "add {element}: добавить новый элемент в коллекцию"),
     ADD_IF_MAX(AddIfMaxCommand.class, "add_if_max {element}: добавить новый элемент в коллекцию, если его значение превышает значение наибольшего элемента этой коллекции"),
     ADD_IF_MIN(AddIfMinCommand.class, "add_if_min {element}: добавить новый элемент в коллекцию, если его значение меньше, чем у наименьшего элемента этой коллекции"),
@@ -21,21 +23,13 @@ public enum CommandType implements Serializable {
     SHOW(ShowCommand.class, "show: вывести все элементы коллекции"),
     SUM_OF_NUMBER_OF_PARTICIPANTS(SumOfNumberOfParticipantsCommand.class, "sum_of_number_of_participants: вывести сумму значений поля numberOfParticipants для всех элементов коллекции"),
     UPDATE(UpdateIdCommand.class, "update id {element}: обновить значение элемента коллекции, id которого равен заданному"),
-    DEFAULT(DefaultCommand.class, ""),
-    SERVICE(ServiceCommand.class, "");
+    DEFAULT(DefaultCommand.class, "");
 
-    private final Class<? extends Executable> executableClass;
+    private final Class<? extends Command> executableClass;
     private final String description;
 
-    CommandType(Class<? extends Executable> executableClass, String description) {
+    CommandType(Class<? extends Command> executableClass, String description) {
         this.executableClass = executableClass;
         this.description = description;
-    }
-
-    public Class<? extends Executable> getExecutableClass() {
-        return executableClass;
-    }
-    public String getDescription(){
-        return description;
     }
 }

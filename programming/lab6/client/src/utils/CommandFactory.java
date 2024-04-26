@@ -4,22 +4,31 @@ import commands.*;
 import baseClasses.CommandType;
 import baseClasses.MusicBand;
 import console.Console;
-import errors.InvalidFormException;
 import forms.MusicBandForm;
 
-import java.io.File;
-import java.util.ArrayList;
 import java.util.Arrays;
 
+/**
+ * Class {@code CommandFactory} contains one method to create object of concrete command class
+ * @author Egorova Varvara
+ */
 public class CommandFactory {
-    public static Command createCommand(CommandType type, String[] userInput){
+    /**
+     * Method that creates command depending on user input
+     * @param type Command type of users command
+     * @param userInput String array of users input
+     * @return Object of command
+     * @see Command
+     * @see CommandType
+     */
+    public static Command createCommand(CommandType type, String[] userInput) {
         String[] args;
-        if (userInput.length == 0){
+        if (userInput.length == 0) {
             args = new String[]{};
         } else {
             args = Arrays.copyOfRange(userInput, 1, userInput.length);
         }
-        return switch (type){
+        return switch (type) {
             case EXIT -> {
                 System.out.println("Отключаемся...");
                 System.exit(0);
@@ -56,7 +65,7 @@ public class CommandFactory {
                 }
             }
             case UPDATE -> {
-                if (args.length < 1){
+                if (args.length < 1) {
                     System.out.println("Недостаточно аргументов для команды " + type.name());
                     yield null;
                 }
@@ -68,51 +77,36 @@ public class CommandFactory {
                     musicBand.setId(id);
                     if (musicBand != null) yield new UpdateIdCommand(musicBand);
                     yield null;
-                } catch (InvalidFormException | NumberFormatException e){
+                } catch (NumberFormatException e) {
                     System.out.println("id должен быть целым положительным числом.");
                     yield null;
                 }
             }
             case ADD -> {
-                try {
-                    MusicBand musicBand;
-                    MusicBandForm musicBandForm = new MusicBandForm(new Console());
-                    musicBand = musicBandForm.build();
-                    yield new AddCommand(musicBand);
-                } catch (InvalidFormException e){
-                    yield null;
-                }
+                MusicBand musicBand;
+                MusicBandForm musicBandForm = new MusicBandForm(new Console());
+                musicBand = musicBandForm.build();
+                yield new AddCommand(musicBand);
             }
             case ADD_IF_MAX -> {
-                try {
-                    MusicBand musicBand;
-                    MusicBandForm musicBandForm = new MusicBandForm(new Console());
-                    musicBand = musicBandForm.build();
-                    yield new AddIfMaxCommand(musicBand);
-                } catch (InvalidFormException e){
-                    yield null;
-                }
+                MusicBand musicBand;
+                MusicBandForm musicBandForm = new MusicBandForm(new Console());
+                musicBand = musicBandForm.build();
+                yield new AddIfMaxCommand(musicBand);
             }
-            case ADD_IF_MIN ->{
-                try {
-                    MusicBand musicBand;
-                    MusicBandForm musicBandForm = new MusicBandForm(new Console());
-                    musicBand = musicBandForm.build();
-                    yield new AddIfMinCommand(musicBand);
-                } catch (InvalidFormException e){
-                    yield null;
-                }
+            case ADD_IF_MIN -> {
+                MusicBand musicBand;
+                MusicBandForm musicBandForm = new MusicBandForm(new Console());
+                musicBand = musicBandForm.build();
+                yield new AddIfMinCommand(musicBand);
+
             }
             case REMOVE_LOWER -> {
-                try{
-                    MusicBand musicBand;
-                    MusicBandForm musicBandForm = new MusicBandForm(new Console());
-                    musicBand = musicBandForm.build();
-                    if (musicBand != null) yield new RemoveLowerCommand(musicBand);
-                    yield null;
-                } catch (InvalidFormException e){
-                    yield null;
-                }
+                MusicBand musicBand;
+                MusicBandForm musicBandForm = new MusicBandForm(new Console());
+                musicBand = musicBandForm.build();
+                if (musicBand != null) yield new RemoveLowerCommand(musicBand);
+                yield null;
             }
             default -> {
                 System.out.println("Неизвестная команда: " + userInput[0]);

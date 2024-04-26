@@ -2,9 +2,9 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
-  <date>2024-04-21T21:41:02.505048100Z</date>
-  <millis>1713735662505</millis>
-  <nanos>48100</nanos>
+  <date>2024-04-25T18:18:01.606058900Z</date>
+  <millis>1714069081606</millis>
+  <nanos>58900</nanos>
   <sequence>0</sequence>
   <logger>utils.ServerLogger</logger>
   <level>INFO</level>
@@ -14,123 +14,338 @@
   <message>Сервер запущен на порте 2712</message>
 </record>
 <record>
-  <date>2024-04-21T21:41:06.927272600Z</date>
-  <millis>1713735666927</millis>
-  <nanos>272600</nanos>
+  <date>2024-04-25T18:18:05.157006Z</date>
+  <millis>1714069085157</millis>
+  <nanos>6000</nanos>
   <sequence>1</sequence>
   <logger>utils.ServerLogger</logger>
   <level>INFO</level>
   <class>utils.CommandManager</class>
   <method>handlePacket</method>
-  <thread>34</thread>
-  <message>Получена команда HELP от /192.168.0.8:62756</message>
+  <thread>32</thread>
+  <message>Получена команда SHOW от /192.168.0.8:57167</message>
 </record>
 <record>
-  <date>2024-04-21T21:41:06.946951400Z</date>
-  <millis>1713735666946</millis>
-  <nanos>951400</nanos>
+  <date>2024-04-25T18:18:05.169363500Z</date>
+  <millis>1714069085169</millis>
+  <nanos>363500</nanos>
   <sequence>2</sequence>
   <logger>utils.ServerLogger</logger>
   <level>INFO</level>
   <class>utils.CommandManager</class>
   <method>handlePacket</method>
-  <thread>34</thread>
-  <message>Отправляется результат на /192.168.0.8:62756</message>
+  <thread>32</thread>
+  <message>Отправляется результат на /192.168.0.8:57167</message>
 </record>
 <record>
-  <date>2024-04-21T21:41:36.551818100Z</date>
-  <millis>1713735696551</millis>
-  <nanos>818100</nanos>
+  <date>2024-04-25T18:18:18.749292100Z</date>
+  <millis>1714069098749</millis>
+  <nanos>292100</nanos>
   <sequence>3</sequence>
   <logger>utils.ServerLogger</logger>
   <level>INFO</level>
   <class>utils.CommandManager</class>
   <method>handlePacket</method>
-  <thread>34</thread>
-  <message>Получена команда ADD от /192.168.0.8:62756</message>
+  <thread>32</thread>
+  <message>Получена команда REMOVE_BY_ID от /192.168.0.8:57167</message>
 </record>
 <record>
-  <date>2024-04-21T21:41:36.551818100Z</date>
-  <millis>1713735696551</millis>
-  <nanos>818100</nanos>
+  <date>2024-04-25T18:18:18.750276500Z</date>
+  <millis>1714069098750</millis>
+  <nanos>276500</nanos>
   <sequence>4</sequence>
   <logger>utils.ServerLogger</logger>
   <level>INFO</level>
   <class>utils.CommandManager</class>
   <method>handlePacket</method>
-  <thread>34</thread>
-  <message>Отправляется результат на /192.168.0.8:62756</message>
+  <thread>32</thread>
+  <message>Отправляется результат на /192.168.0.8:57167</message>
 </record>
 <record>
-  <date>2024-04-21T21:41:38.848969700Z</date>
-  <millis>1713735698848</millis>
-  <nanos>969700</nanos>
+  <date>2024-04-25T18:18:20.801653400Z</date>
+  <millis>1714069100801</millis>
+  <nanos>653400</nanos>
   <sequence>5</sequence>
   <logger>utils.ServerLogger</logger>
   <level>INFO</level>
   <class>utils.CommandManager</class>
   <method>handlePacket</method>
-  <thread>34</thread>
-  <message>Получена команда SHOW от /192.168.0.8:62756</message>
+  <thread>32</thread>
+  <message>Получена команда SHOW от /192.168.0.8:57167</message>
 </record>
 <record>
-  <date>2024-04-21T21:41:38.864489Z</date>
-  <millis>1713735698864</millis>
-  <nanos>489000</nanos>
+  <date>2024-04-25T18:18:20.802858Z</date>
+  <millis>1714069100802</millis>
+  <nanos>858000</nanos>
   <sequence>6</sequence>
   <logger>utils.ServerLogger</logger>
   <level>INFO</level>
   <class>utils.CommandManager</class>
   <method>handlePacket</method>
-  <thread>34</thread>
-  <message>Отправляется результат на /192.168.0.8:62756</message>
+  <thread>32</thread>
+  <message>Отправляется результат на /192.168.0.8:57167</message>
 </record>
 <record>
-  <date>2024-04-21T21:41:44.769404500Z</date>
-  <millis>1713735704769</millis>
-  <nanos>404500</nanos>
+  <date>2024-04-25T18:20:20.663355700Z</date>
+  <millis>1714069220663</millis>
+  <nanos>355700</nanos>
   <sequence>7</sequence>
   <logger>utils.ServerLogger</logger>
   <level>INFO</level>
-  <class>utils.Parser</class>
-  <method>saveToJson</method>
-  <thread>33</thread>
-  <message>Коллекция сохранена в файл. </message>
+  <class>utils.CommandManager</class>
+  <method>handlePacket</method>
+  <thread>32</thread>
+  <message>Получена команда UPDATE от /192.168.0.8:57167</message>
 </record>
 <record>
-  <date>2024-04-21T21:41:44.770624700Z</date>
-  <millis>1713735704770</millis>
-  <nanos>624700</nanos>
+  <date>2024-04-25T18:20:20.664349700Z</date>
+  <millis>1714069220664</millis>
+  <nanos>349700</nanos>
   <sequence>8</sequence>
   <logger>utils.ServerLogger</logger>
   <level>INFO</level>
-  <class>utils.Server</class>
-  <method>lambda$run$0</method>
-  <thread>33</thread>
-  <message>Обекты успешно сохранены</message>
+  <class>utils.CommandManager</class>
+  <method>handlePacket</method>
+  <thread>32</thread>
+  <message>Отправляется результат на /192.168.0.8:57167</message>
 </record>
 <record>
-  <date>2024-04-21T21:42:16.745740Z</date>
-  <millis>1713735736745</millis>
-  <nanos>740000</nanos>
+  <date>2024-04-25T18:20:38.773591500Z</date>
+  <millis>1714069238773</millis>
+  <nanos>591500</nanos>
   <sequence>9</sequence>
   <logger>utils.ServerLogger</logger>
   <level>INFO</level>
-  <class>utils.Parser</class>
-  <method>saveToJson</method>
-  <thread>33</thread>
-  <message>Коллекция сохранена в файл. </message>
+  <class>utils.CommandManager</class>
+  <method>handlePacket</method>
+  <thread>32</thread>
+  <message>Получена команда SHOW от /192.168.0.8:57167</message>
 </record>
 <record>
-  <date>2024-04-21T21:42:16.746746500Z</date>
-  <millis>1713735736746</millis>
-  <nanos>746500</nanos>
+  <date>2024-04-25T18:20:38.774610400Z</date>
+  <millis>1714069238774</millis>
+  <nanos>610400</nanos>
   <sequence>10</sequence>
   <logger>utils.ServerLogger</logger>
   <level>INFO</level>
-  <class>utils.Server</class>
-  <method>lambda$run$0</method>
-  <thread>33</thread>
-  <message>Обекты успешно сохранены. Завершаем работу сервера.</message>
+  <class>utils.CommandManager</class>
+  <method>handlePacket</method>
+  <thread>32</thread>
+  <message>Отправляется результат на /192.168.0.8:57167</message>
 </record>
-</log>
+<record>
+  <date>2024-04-25T18:21:24.998219600Z</date>
+  <millis>1714069284998</millis>
+  <nanos>219600</nanos>
+  <sequence>11</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>utils.CommandManager</class>
+  <method>handlePacket</method>
+  <thread>32</thread>
+  <message>Получена команда ADD_IF_MAX от /192.168.0.8:57167</message>
+</record>
+<record>
+  <date>2024-04-25T18:21:25.002208100Z</date>
+  <millis>1714069285002</millis>
+  <nanos>208100</nanos>
+  <sequence>12</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>utils.CommandManager</class>
+  <method>handlePacket</method>
+  <thread>32</thread>
+  <message>Отправляется результат на /192.168.0.8:57167</message>
+</record>
+<record>
+  <date>2024-04-25T18:21:29.945348900Z</date>
+  <millis>1714069289945</millis>
+  <nanos>348900</nanos>
+  <sequence>13</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>utils.CommandManager</class>
+  <method>handlePacket</method>
+  <thread>32</thread>
+  <message>Получена команда SHOW от /192.168.0.8:57167</message>
+</record>
+<record>
+  <date>2024-04-25T18:21:29.946339300Z</date>
+  <millis>1714069289946</millis>
+  <nanos>339300</nanos>
+  <sequence>14</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>utils.CommandManager</class>
+  <method>handlePacket</method>
+  <thread>32</thread>
+  <message>Отправляется результат на /192.168.0.8:57167</message>
+</record>
+<record>
+  <date>2024-04-25T18:21:43.857811600Z</date>
+  <millis>1714069303857</millis>
+  <nanos>811600</nanos>
+  <sequence>15</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>utils.CommandManager</class>
+  <method>handlePacket</method>
+  <thread>32</thread>
+  <message>Получена команда ADD_IF_MAX от /192.168.0.8:57167</message>
+</record>
+<record>
+  <date>2024-04-25T18:21:43.858805200Z</date>
+  <millis>1714069303858</millis>
+  <nanos>805200</nanos>
+  <sequence>16</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>utils.CommandManager</class>
+  <method>handlePacket</method>
+  <thread>32</thread>
+  <message>Отправляется результат на /192.168.0.8:57167</message>
+</record>
+<record>
+  <date>2024-04-25T18:21:46.997484Z</date>
+  <millis>1714069306997</millis>
+  <nanos>484000</nanos>
+  <sequence>17</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>utils.CommandManager</class>
+  <method>handlePacket</method>
+  <thread>32</thread>
+  <message>Получена команда SHOW от /192.168.0.8:57167</message>
+</record>
+<record>
+  <date>2024-04-25T18:21:46.998496500Z</date>
+  <millis>1714069306998</millis>
+  <nanos>496500</nanos>
+  <sequence>18</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>utils.CommandManager</class>
+  <method>handlePacket</method>
+  <thread>32</thread>
+  <message>Отправляется результат на /192.168.0.8:57167</message>
+</record>
+<record>
+  <date>2024-04-25T18:22:50.225917700Z</date>
+  <millis>1714069370225</millis>
+  <nanos>917700</nanos>
+  <sequence>19</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>utils.CommandManager</class>
+  <method>handlePacket</method>
+  <thread>32</thread>
+  <message>Получена команда REMOVE_LOWER от /192.168.0.8:57167</message>
+</record>
+<record>
+  <date>2024-04-25T18:22:50.226917700Z</date>
+  <millis>1714069370226</millis>
+  <nanos>917700</nanos>
+  <sequence>20</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>utils.CommandManager</class>
+  <method>handlePacket</method>
+  <thread>32</thread>
+  <message>Отправляется результат на /192.168.0.8:57167</message>
+</record>
+<record>
+  <date>2024-04-25T18:22:52.985085100Z</date>
+  <millis>1714069372985</millis>
+  <nanos>85100</nanos>
+  <sequence>21</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>utils.CommandManager</class>
+  <method>handlePacket</method>
+  <thread>32</thread>
+  <message>Получена команда SHOW от /192.168.0.8:57167</message>
+</record>
+<record>
+  <date>2024-04-25T18:22:52.987065200Z</date>
+  <millis>1714069372987</millis>
+  <nanos>65200</nanos>
+  <sequence>22</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>utils.CommandManager</class>
+  <method>handlePacket</method>
+  <thread>32</thread>
+  <message>Отправляется результат на /192.168.0.8:57167</message>
+</record>
+<record>
+  <date>2024-04-25T18:23:22.526301100Z</date>
+  <millis>1714069402526</millis>
+  <nanos>301100</nanos>
+  <sequence>23</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>utils.CommandManager</class>
+  <method>handlePacket</method>
+  <thread>32</thread>
+  <message>Получена команда SUM_OF_NUMBER_OF_PARTICIPANTS от /192.168.0.8:57167</message>
+</record>
+<record>
+  <date>2024-04-25T18:23:22.528297Z</date>
+  <millis>1714069402528</millis>
+  <nanos>297000</nanos>
+  <sequence>24</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>utils.CommandManager</class>
+  <method>handlePacket</method>
+  <thread>32</thread>
+  <message>Отправляется результат на /192.168.0.8:57167</message>
+</record>
+<record>
+  <date>2024-04-25T18:23:41.385303400Z</date>
+  <millis>1714069421385</millis>
+  <nanos>303400</nanos>
+  <sequence>25</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>utils.CommandManager</class>
+  <method>handlePacket</method>
+  <thread>32</thread>
+  <message>Получена команда FILTER_LESS_THAN_NUMBER_OF_PARTICIPANTS от /192.168.0.8:57167</message>
+</record>
+<record>
+  <date>2024-04-25T18:23:41.387317100Z</date>
+  <millis>1714069421387</millis>
+  <nanos>317100</nanos>
+  <sequence>26</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>utils.CommandManager</class>
+  <method>handlePacket</method>
+  <thread>32</thread>
+  <message>Отправляется результат на /192.168.0.8:57167</message>
+</record>
+<record>
+  <date>2024-04-25T18:23:59.025638500Z</date>
+  <millis>1714069439025</millis>
+  <nanos>638500</nanos>
+  <sequence>27</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>utils.CommandManager</class>
+  <method>handlePacket</method>
+  <thread>32</thread>
+  <message>Получена команда PRINT_DESCENDING от /192.168.0.8:57167</message>
+</record>
+<record>
+  <date>2024-04-25T18:23:59.028666Z</date>
+  <millis>1714069439028</millis>
+  <nanos>666000</nanos>
+  <sequence>28</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>utils.CommandManager</class>
+  <method>handlePacket</method>
+  <thread>32</thread>
+  <message>Отправляется результат на /192.168.0.8:57167</message>
+</record>

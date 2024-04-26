@@ -2,6 +2,11 @@ package console;
 
 import java.util.Scanner;
 
+/**
+ * Class {@code Console} represents instruments for reading different types from console and implements ReaderWriter
+ * @author Egorova Varvara
+ * @see console.ReaderWriter
+ */
 public class Console implements ReaderWriter{
     private static boolean fileMode = false;
     public Console(){}

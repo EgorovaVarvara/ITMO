@@ -1,11 +1,5 @@
 package commands;
 
-import baseClasses.CommandType;
-import connectionUtils.Response;
-import console.Executable;
-import errors.CommandRuntimeException;
-import errors.ExitObligedException;
-
 import java.io.Serial;
 
 /**
@@ -14,17 +8,18 @@ import java.io.Serial;
  * @author Egorova Varvara
  */
 
-public class FilterLessThanNumberOfParticipantsCommand implements Command, Executable {
+public class FilterLessThanNumberOfParticipantsCommand implements Command {
     @Serial
     private final static long serialVersionUID = 7L;
+    /**
+     * Number of participants by which the collection is sorted
+     */
     private int numberOfParticipants;
-
+    /**
+     * Constructor of class
+     * @param numberOfParticipants
+     */
     public FilterLessThanNumberOfParticipantsCommand(int numberOfParticipants) {
         this.numberOfParticipants = numberOfParticipants;
-    }
-
-    @Override
-    public Response execute() throws IllegalArgumentException, CommandRuntimeException, ExitObligedException {
-        return null;
     }
 }

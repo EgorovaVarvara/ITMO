@@ -2,6 +2,11 @@ package baseClasses;
 
 import commands.*;
 
+/**
+ * The {@code CommandType} enum is a list of possible commands
+ *
+ * @author Egorova Varvara
+ */
 
 public enum CommandType {
     ADD(AddCommand.class, "add {element}: добавить новый элемент в коллекцию"),

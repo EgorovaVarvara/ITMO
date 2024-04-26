@@ -1,7 +1,16 @@
 package forms;
 
-import errors.InvalidFormException;
 
+/**
+ * Abstract class {@code Form} that contains one method for building some field of MusicBand class
+ * @author Egorova Varvara
+ * @see baseClasses.MusicBand
+ * @param <T>
+ */
 public abstract class Form<T> {
-    public abstract T build() throws InvalidFormException;
+    /**
+     * Abstract method for building field
+     * @return parameter of type <T>
+     */
+    public abstract T build();
 }

@@ -1,11 +1,5 @@
 package commands;
 
-import baseClasses.CommandType;
-import connectionUtils.Response;
-import console.Executable;
-import errors.CommandRuntimeException;
-import errors.ExitObligedException;
-
 import java.io.Serial;
 
 /**
@@ -14,17 +8,18 @@ import java.io.Serial;
  * @author Egorova Varvara
  */
 
-public class RemoveByIdCommand implements Command, Executable {
+public class RemoveByIdCommand implements Command {
     @Serial
     private final static long serialVersionUID = 11L;
+    /**
+     * Id by which collection is sorted
+     */
     private int id;
-
+    /**
+     * Constructor of class
+     * @param id
+     */
     public RemoveByIdCommand(int id) {
         this.id = id;
-    }
-
-    @Override
-    public Response execute() throws IllegalArgumentException, CommandRuntimeException, ExitObligedException {
-        return null;
     }
 }
