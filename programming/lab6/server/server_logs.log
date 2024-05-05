@@ -349,3 +349,4 @@
   <thread>32</thread>
   <message>Отправляется результат на /192.168.0.8:57167</message>
 </record>
+</log>
