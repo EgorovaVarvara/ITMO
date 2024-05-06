@@ -10,7 +10,6 @@ import java.net.DatagramSocket;
 import java.util.logging.Level;
 
 public class Interpreter extends Thread{
-    //класс должен отправлять response sender-у
     private Request request;
     private DatagramSocket socket;
     private DatagramPacket packet;
@@ -24,6 +23,7 @@ public class Interpreter extends Thread{
         this.request = request;
         this.packet = packet;
         hasNextPacket = true;
+        this.start();
     }
     @Override
     public void run(){
@@ -36,8 +36,9 @@ public class Interpreter extends Thread{
     public void interpret(Request request, DatagramPacket packet){
         hasNextPacket = false;
         Command command = request.getCommand();
-        ServerLogger.getLogger().log(Level.INFO, "Получена команда %s от %s".formatted((command).getCommandName().toUpperCase(), sender));
+        ServerLogger.getLogger().log(Level.INFO, "Получена команда %s от %s".formatted((command).getCommandName().toUpperCase(), packet.getAddress()));
         Response response = command.run();
         sender.putResponse(response, packet);
+        this.interrupt();
     }
 }
