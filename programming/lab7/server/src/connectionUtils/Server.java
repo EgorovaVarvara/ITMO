@@ -59,8 +59,6 @@ public class Server {
                         Interpreter interpreter = new Interpreter(sender, socket);
                         Receiver receiver = new Receiver(socket, interpreter);
                         receiver.setDaemon(true);
-                        sender.start();
-                        interpreter.start();
                         receiver.start();
                     } catch (Exception e){
                         ServerLogger.getLogger().warning("Ошибка: " + e.getMessage());
