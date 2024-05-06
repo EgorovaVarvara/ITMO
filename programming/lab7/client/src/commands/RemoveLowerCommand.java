@@ -13,7 +13,7 @@ import java.io.Serial;
 public class RemoveLowerCommand  implements Command {
     @Serial
     private final static long serialVersionUID = 12L;
-    private String user_login;
+    private User user;
     /**
      * Music band for adding to collection with deleting lower elements
      */
@@ -28,6 +28,19 @@ public class RemoveLowerCommand  implements Command {
     }
     @Override
     public void setUser(User user) {
-        this.user_login = user.getLogin();
+        this.user = user;
+    }
+    @Override
+    public User getUser() {
+        return user;
+    }
+
+    @Override
+    public MusicBand getMusicband() {
+        return musicBand;
+    }
+    @Override
+    public Integer getIntArgument() {
+        return null;
     }
 }

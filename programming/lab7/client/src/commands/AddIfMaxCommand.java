@@ -17,7 +17,7 @@ public class AddIfMaxCommand implements Command {
      * Music band for adding to collection
      */
     private MusicBand musicBand;
-    private String user_login;
+    private User user;
 
     /**
      * Constructor of class
@@ -28,6 +28,21 @@ public class AddIfMaxCommand implements Command {
     }
     @Override
     public void setUser(User user) {
-        this.user_login = user.getLogin();
+        this.user = user;
+    }
+
+    @Override
+    public User getUser() {
+        return user;
+    }
+
+    @Override
+    public MusicBand getMusicband() {
+        return musicBand;
+    }
+
+    @Override
+    public Integer getIntArgument() {
+        return null;
     }
 }

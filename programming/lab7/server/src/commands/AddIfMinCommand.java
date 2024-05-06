@@ -4,6 +4,7 @@ import baseClasses.MusicBand;
 import collection.CollectionManager;
 import connectionUtils.Response;
 import connectionUtils.ResponseStatus;
+import connectionUtils.User;
 import utils.DataBaseManager;
 
 import java.io.Serial;
@@ -18,8 +19,8 @@ import java.io.Serial;
 public class AddIfMinCommand implements Command {
     @Serial
     private final static long serialVersionUID = 2L;
-    MusicBand musicBand;
-    private String user_login;
+    private MusicBand musicBand;
+    private User user;
     /**
      * Constructor that creates object of {@code AddIfMinCommand}.
      * @param cm collection manager
@@ -45,5 +46,20 @@ public class AddIfMinCommand implements Command {
     @Override
     public String getCommandName() {
         return "add_if_min";
+    }
+
+    @Override
+    public User getUser() {
+        return user;
+    }
+
+    @Override
+    public MusicBand getMusicband() {
+        return musicBand;
+    }
+
+    @Override
+    public Integer getIntArgument() {
+        return null;
     }
 }

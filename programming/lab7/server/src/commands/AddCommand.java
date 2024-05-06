@@ -4,6 +4,7 @@ import baseClasses.MusicBand;
 import collection.CollectionManager;
 import connectionUtils.Response;
 import connectionUtils.ResponseStatus;
+import connectionUtils.User;
 import utils.DataBaseManager;
 
 import java.io.Serial;
@@ -17,7 +18,7 @@ public class AddCommand implements Command {
     @Serial
     private final static long serialVersionUID = 0L;
     private MusicBand musicBand;
-    private String user_login;
+    private User user;
 
     public AddCommand(MusicBand musicBand){
         this.musicBand = musicBand;
@@ -39,5 +40,20 @@ public class AddCommand implements Command {
     @Override
     public String getCommandName() {
         return "add";
+    }
+
+    @Override
+    public User getUser() {
+        return user;
+    }
+
+    @Override
+    public MusicBand getMusicband() {
+        return musicBand;
+    }
+
+    @Override
+    public Integer getIntArgument() {
+        return null;
     }
 }

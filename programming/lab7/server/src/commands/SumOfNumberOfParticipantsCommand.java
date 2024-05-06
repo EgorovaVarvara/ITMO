@@ -1,8 +1,10 @@
 package commands;
 
+import baseClasses.MusicBand;
 import collection.CollectionManager;
 import connectionUtils.Response;
 import connectionUtils.ResponseStatus;
+import connectionUtils.User;
 
 import java.io.Serial;
 
@@ -14,7 +16,7 @@ import java.io.Serial;
 public class SumOfNumberOfParticipantsCommand implements Command{
     @Serial
     private final static long serialVersionUID = 15L;
-    private String user_login;
+    private User user;
 
     @Override
     public Response run() {
@@ -24,5 +26,20 @@ public class SumOfNumberOfParticipantsCommand implements Command{
     @Override
     public String getCommandName() {
         return "sum_of_number_of_participants";
+    }
+
+    @Override
+    public User getUser() {
+        return user;
+    }
+
+    @Override
+    public MusicBand getMusicband() {
+        return null;
+    }
+
+    @Override
+    public Integer getIntArgument() {
+        return null;
     }
 }

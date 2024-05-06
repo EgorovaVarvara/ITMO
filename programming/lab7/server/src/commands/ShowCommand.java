@@ -1,8 +1,10 @@
 package commands;
 
+import baseClasses.MusicBand;
 import collection.CollectionManager;
 import connectionUtils.Response;
 import connectionUtils.ResponseStatus;
+import connectionUtils.User;
 
 import java.io.Serial;
 
@@ -15,7 +17,7 @@ import java.io.Serial;
 public class ShowCommand implements Command {
     @Serial
     private final static long serialVersionUID = 14L;
-    private String user_login;
+    private User user;
 
     @Override
     public Response run() {
@@ -25,5 +27,20 @@ public class ShowCommand implements Command {
     @Override
     public String getCommandName() {
         return "show";
+    }
+
+    @Override
+    public User getUser() {
+        return user;
+    }
+
+    @Override
+    public MusicBand getMusicband() {
+        return null;
+    }
+
+    @Override
+    public Integer getIntArgument() {
+        return null;
     }
 }

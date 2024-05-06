@@ -2,9 +2,9 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
-  <date>2024-05-04T14:56:43.363646Z</date>
-  <millis>1714834603363</millis>
-  <nanos>646000</nanos>
+  <date>2024-05-06T05:09:18.036441500Z</date>
+  <millis>1714972158036</millis>
+  <nanos>441500</nanos>
   <sequence>0</sequence>
   <logger>utils.ServerLogger</logger>
   <level>INFO</level>
@@ -14,135 +14,74 @@
   <message>Сервер запущен на порте 2712</message>
 </record>
 <record>
-  <date>2024-05-04T14:56:48.027341600Z</date>
-  <millis>1714834608027</millis>
-  <nanos>341600</nanos>
+  <date>2024-05-06T05:09:45.545332300Z</date>
+  <millis>1714972185545</millis>
+  <nanos>332300</nanos>
   <sequence>1</sequence>
   <logger>utils.ServerLogger</logger>
   <level>INFO</level>
-  <class>utils.DataBaseParser</class>
-  <method>save</method>
-  <thread>32</thread>
-  <message>Коллекция сохранена в базу данных.</message>
+  <class>threadUtils.ReceiverTask</class>
+  <method>run</method>
+  <thread>707</thread>
+  <message>Получено сообщение от /192.168.0.8 : 61817 - registration</message>
 </record>
 <record>
-  <date>2024-05-05T09:42:38.825129Z</date>
-  <millis>1714902158825</millis>
-  <nanos>129000</nanos>
+  <date>2024-05-06T05:09:47.763751800Z</date>
+  <millis>1714972187763</millis>
+  <nanos>751800</nanos>
   <sequence>2</sequence>
   <logger>utils.ServerLogger</logger>
   <level>INFO</level>
-  <class>utils.CommandManager</class>
-  <method>handlePacket</method>
-  <thread>33</thread>
-  <message>Получена информация о пользователе от /192.168.0.8:51213</message>
+  <class>threadUtils.Interpreter</class>
+  <method>interpret</method>
+  <thread>41</thread>
+  <message>Получена команда REGISTRATION от Thread[#40,Thread-8,5,main]</message>
 </record>
 <record>
-  <date>2024-05-05T09:42:39.082759400Z</date>
-  <millis>1714902159082</millis>
-  <nanos>759400</nanos>
+  <date>2024-05-06T05:09:50.615455500Z</date>
+  <millis>1714972190615</millis>
+  <nanos>455500</nanos>
   <sequence>3</sequence>
   <logger>utils.ServerLogger</logger>
   <level>INFO</level>
-  <class>utils.CommandManager</class>
-  <method>handlePacket</method>
-  <thread>33</thread>
-  <message>Отправляется результат на /192.168.0.8:51213</message>
+  <class>threadUtils.Sender</class>
+  <method>send</method>
+  <thread>40</thread>
+  <message>Отправляется результат на /192.168.0.8</message>
 </record>
 <record>
-  <date>2024-05-05T09:42:55.721586700Z</date>
-  <millis>1714902175721</millis>
-  <nanos>586700</nanos>
+  <date>2024-05-06T05:10:17.975320400Z</date>
+  <millis>1714972217975</millis>
+  <nanos>320400</nanos>
   <sequence>4</sequence>
   <logger>utils.ServerLogger</logger>
   <level>INFO</level>
-  <class>utils.CommandManager</class>
-  <method>handlePacket</method>
-  <thread>33</thread>
-  <message>Получена информация о пользователе от /192.168.0.8:51213</message>
+  <class>threadUtils.ReceiverTask</class>
+  <method>run</method>
+  <thread>706</thread>
+  <message>Получено сообщение от /192.168.0.8 : 61817 - registration</message>
 </record>
 <record>
-  <date>2024-05-05T09:42:55.938103400Z</date>
-  <millis>1714902175938</millis>
-  <nanos>103400</nanos>
+  <date>2024-05-06T05:10:18.032449800Z</date>
+  <millis>1714972218032</millis>
+  <nanos>449800</nanos>
   <sequence>5</sequence>
   <logger>utils.ServerLogger</logger>
   <level>INFO</level>
-  <class>utils.CommandManager</class>
-  <method>handlePacket</method>
-  <thread>33</thread>
-  <message>Отправляется результат на /192.168.0.8:51213</message>
+  <class>threadUtils.Interpreter</class>
+  <method>interpret</method>
+  <thread>38</thread>
+  <message>Получена команда REGISTRATION от Thread[#37,Thread-5,5,main]</message>
 </record>
 <record>
-  <date>2024-05-05T09:44:35.847993600Z</date>
-  <millis>1714902275847</millis>
-  <nanos>993600</nanos>
+  <date>2024-05-06T05:10:26.417205900Z</date>
+  <millis>1714972226417</millis>
+  <nanos>205900</nanos>
   <sequence>6</sequence>
   <logger>utils.ServerLogger</logger>
   <level>INFO</level>
-  <class>utils.CommandManager</class>
-  <method>handlePacket</method>
-  <thread>33</thread>
-  <message>Получена команда REMOVE_BY_ID от /192.168.0.8:51213</message>
+  <class>threadUtils.Sender</class>
+  <method>send</method>
+  <thread>37</thread>
+  <message>Отправляется результат на /192.168.0.8</message>
 </record>
-<record>
-  <date>2024-05-05T09:44:36.103953200Z</date>
-  <millis>1714902276103</millis>
-  <nanos>953200</nanos>
-  <sequence>7</sequence>
-  <logger>utils.ServerLogger</logger>
-  <level>INFO</level>
-  <class>utils.CommandManager</class>
-  <method>handlePacket</method>
-  <thread>33</thread>
-  <message>Отправляется результат на /192.168.0.8:51213</message>
-</record>
-<record>
-  <date>2024-05-05T09:45:16.366943700Z</date>
-  <millis>1714902316366</millis>
-  <nanos>943700</nanos>
-  <sequence>8</sequence>
-  <logger>utils.ServerLogger</logger>
-  <level>INFO</level>
-  <class>utils.CommandManager</class>
-  <method>handlePacket</method>
-  <thread>33</thread>
-  <message>Получена команда SHOW от /192.168.0.8:51213</message>
-</record>
-<record>
-  <date>2024-05-05T09:45:16.387588300Z</date>
-  <millis>1714902316387</millis>
-  <nanos>588300</nanos>
-  <sequence>9</sequence>
-  <logger>utils.ServerLogger</logger>
-  <level>INFO</level>
-  <class>utils.CommandManager</class>
-  <method>handlePacket</method>
-  <thread>33</thread>
-  <message>Отправляется результат на /192.168.0.8:51213</message>
-</record>
-<record>
-  <date>2024-05-05T09:46:10.379485700Z</date>
-  <millis>1714902370379</millis>
-  <nanos>485700</nanos>
-  <sequence>10</sequence>
-  <logger>utils.ServerLogger</logger>
-  <level>WARNING</level>
-  <class>utils.DataBaseParser</class>
-  <method>save</method>
-  <thread>32</thread>
-  <message>Ошибка при подключении к базе данных. Колекция не сохранена.</message>
-</record>
-<record>
-  <date>2024-05-05T09:46:10.379485700Z</date>
-  <millis>1714902370379</millis>
-  <nanos>485700</nanos>
-  <sequence>11</sequence>
-  <logger>utils.ServerLogger</logger>
-  <level>INFO</level>
-  <class>connectionUtils.Server</class>
-  <method>lambda$run$0</method>
-  <thread>32</thread>
-  <message>Завершаем работу сервера.</message>
-</record>
-</log>

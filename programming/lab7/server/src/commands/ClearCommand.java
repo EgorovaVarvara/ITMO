@@ -1,8 +1,10 @@
 package commands;
 
+import baseClasses.MusicBand;
 import collection.CollectionManager;
 import connectionUtils.Response;
 import connectionUtils.ResponseStatus;
+import connectionUtils.User;
 import utils.DataBaseManager;
 
 import java.io.Serial;
@@ -16,12 +18,12 @@ import java.util.HashSet;
 public class ClearCommand implements Command {
     @Serial
     private final static long serialVersionUID = 3L;
-    private String user_login;
+    private User user;
 
     @Override
     public Response run() {
         DataBaseManager dataBaseManager = new DataBaseManager();
-        HashSet<Integer> ids = dataBaseManager.clear(user_login);
+        HashSet<Integer> ids = dataBaseManager.clear(user.getLogin());
         if (ids.isEmpty()){
             return new Response(ResponseStatus.OK, "Коллекция не содержит элементов, которые вы можете удалить");
         }
@@ -34,5 +36,20 @@ public class ClearCommand implements Command {
     @Override
     public String getCommandName() {
         return "clear";
+    }
+
+    @Override
+    public User getUser() {
+        return user;
+    }
+
+    @Override
+    public MusicBand getMusicband() {
+        return null;
+    }
+
+    @Override
+    public Integer getIntArgument() {
+        return null;
     }
 }

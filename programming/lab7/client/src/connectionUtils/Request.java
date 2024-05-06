@@ -1,95 +1,71 @@
 package connectionUtils;
 
+import baseClasses.MusicBand;
+import commands.Command;
 
-import java.io.*;
-import java.net.DatagramPacket;
-import java.net.DatagramSocket;
-import java.net.InetAddress;
-import java.net.SocketException;
+import java.io.Serial;
+import java.io.Serializable;
+import java.util.Objects;
 
-
-/**
- * Class {@code Request} sends request to the server
- * @author Egorova Varvara
- */
 public class Request implements Serializable {
     @Serial
     private static final long serialVersionUID = 21L;
-    /**
-     * Datagram socket that sends request
-     */
-    private static DatagramSocket socket;
-    /**
-     * Server address
-     */
-    private final InetAddress address;
-    /**
-     * Server port
-     */
-    private final int port;
-    /**
-     * Socket timeout
-     */
-    private final static int socketTimeout = 4000;
-
-    /**
-     * Constructor of class with given server address and server port
-     * @param address server address
-     * @param port server port
-     * @throws SocketException if there is error of creating or accessing the socket
-     */
-    public Request(InetAddress address, int port) throws SocketException {
-        socket = new DatagramSocket();
-        socket.setSoTimeout(socketTimeout);
-        this.address = address;
-        this.port = port;
+    private Command command;
+    private String args = "";
+    private MusicBand musicBand = null;
+    private User user;
+    public  Request(Command command){
+        this.command = command;
+        this.user = command.getUser();
+        this.args = command.getIntArgument() == null ? "" : command.getIntArgument().toString();
+        this.musicBand = command.getMusicband();
     }
-
-    /**
-     * Getter of server port
-     * @return server port
-     */
-    public int getPort(){
-        return socket.getLocalPort();
+    public Request(ResponseStatus responseStatus, Command commandName, MusicBand musicBand){
+        this.command = commandName;
     }
-
-    /**
-     * Setter for buffer size of socket
-     * @param size size of buffer
-     * @throws SocketException if there is error of creating or accessing the socket
-     */
-    public void setBufferSize(int size) throws SocketException {
-        socket.setReceiveBufferSize(size);
-        socket.setSendBufferSize(size);
+    public Request(Command commandName, String args){
+        this.command = commandName;
+        this.args = args.trim();
     }
-
-    /**
-     * Method for sending request to server
-     * @param bytes request
-     * @throws IOException if there is an error of sending
-     */
-    public void send(byte[] bytes) throws IOException {
-        DatagramPacket datagramPacket = new DatagramPacket(bytes, bytes.length, this.address, port);
-        socket.send(datagramPacket);
-        System.out.print("");
+    public Request(Command commandName, MusicBand musicBand){
+        this.command = commandName;
+        this.musicBand = musicBand;
     }
-
-    /**
-     * Method for receiving response from server
-     *
-     * @return String response
-     * @throws IOException if there is an error of receiving data
-     */
-    public Response receive() throws IOException, ClassNotFoundException {
-//        ByteArrayOutputStream bos = new ByteArrayOutputStream();
-        byte[] buffer = new byte[1024 * 1024];
-        DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
-        socket.receive(packet);
-//        bos.write(packet.getData(), 0, packet.getLength());
-//        String data = bos.;
-//        bos.close();
-//        return data;
-        ObjectInputStream objectInputStream = new ObjectInputStream(new ByteArrayInputStream(packet.getData()));
-        return (Response)objectInputStream.readObject();
+    public Request(Command commandName, String args, MusicBand musicBand){
+        this.command = commandName;
+        this.args = args.trim();
+        this.musicBand = musicBand;
+    }
+    public boolean isEmpty(){
+        return command == null && args.isEmpty() && musicBand == null;
+    }
+    public Command getCommandName(){
+        return command;
+    }
+    public String getArgs() {
+        return args;
+    }
+    public MusicBand getMusicBand() {
+        return musicBand;
+    }
+    @Override
+    public boolean equals(Object o){
+        if (this == o) return true;
+        if (!(o instanceof Request request)) return false;
+        return Objects.equals(command, request.command) && Objects.equals(args, request.args) && Objects.equals(musicBand, request.musicBand);
+    }
+    @Override
+    public int hashCode(){
+        return Objects.hash(command, args, musicBand);
+    }
+    @Override
+    public String toString(){
+        return "Request[" + command.toString() +
+                (args.isEmpty()
+                        ? ""
+                        : ", " + args) +
+                ((musicBand == null)
+                        ? "]"
+                        : ", " + musicBand + "]");
     }
 }

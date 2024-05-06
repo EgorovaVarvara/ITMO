@@ -1,8 +1,10 @@
 package commands;
 
 import baseClasses.CommandType;
+import baseClasses.MusicBand;
 import connectionUtils.Response;
 import connectionUtils.ResponseStatus;
+import connectionUtils.User;
 
 import java.io.Serial;
 import java.util.Arrays;
@@ -17,7 +19,7 @@ import java.util.stream.Collectors;
 public class HelpCommand implements Command{
     @Serial
     private final static long serialVersionUID = 8L;
-    private String user_login;
+    private User user;
     @Override
     public Response run() {
         return new Response(ResponseStatus.OK, Arrays.stream(CommandType.values()).
@@ -29,5 +31,20 @@ public class HelpCommand implements Command{
     @Override
     public String getCommandName() {
         return "help";
+    }
+
+    @Override
+    public User getUser() {
+        return user;
+    }
+
+    @Override
+    public MusicBand getMusicband() {
+        return null;
+    }
+
+    @Override
+    public Integer getIntArgument() {
+        return null;
     }
 }

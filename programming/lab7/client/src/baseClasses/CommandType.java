@@ -23,6 +23,7 @@ public enum CommandType{
     SHOW(ShowCommand.class, "show: вывести все элементы коллекции"),
     SUM_OF_NUMBER_OF_PARTICIPANTS(SumOfNumberOfParticipantsCommand.class, "sum_of_number_of_participants: вывести сумму значений поля numberOfParticipants для всех элементов коллекции"),
     UPDATE(UpdateIdCommand.class, "update id {element}: обновить значение элемента коллекции, id которого равен заданному"),
+    REGISTRATION(RegistrationCommand.class, ""),
     DEFAULT(DefaultCommand.class, "");
 
     private final Class<? extends Command> executableClass;

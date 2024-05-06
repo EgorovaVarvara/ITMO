@@ -1,8 +1,10 @@
 package commands;
 
+import baseClasses.MusicBand;
 import collection.CollectionManager;
 import connectionUtils.Response;
 import connectionUtils.ResponseStatus;
+import connectionUtils.User;
 
 import java.io.Serial;
 
@@ -15,7 +17,7 @@ import java.io.Serial;
 public class InfoCommand implements Command{
     @Serial
     private final static long serialVersionUID = 9L;
-    private String user_login;
+    private User user;
     @Override
     public Response run() {
         return new Response(ResponseStatus.OK, CollectionManager.info());
@@ -24,5 +26,20 @@ public class InfoCommand implements Command{
     @Override
     public String getCommandName() {
         return "info";
+    }
+
+    @Override
+    public User getUser() {
+        return user;
+    }
+
+    @Override
+    public MusicBand getMusicband() {
+        return null;
+    }
+
+    @Override
+    public Integer getIntArgument() {
+        return null;
     }
 }

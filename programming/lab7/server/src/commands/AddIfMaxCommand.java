@@ -4,6 +4,7 @@ import baseClasses.MusicBand;
 import collection.CollectionManager;
 import connectionUtils.Response;
 import connectionUtils.ResponseStatus;
+import connectionUtils.User;
 import utils.DataBaseManager;
 
 import java.io.Serial;
@@ -17,7 +18,7 @@ import java.io.Serial;
 public class AddIfMaxCommand implements Command {
     @Serial
     private final static long serialVersionUID = 1L;
-    private String user_login;
+    private User user;
 
     private MusicBand musicBand;
     public AddIfMaxCommand(MusicBand musicBand){
@@ -41,5 +42,20 @@ public class AddIfMaxCommand implements Command {
     @Override
     public String getCommandName() {
         return "add_if_max";
+    }
+
+    @Override
+    public User getUser() {
+        return user;
+    }
+
+    @Override
+    public MusicBand getMusicband() {
+        return musicBand;
+    }
+
+    @Override
+    public Integer getIntArgument() {
+        return null;
     }
 }

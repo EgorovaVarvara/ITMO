@@ -4,6 +4,7 @@ import baseClasses.MusicBand;
 import collection.CollectionManager;
 import connectionUtils.Response;
 import connectionUtils.ResponseStatus;
+import connectionUtils.User;
 import utils.DataBaseManager;
 
 import java.io.Serial;
@@ -18,19 +19,34 @@ public class UpdateIdCommand implements Command {
     @Serial
     private final static long serialVersionUID = 16L;
     private MusicBand musicBand;
-    private String user_login;
+    private User user;
     public UpdateIdCommand(MusicBand musicBand){
         this.musicBand = musicBand;
     }
     @Override
     public Response run() {
         DataBaseManager dataBaseManager = new DataBaseManager();
-        if (dataBaseManager.updateObject(musicBand, user_login)) return new Response(ResponseStatus.OK, CollectionManager.updateId(musicBand));
+        if (dataBaseManager.updateObject(musicBand, user.getLogin())) return new Response(ResponseStatus.OK, CollectionManager.updateId(musicBand));
         return new Response(ResponseStatus.OK, "Вы не можете изменить этот элемент, так как он принадлежит другому пользователю (сорян)");
     }
 
     @Override
     public String getCommandName() {
         return "update";
+    }
+
+    @Override
+    public User getUser() {
+        return user;
+    }
+
+    @Override
+    public MusicBand getMusicband() {
+        return musicBand;
+    }
+
+    @Override
+    public Integer getIntArgument() {
+        return null;
     }
 }

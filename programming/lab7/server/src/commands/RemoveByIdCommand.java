@@ -1,8 +1,10 @@
 package commands;
 
+import baseClasses.MusicBand;
 import collection.CollectionManager;
 import connectionUtils.Response;
 import connectionUtils.ResponseStatus;
+import connectionUtils.User;
 import utils.DataBaseManager;
 
 import java.io.Serial;
@@ -17,19 +19,34 @@ public class RemoveByIdCommand implements Command{
     @Serial
     private final static long serialVersionUID = 11L;
     private int id;
-    private String user_login;
+    private User user;
     public RemoveByIdCommand(Integer id){
         this.id = id;
     }
     @Override
     public Response run() {
         DataBaseManager dataBaseManager = new DataBaseManager();
-        if (dataBaseManager.removeObject(id, user_login)) return new Response(ResponseStatus.OK, CollectionManager.removeById(id));
+        if (dataBaseManager.removeObject(id, user.getLogin())) return new Response(ResponseStatus.OK, CollectionManager.removeById(id));
         return new Response(ResponseStatus.OK, "Невозможно удалить элемент, так как он принадлежит другому пользователю.");
     }
 
     @Override
     public String getCommandName() {
         return "remove_by_id";
+    }
+
+    @Override
+    public User getUser() {
+        return user;
+    }
+
+    @Override
+    public MusicBand getMusicband() {
+        return null;
+    }
+
+    @Override
+    public Integer getIntArgument() {
+        return id;
     }
 }

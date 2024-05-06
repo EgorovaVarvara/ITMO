@@ -2,6 +2,9 @@
 package connectionUtils;
 
 import collection.CollectionManager;
+import threadUtils.Interpreter;
+import threadUtils.Receiver;
+import threadUtils.Sender;
 import utils.CommandManager;
 import utils.DataBaseParser;
 import utils.ServerLogger;
@@ -13,15 +16,14 @@ import java.net.*;
 import static utils.CommandManager.handlePacket;
 
 public class Server {
-    private static final int bufferSize = 1024;
+    public static final int bufferSize = 1024;
     private final int port;
     private DatagramSocket socket;
     private InetAddress address = InetAddress.getByName("localhost");
     private static CollectionManager collectionManager;
 
-    public Server(CollectionManager collectionManager, int port) throws SocketException, UnknownHostException {
+    public Server(int port) throws SocketException, UnknownHostException {
         this.socket = new DatagramSocket(port);
-        Server.collectionManager = collectionManager;
         this.port = port;
     }
 
@@ -53,17 +55,15 @@ public class Server {
             Thread clientThread = new Thread(() -> {
                 while (true){
                     try{
-                        DatagramPacket packet = new DatagramPacket(new byte[bufferSize], bufferSize);
-                        socket.receive(packet);
-                        InetSocketAddress senderAddress = new InetSocketAddress(packet.getAddress(), packet.getPort());
-                        handlePacket(senderAddress, packet.getData());
+                        Sender sender = new Sender(socket);
+                        Interpreter interpreter = new Interpreter(sender, socket);
+                        Receiver receiver = new Receiver(socket, interpreter);
+                        receiver.setDaemon(true);
+                        sender.start();
+                        interpreter.start();
+                        receiver.start();
                     } catch (Exception e){
-                        byte[] message = "ERROR: Что-то пошло не так...".getBytes();
-                        try {
-                            socket.send(new DatagramPacket(message, message.length, address, port));
-                        } catch (IOException ex) {
-                            ServerLogger.getLogger().warning("Ошибка: " + e.getMessage());
-                        }
+                        ServerLogger.getLogger().warning("Ошибка: " + e.getMessage());
                     }
                 }
             });

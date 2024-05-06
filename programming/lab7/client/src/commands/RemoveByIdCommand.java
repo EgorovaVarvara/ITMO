@@ -1,5 +1,6 @@
 package commands;
 
+import baseClasses.MusicBand;
 import connectionUtils.User;
 
 import java.io.Serial;
@@ -13,7 +14,7 @@ import java.io.Serial;
 public class RemoveByIdCommand implements Command {
     @Serial
     private final static long serialVersionUID = 11L;
-    private String user_login;
+    private User user;
     /**
      * Id by which collection is sorted
      */
@@ -27,6 +28,19 @@ public class RemoveByIdCommand implements Command {
     }
     @Override
     public void setUser(User user) {
-        this.user_login = user.getLogin();
+        this.user = user;
+    }
+    @Override
+    public User getUser() {
+        return user;
+    }
+
+    @Override
+    public MusicBand getMusicband() {
+        return null;
+    }
+    @Override
+    public Integer getIntArgument() {
+        return id;
     }
 }

@@ -3,8 +3,10 @@ package utils;
 import commands.*;
 import baseClasses.CommandType;
 import baseClasses.MusicBand;
+import connectionUtils.User;
 import console.Console;
 import forms.MusicBandForm;
+import forms.UserForm;
 
 import java.util.Arrays;
 
@@ -107,6 +109,13 @@ public class CommandFactory {
                 MusicBandForm musicBandForm = new MusicBandForm(new Console());
                 musicBand = musicBandForm.build();
                 if (musicBand != null) yield new RemoveLowerCommand(musicBand);
+                yield null;
+            }
+            case REGISTRATION -> {
+                User user;
+                UserForm userForm = new UserForm(new Console());
+                user = userForm.build();
+                if (user != null) yield new RegistrationCommand(user);
                 yield null;
             }
             default -> {

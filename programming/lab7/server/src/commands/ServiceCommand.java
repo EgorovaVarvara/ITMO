@@ -1,8 +1,10 @@
 package commands;
 
+import baseClasses.MusicBand;
 import collection.CollectionManager;
 import connectionUtils.Response;
 import connectionUtils.ResponseStatus;
+import connectionUtils.User;
 
 import java.io.Serial;
 
@@ -10,7 +12,7 @@ public class ServiceCommand implements Command{
     @Serial
     private final static long serialVersionUID = 13L;
     private final String command;
-    private String user_login;
+    private User user;
 
     public ServiceCommand(String command) {
         this.command = command;
@@ -33,5 +35,20 @@ public class ServiceCommand implements Command{
     @Override
     public String getCommandName() {
         return "service";
+    }
+
+    @Override
+    public User getUser() {
+        return user;
+    }
+
+    @Override
+    public MusicBand getMusicband() {
+        return null;
+    }
+
+    @Override
+    public Integer getIntArgument() {
+        return null;
     }
 }

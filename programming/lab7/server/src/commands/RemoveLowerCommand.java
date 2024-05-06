@@ -4,6 +4,7 @@ import baseClasses.MusicBand;
 import collection.CollectionManager;
 import connectionUtils.Response;
 import connectionUtils.ResponseStatus;
+import connectionUtils.User;
 import utils.DataBaseManager;
 
 import java.io.Serial;
@@ -18,14 +19,14 @@ public class RemoveLowerCommand implements Command{
     @Serial
     private final static long serialVersionUID = 12L;
     private MusicBand musicBand;
-    private String user_login;
+    private User user;
     public RemoveLowerCommand(MusicBand musicBand){
         this.musicBand = musicBand;
     }
     @Override
     public Response run() {
         DataBaseManager dataBaseManager = new DataBaseManager();
-        HashSet<Integer> ids = dataBaseManager.removeLower(user_login, musicBand.getNumberOfParticipants());
+        HashSet<Integer> ids = dataBaseManager.removeLower(user.getLogin(), musicBand.getNumberOfParticipants());
         if (!ids.isEmpty()){
             for (int id : ids){
                 CollectionManager.removeById(id);
@@ -40,5 +41,20 @@ public class RemoveLowerCommand implements Command{
     @Override
     public String getCommandName() {
         return "remove_lower";
+    }
+
+    @Override
+    public User getUser() {
+        return user;
+    }
+
+    @Override
+    public MusicBand getMusicband() {
+        return musicBand;
+    }
+
+    @Override
+    public Integer getIntArgument() {
+        return null;
     }
 }

@@ -1,7 +1,9 @@
 package commands;
 
+import baseClasses.MusicBand;
 import connectionUtils.Response;
 import connectionUtils.ResponseStatus;
+import connectionUtils.User;
 
 import java.io.Serial;
 import java.util.ArrayList;
@@ -17,7 +19,7 @@ public class ExecuteScriptCommand implements Command {
     @Serial
     private final static long serialVersionUID = 5L;
     private final ArrayList<Command> commandStack;
-    private String user_login;
+    private User user;
     public ExecuteScriptCommand(ArrayList<Command> commands){
         this.commandStack = commands;
     }
@@ -33,5 +35,20 @@ public class ExecuteScriptCommand implements Command {
     @Override
     public String getCommandName() {
         return "execute_script";
+    }
+
+    @Override
+    public User getUser() {
+        return user;
+    }
+
+    @Override
+    public MusicBand getMusicband() {
+        return null;
+    }
+
+    @Override
+    public Integer getIntArgument() {
+        return null;
     }
 }

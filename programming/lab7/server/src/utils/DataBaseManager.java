@@ -18,7 +18,7 @@ public class DataBaseManager {
     public static Connection connect(){
         try{
             Class.forName("org.postgresql.Driver");
-            return DriverManager.getConnection("jdbc:postgresql://localhost:8888/studs", "", "");
+            return DriverManager.getConnection("jdbc:postgresql://localhost:8888/studs", "s408575", "2ljIFHZgh4vQ7iLC");
         } catch (ClassNotFoundException | SQLException e){
             ServerLogger.getLogger().warning("Ошибка при подключении к базе данных");
         }

@@ -14,7 +14,7 @@ import java.io.Serial;
 public class UpdateIdCommand implements Command {
     @Serial
     private final static long serialVersionUID = 16L;
-    private String user_login;
+    private User user;
     /**
      * Music band for updating in collection
      */
@@ -27,6 +27,19 @@ public class UpdateIdCommand implements Command {
     }
     @Override
     public void setUser(User user) {
-        this.user_login = user.getLogin();
+        this.user = user;
+    }
+    @Override
+    public User getUser() {
+        return user;
+    }
+
+    @Override
+    public MusicBand getMusicband() {
+        return musicBand;
+    }
+    @Override
+    public Integer getIntArgument() {
+        return null;
     }
 }

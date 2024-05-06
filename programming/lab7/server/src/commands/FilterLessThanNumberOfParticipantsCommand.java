@@ -1,8 +1,10 @@
 package commands;
 
+import baseClasses.MusicBand;
 import collection.CollectionManager;
 import connectionUtils.Response;
 import connectionUtils.ResponseStatus;
+import connectionUtils.User;
 
 import java.io.Serial;
 
@@ -16,7 +18,7 @@ public class FilterLessThanNumberOfParticipantsCommand implements Command{
     @Serial
     private final static long serialVersionUID = 7L;
     private int numberOfParticipants;
-    private String user_login;
+    private User user;
     public FilterLessThanNumberOfParticipantsCommand(Integer numberOfParticipants){
         this.numberOfParticipants = numberOfParticipants;
     }
@@ -29,5 +31,20 @@ public class FilterLessThanNumberOfParticipantsCommand implements Command{
     @Override
     public String getCommandName() {
         return "filter_less_than_number_of_participants";
+    }
+
+    @Override
+    public User getUser() {
+        return user;
+    }
+
+    @Override
+    public MusicBand getMusicband() {
+        return null;
+    }
+
+    @Override
+    public Integer getIntArgument() {
+        return numberOfParticipants;
     }
 }

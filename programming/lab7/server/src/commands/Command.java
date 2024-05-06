@@ -1,6 +1,8 @@
 package commands;
 
+import baseClasses.MusicBand;
 import connectionUtils.Response;
+import connectionUtils.User;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -12,5 +14,8 @@ public interface Command extends Serializable {
     Response run();
 
     String getCommandName();
+    User getUser();
+    MusicBand getMusicband();
+    Integer getIntArgument();
 
 }

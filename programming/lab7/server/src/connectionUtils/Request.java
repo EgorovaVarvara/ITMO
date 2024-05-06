@@ -1,6 +1,7 @@
 package connectionUtils;
 
 import baseClasses.MusicBand;
+import commands.Command;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -9,30 +10,21 @@ import java.util.Objects;
 public class Request implements Serializable {
     @Serial
     private static final long serialVersionUID = 21L;
-    private String commandName;
+    private Command command;
     private String args = "";
     private MusicBand musicBand = null;
-    public Request(ResponseStatus responseStatus, String commandName, MusicBand musicBand){
-        this.commandName = commandName.trim();
-    }
-    public Request(String commandName, String args){
-        this.commandName = commandName.trim();
-        this.args = args.trim();
-    }
-    public Request(String commandName, MusicBand musicBand){
-        this.commandName = commandName.trim();
-        this.musicBand = musicBand;
-    }
-    public Request(String commandName, String args, MusicBand musicBand){
-        this.commandName = commandName.trim();
-        this.args = args.trim();
-        this.musicBand = musicBand;
+    private User user;
+    public  Request(Command command){
+        this.command = command;
+        this.user = command.getUser();
+        this.args = command.getIntArgument().toString();
+        this.musicBand = command.getMusicband();
     }
     public boolean isEmpty(){
-        return commandName.isEmpty() && args.isEmpty() && musicBand == null;
+        return command == null && args.isEmpty() && musicBand == null;
     }
-    public String getCommandName(){
-        return commandName;
+    public Command getCommand(){
+        return command;
     }
     public String getArgs() {
         return args;
@@ -44,15 +36,15 @@ public class Request implements Serializable {
     public boolean equals(Object o){
         if (this == o) return true;
         if (!(o instanceof Request request)) return false;
-        return Objects.equals(commandName, request.commandName) && Objects.equals(args, request.args) && Objects.equals(musicBand, request.musicBand);
+        return Objects.equals(command, request.command) && Objects.equals(args, request.args) && Objects.equals(musicBand, request.musicBand);
     }
     @Override
     public int hashCode(){
-        return Objects.hash(commandName, args, musicBand);
+        return Objects.hash(command, args, musicBand);
     }
     @Override
     public String toString(){
-     return "Request[" + commandName +
+     return "Request[" + command.getCommandName() +
              (args.isEmpty()
                 ? ""
                 : ", " + args) +
