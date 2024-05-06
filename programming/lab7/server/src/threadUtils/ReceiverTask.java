@@ -9,10 +9,13 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
+import java.util.concurrent.locks.ReadWriteLock;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 public class ReceiverTask implements Runnable{
     private DatagramSocket socket;
     private Interpreter interpreter;
+    private final ReadWriteLock lock = new ReentrantReadWriteLock();
     public ReceiverTask(DatagramSocket socket, Interpreter interpreter){
         this.socket = socket;
         this.interpreter = interpreter;
@@ -21,6 +24,7 @@ public class ReceiverTask implements Runnable{
     @Override
     public void run() {
         while(!Thread.currentThread().isInterrupted()){
+            lock.readLock().lock();
             try{
                 byte[] bytes = new byte[Server.bufferSize];
                 DatagramPacket packet = new DatagramPacket(bytes, bytes.length);
@@ -30,9 +34,12 @@ public class ReceiverTask implements Runnable{
                 Request request = (Request) objectInputStream.readObject();
                 ServerLogger.getLogger().info("Получено сообщение от " + packet.getAddress() + " : " + packet.getPort() + " - " + request.getCommand().getCommandName());
                 interpreter.putRequest(request, packet);
+                byteArrayInputStream.close();
                 objectInputStream.close();
             } catch (IOException | ClassNotFoundException e){
                 ServerLogger.getLogger().warning("Невозможно принять сообщение");
+            } finally {
+                lock.readLock().unlock();
             }
         }
     }
