@@ -1,7 +1,5 @@
 package threadUtils;
 
-import connectionUtils.Request;
-
 import java.net.DatagramSocket;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadPoolExecutor;
