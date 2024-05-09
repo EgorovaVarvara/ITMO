@@ -13,12 +13,11 @@ import java.util.Set;
 
 
 public class DataBaseManager {
-    String alphabet = "QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm";
     private QueryManager queryManager = new QueryManager();
     public static Connection connect(){
         try{
             Class.forName("org.postgresql.Driver");
-            return DriverManager.getConnection("jdbc:postgresql://localhost:8888/studs", "s408575", "2ljIFHZgh4vQ7iLC");
+            return DriverManager.getConnection("jdbc:postgresql://localhost:5432/studs", "s408575", "");
         } catch (ClassNotFoundException | SQLException e){
             ServerLogger.getLogger().warning("Ошибка при подключении к базе данных");
         }

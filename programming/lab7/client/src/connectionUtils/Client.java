@@ -74,7 +74,8 @@ public class Client {
                     commands.forEach(command -> {
                         try {
                             command.setUser(user);
-                            sender.send(Serializer.serialize(command));
+                            Request request = new Request(command);
+                            sender.send(Serializer.serialize(request));
                         } catch (IOException e) {
                             System.out.println("Невозможно отправить запрос серверу: " + e.getMessage());
                         }
