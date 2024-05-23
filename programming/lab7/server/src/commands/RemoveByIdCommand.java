@@ -27,7 +27,7 @@ public class RemoveByIdCommand implements Command{
     public Response run() {
         DataBaseManager dataBaseManager = new DataBaseManager();
         if (dataBaseManager.removeObject(id, user.getLogin())) return new Response(ResponseStatus.OK, CollectionManager.removeById(id));
-        return new Response(ResponseStatus.OK, "Невозможно удалить элемент, так как он принадлежит другому пользователю.");
+        return new Response(ResponseStatus.OK, "Невозможно удалить элемент, так как он принадлежит другому пользователю либо элемента с таким id не существует.");
     }
 
     @Override

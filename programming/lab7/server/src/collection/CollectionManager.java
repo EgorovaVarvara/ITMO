@@ -7,6 +7,8 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
+import java.util.concurrent.locks.ReadWriteLock;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.stream.Collectors;
 
 
@@ -28,6 +30,7 @@ public class CollectionManager implements Serializable {
      * Filename of file with main collection.
      */
     private String filename;
+    private static final ReadWriteLock lock = new ReentrantReadWriteLock();
 
     /**
      * Constructor that creates collection manager.
@@ -66,18 +69,26 @@ public class CollectionManager implements Serializable {
      * Shows type of collection, its date of initialisation and amount of elements.
      */
     public static String info() {
-        return "Тип коллекции: " + musicBands.getClass().getSimpleName() + "\nДата инициализации: " + localDateTime.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm")) + "\nКоличество элементов: " + musicBands.size();
+        lock.readLock().lock();
+        String name = musicBands.getClass().getSimpleName();
+        String date = localDateTime.format(DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss"));
+        int size = musicBands.size();
+        lock.readLock().unlock();
+        return "Тип коллекции: " + name + "\nДата инициализации: " + date + "\nКоличество элементов: " + size;
     }
 
     /**
      * Shows all collection elements.
      */
     public static String show() {
+        lock.readLock().lock();
         StringBuilder result = new StringBuilder();
         if (!musicBands.isEmpty()) {
             musicBands.forEach(musicBand -> result.append(musicBand.toString()));
+            lock.readLock().unlock();
             return result.toString();
         } else {
+            lock.readLock().unlock();
             return "Коллекция не содержит элементов.";
         }
     }
@@ -89,7 +100,9 @@ public class CollectionManager implements Serializable {
      * @param musicBand that should be added to main collection
      */
     public static void add(MusicBand musicBand) {
+        lock.writeLock().lock();
         musicBands.add(musicBand);
+        lock.writeLock().unlock();
     }
 
     /**
@@ -98,6 +111,7 @@ public class CollectionManager implements Serializable {
      * @param newMusicBand updated music band
      */
     public static String updateId(MusicBand newMusicBand) {
+        lock.writeLock().lock();
         boolean flag = musicBands.stream()
                 .filter(band -> band.getId() == newMusicBand.getId())
                 .findFirst()
@@ -110,6 +124,7 @@ public class CollectionManager implements Serializable {
                     return band;
                 })
                 .isPresent();
+        lock.writeLock().unlock();
         return !flag ? "Элемента с таким id нет в коллекции." : "Элемент успешно обновлен.";
     }
 
@@ -119,6 +134,7 @@ public class CollectionManager implements Serializable {
      * @param id id of element that must be deleted
      */
     public static String removeById(int id) {
+        lock.writeLock().lock();
         boolean flag = false;
         for (MusicBand musicBand : musicBands){
             if (musicBand.getId() == id){
@@ -127,6 +143,7 @@ public class CollectionManager implements Serializable {
                 break;
             }
         }
+        lock.writeLock().unlock();
         if (!flag){
             return "Элемента с таким id нет в коллекции. ";
         } else {
@@ -138,7 +155,9 @@ public class CollectionManager implements Serializable {
      * Clears main collection.
      */
     public static void clear() {
+        lock.writeLock().lock();
         musicBands.clear();
+        lock.writeLock().unlock();
     }
 
 
@@ -148,10 +167,14 @@ public class CollectionManager implements Serializable {
      * @param newMusicBand that can be added to collection
      */
     public static String addIfMax(MusicBand newMusicBand) {
+        lock.writeLock().lock();
+        lock.readLock().lock();
         int maxNumberOfParticipants = musicBands.stream()
                 .mapToInt(MusicBand::getNumberOfParticipants)
                 .max()
                 .getAsInt();
+        lock.readLock().unlock();
+        lock.writeLock().unlock();
         if (newMusicBand.getNumberOfParticipants() > maxNumberOfParticipants) {
             add(newMusicBand);
             return "Элемент успешно добавлен в коллекцию. ";
@@ -166,10 +189,14 @@ public class CollectionManager implements Serializable {
      * @param newMusicBand that can be added to collection
      */
     public static String addIfMin(MusicBand newMusicBand) {
+        lock.writeLock().lock();
+        lock.readLock().lock();
         int minNumberOfParticipants = musicBands.stream()
                 .mapToInt(MusicBand::getNumberOfParticipants)
                 .min()
                 .getAsInt();
+        lock.readLock().unlock();
+        lock.writeLock().unlock();
         if (newMusicBand.getNumberOfParticipants() < minNumberOfParticipants) {
             add(newMusicBand);
             return "Элемент успешно добавлен в коллекцию. ";
@@ -184,8 +211,10 @@ public class CollectionManager implements Serializable {
      * @param newMusicBand given music band
      */
     public static String removeLower(MusicBand newMusicBand) {
+        lock.writeLock().lock();
         musicBands.removeIf(musicBand -> musicBand.getNumberOfParticipants() < newMusicBand.getNumberOfParticipants());
         musicBands.add(newMusicBand);
+        lock.writeLock().unlock();
         return "Элементы, меньшие чем заданный, удалены. ";
     }
 
@@ -193,9 +222,11 @@ public class CollectionManager implements Serializable {
      * Shows the sum of field {@code NumberOfParticipants}.
      */
     public static String sumOfNumberOfParticipants() {
+        lock.readLock().lock();
         int sumOfNumberOfParticipants = musicBands.stream()
                 .mapToInt(MusicBand::getNumberOfParticipants)
                 .sum();
+        lock.readLock().unlock();
         return "Сумма значений поля numberOfParticipants: " + sumOfNumberOfParticipants;
     }
 
@@ -205,10 +236,12 @@ public class CollectionManager implements Serializable {
      * @param newNumberOfParticipants given number of participants
      */
     public static String filterLessThanNumberOfParticipants(int newNumberOfParticipants) {
+        lock.readLock().lock();
         StringBuilder result = new StringBuilder();
         musicBands.stream()
                 .filter(band -> band.getNumberOfParticipants() < newNumberOfParticipants)
                 .forEach(result::append);
+        lock.readLock().unlock();
         return result.toString();
     }
 
@@ -216,10 +249,12 @@ public class CollectionManager implements Serializable {
      * Shows all elements by descending order.
      */
     public static String printDescending() {
+        lock.readLock().lock();
         String result = musicBands.stream()
                 .sorted(Comparator.reverseOrder())
                 .map(MusicBand::toString)
                 .collect(Collectors.joining());
+        lock.readLock().unlock();
         return result;
     }
 

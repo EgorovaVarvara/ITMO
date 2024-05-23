@@ -12,20 +12,19 @@ import java.net.DatagramSocket;
 import java.util.concurrent.locks.ReadWriteLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
-public class ReceiverTask implements Runnable{
+public class ReceiverTask implements Runnable {
     private DatagramSocket socket;
     private Interpreter interpreter;
-    private final ReadWriteLock lock = new ReentrantReadWriteLock();
-    public ReceiverTask(DatagramSocket socket, Interpreter interpreter){
+
+    public ReceiverTask(DatagramSocket socket, Interpreter interpreter) {
         this.socket = socket;
         this.interpreter = interpreter;
     }
 
     @Override
     public void run() {
-        while(!Thread.currentThread().isInterrupted()){
-            lock.readLock().lock();
-            try{
+        while (!Thread.currentThread().isInterrupted()) {
+            try {
                 byte[] bytes = new byte[Server.bufferSize];
                 DatagramPacket packet = new DatagramPacket(bytes, bytes.length);
                 socket.receive(packet);
@@ -36,11 +35,10 @@ public class ReceiverTask implements Runnable{
                 interpreter.putRequest(request, packet);
                 byteArrayInputStream.close();
                 objectInputStream.close();
-            } catch (IOException | ClassNotFoundException e){
+            } catch (IOException | ClassNotFoundException e) {
                 ServerLogger.getLogger().warning("Невозможно принять сообщение");
-            } finally {
-                lock.readLock().unlock();
             }
         }
     }
+
 }

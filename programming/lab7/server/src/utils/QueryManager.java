@@ -29,5 +29,8 @@ public class QueryManager {
     String selectAllObjects = """
             select * from musicBands ;
             """;
+    String selectObject = """
+            select id, user_login from musicBands where (user_login = ?) and (id = ?);
+            """;
     String deleteAll = "delete from musicBands;";
 }

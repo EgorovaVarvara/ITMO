@@ -2,9 +2,9 @@
 <!DOCTYPE log SYSTEM "logger.dtd">
 <log>
 <record>
-  <date>2024-05-09T13:51:21.735459400Z</date>
-  <millis>1715262681735</millis>
-  <nanos>459400</nanos>
+  <date>2024-05-11T12:58:47.621503200Z</date>
+  <millis>1715432327621</millis>
+  <nanos>503200</nanos>
   <sequence>0</sequence>
   <logger>utils.ServerLogger</logger>
   <level>INFO</level>
@@ -14,111 +14,74 @@
   <message>Сервер запущен на порте 2712</message>
 </record>
 <record>
-  <date>2024-05-09T13:53:56.227427600Z</date>
-  <millis>1715262836227</millis>
-  <nanos>427600</nanos>
+  <date>2024-05-11T12:59:01.173505400Z</date>
+  <millis>1715432341173</millis>
+  <nanos>505400</nanos>
   <sequence>1</sequence>
   <logger>utils.ServerLogger</logger>
   <level>INFO</level>
   <class>threadUtils.ReceiverTask</class>
   <method>run</method>
-  <thread>98</thread>
-  <message>Получено сообщение от /192.168.0.8 : 63466 - registration</message>
+  <thread>35</thread>
+  <message>Получено сообщение от /172.28.96.213 : 59726 - registration</message>
 </record>
 <record>
-  <date>2024-05-09T13:53:56.345175Z</date>
-  <millis>1715262836345</millis>
-  <nanos>175000</nanos>
+  <date>2024-05-11T12:59:01.173505400Z</date>
+  <millis>1715432341173</millis>
+  <nanos>505400</nanos>
   <sequence>2</sequence>
   <logger>utils.ServerLogger</logger>
   <level>INFO</level>
   <class>threadUtils.Interpreter</class>
   <method>interpret</method>
-  <thread>74</thread>
-  <message>Получена команда REGISTRATION от /192.168.0.8</message>
+  <thread>33</thread>
+  <message>Получена команда REGISTRATION от /172.28.96.213</message>
 </record>
 <record>
-  <date>2024-05-09T13:53:56.548317600Z</date>
-  <millis>1715262836548</millis>
-  <nanos>317600</nanos>
+  <date>2024-05-11T12:59:01.536640800Z</date>
+  <millis>1715432341536</millis>
+  <nanos>640800</nanos>
   <sequence>3</sequence>
   <logger>utils.ServerLogger</logger>
   <level>INFO</level>
   <class>threadUtils.Sender</class>
   <method>send</method>
-  <thread>73</thread>
-  <message>Отправляется результат на /192.168.0.8</message>
+  <thread>32</thread>
+  <message>Отправляется результат на /172.28.96.213</message>
 </record>
 <record>
-  <date>2024-05-09T13:54:00.177015200Z</date>
-  <millis>1715262840177</millis>
-  <nanos>15200</nanos>
+  <date>2024-05-11T12:59:03.524058200Z</date>
+  <millis>1715432343524</millis>
+  <nanos>58200</nanos>
   <sequence>4</sequence>
   <logger>utils.ServerLogger</logger>
   <level>INFO</level>
   <class>threadUtils.ReceiverTask</class>
   <method>run</method>
-  <thread>103</thread>
-  <message>Получено сообщение от /192.168.0.8 : 63466 - help</message>
+  <thread>35</thread>
+  <message>Получено сообщение от /172.28.96.213 : 59726 - show</message>
 </record>
 <record>
-  <date>2024-05-09T13:54:00.195089400Z</date>
-  <millis>1715262840195</millis>
-  <nanos>89400</nanos>
+  <date>2024-05-11T12:59:03.524058200Z</date>
+  <millis>1715432343524</millis>
+  <nanos>58200</nanos>
   <sequence>5</sequence>
   <logger>utils.ServerLogger</logger>
   <level>INFO</level>
   <class>threadUtils.Interpreter</class>
   <method>interpret</method>
-  <thread>53</thread>
-  <message>Получена команда HELP от /192.168.0.8</message>
+  <thread>33</thread>
+  <message>Получена команда SHOW от /172.28.96.213</message>
 </record>
 <record>
-  <date>2024-05-09T13:54:00.273264Z</date>
-  <millis>1715262840273</millis>
-  <nanos>264000</nanos>
+  <date>2024-05-11T12:59:03.555011300Z</date>
+  <millis>1715432343555</millis>
+  <nanos>11300</nanos>
   <sequence>6</sequence>
   <logger>utils.ServerLogger</logger>
   <level>INFO</level>
   <class>threadUtils.Sender</class>
   <method>send</method>
-  <thread>52</thread>
-  <message>Отправляется результат на /192.168.0.8</message>
+  <thread>32</thread>
+  <message>Отправляется результат на /172.28.96.213</message>
 </record>
-<record>
-  <date>2024-05-09T13:54:25.448727500Z</date>
-  <millis>1715262865448</millis>
-  <nanos>727500</nanos>
-  <sequence>7</sequence>
-  <logger>utils.ServerLogger</logger>
-  <level>INFO</level>
-  <class>threadUtils.ReceiverTask</class>
-  <method>run</method>
-  <thread>96</thread>
-  <message>Получено сообщение от /192.168.0.8 : 63466 - show</message>
-</record>
-<record>
-  <date>2024-05-09T13:54:25.542476800Z</date>
-  <millis>1715262865542</millis>
-  <nanos>476800</nanos>
-  <sequence>8</sequence>
-  <logger>utils.ServerLogger</logger>
-  <level>INFO</level>
-  <class>threadUtils.Interpreter</class>
-  <method>interpret</method>
-  <thread>44</thread>
-  <message>Получена команда SHOW от /192.168.0.8</message>
-</record>
-<record>
-  <date>2024-05-09T13:54:25.604981400Z</date>
-  <millis>1715262865604</millis>
-  <nanos>981400</nanos>
-  <sequence>9</sequence>
-  <logger>utils.ServerLogger</logger>
-  <level>INFO</level>
-  <class>threadUtils.Sender</class>
-  <method>send</method>
-  <thread>43</thread>
-  <message>Отправляется результат на /192.168.0.8</message>
-</record>
-</log>

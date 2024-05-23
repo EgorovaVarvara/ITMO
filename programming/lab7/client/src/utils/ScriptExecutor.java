@@ -29,6 +29,7 @@ public class ScriptExecutor {
             System.out.println("Невозможно исполнить скрипт:" + ((!scriptFile.exists()) ? " файл не найден" : " нет прав на чтение файла"));
             return this;
         }
+        System.out.println("Читаем файл...");
         fileMemory.add(scriptFile);
         for (int index = 0; index < lines.size(); index++) {
             String line = lines.get(index);

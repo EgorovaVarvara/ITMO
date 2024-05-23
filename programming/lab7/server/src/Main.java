@@ -17,7 +17,7 @@ public class Main {
         try {
             CollectionManager collectionManager = new CollectionManager();
             collectionManager.setCollection(collection);
-            Server server = new Server(serverPort);
+            Server server = new Server(serverPort, dataBaseParser);
             server.run();
         } catch (Exception e){
             System.err.println(e.getMessage());

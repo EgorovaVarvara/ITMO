@@ -79,14 +79,9 @@ public class Sender{
      * @throws IOException if there is an error of receiving data
      */
     public Response receive() throws IOException, ClassNotFoundException {
-//        ByteArrayOutputStream bos = new ByteArrayOutputStream();
         byte[] buffer = new byte[1024 * 1024];
         DatagramPacket packet = new DatagramPacket(buffer, buffer.length);
         socket.receive(packet);
-//        bos.write(packet.getData(), 0, packet.getLength());
-//        String data = bos.;
-//        bos.close();
-//        return data;
         ObjectInputStream objectInputStream = new ObjectInputStream(new ByteArrayInputStream(packet.getData()));
         return (Response)objectInputStream.readObject();
     }
