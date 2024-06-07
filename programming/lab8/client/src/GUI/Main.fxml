@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="650.0" prefWidth="900.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.MainApp">
+    <GridPane prefHeight="47.0" prefWidth="614.0" AnchorPane.leftAnchor="5.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="237.60000000000002" minWidth="10.0" prefWidth="112.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="242.19999237060546" minWidth="0.0" prefWidth="188.2" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="154.39999999999998" minWidth="10.0" prefWidth="112.80000000000001" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="198.19999999999993" minWidth="10.0" prefWidth="197.19999999999993" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="47.4" minHeight="10.0" prefHeight="40.4" vgrow="SOMETIMES" />
+        </rowConstraints>
+        <Button fx:id="infoButton" mnemonicParsing="false" onAction="#info" prefHeight="39.0" prefWidth="98.0" style="-fx-background-color: #C29292; -fx-border-radius: 0;" text="Инфо" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="BOTTOM" GridPane.vgrow="ALWAYS">
+            <font>
+                <Font name="DejaVu Sans Bold" size="14.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+        <Button fx:id="executeScriptButton" mnemonicParsing="false" onAction="#executeScript" prefHeight="39.0" prefWidth="183.0" style="-fx-background-color: C29292;" text="Испольнить скрипт" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="BOTTOM" GridPane.vgrow="ALWAYS">
+            <font>
+                <Font name="DejaVu Sans Bold" size="14.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+        <Button fx:id="clearButton" mnemonicParsing="false" onAction="#clear" prefHeight="38.0" prefWidth="102.0" style="-fx-background-color: C29292;" text="Очистить" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="BOTTOM" GridPane.vgrow="ALWAYS">
+            <font>
+                <Font name="DejaVu Sans Bold" size="14.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+        <Button fx:id="sumOfNumberOfParticipantsButton" mnemonicParsing="false" onAction="#sumOfNumberOfParticipants" prefHeight="38.0" prefWidth="194.0" style="-fx-background-color: C29292;" text=" Сумма участников групп" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="BOTTOM" GridPane.vgrow="ALWAYS">
+            <font>
+                <Font name="DejaVu Sans Bold" size="12.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </Button>
+    </GridPane>
+    <GridPane layoutX="662.0" prefHeight="66.0" prefWidth="238.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="131.0" minWidth="10.0" prefWidth="118.19999999999999" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="109.19999999999999" minWidth="10.0" prefWidth="108.19999999999999" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+        <Label fx:id="userName" text="USER" textFill="WHITE" GridPane.halignment="RIGHT" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+            <font>
+                <Font name="DejaVu Sans Bold" size="14.0" />
+            </font>
+        </Label>
+        <ImageView fitHeight="68.0" fitWidth="76.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+            <Image url="@resources/gru.jpeg" />
+        </ImageView>
+    </GridPane>
+    <GridPane layoutX="9.0" layoutY="62.0" prefHeight="56.0" prefWidth="614.0" AnchorPane.leftAnchor="5.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="259.59998474121096" minWidth="10.0" prefWidth="259.59998474121096" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="194.0" minWidth="10.0" prefWidth="93.19999999999999" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="306.59999999999997" minWidth="10.0" prefWidth="260.59999999999997" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+        <Button fx:id="filterLessThanNumberOfParticipants" mnemonicParsing="false" onAction="#filterLessThanNumberOfParticipants" prefHeight="47.0" prefWidth="249.0" style="-fx-background-color: #C29292;" text="Фильтрация по участникам " GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+            <font>
+                <Font name="DejaVu Sans Bold" size="14.0" />
+            </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+        </Button>
+      <TextField fx:id="numberOfParticipantsField" alignment="CENTER_RIGHT" prefHeight="47.0" prefWidth="261.0" style="-fx-background-color: #000000; -fx-border-color: #C29292; -fx-border-width: 4;" GridPane.columnIndex="2" GridPane.halignment="RIGHT" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+         <font>
+            <Font name="DejaVu Sans Bold" size="13.0" />
+         </font>
+      </TextField>
+    </GridPane>
+    <TableView fx:id="tableTable" layoutX="2.0" layoutY="137.0" prefHeight="328.0" prefWidth="894.0" style="-fx-background-color: #000000;">
+        <columns>
+            <TableColumn id="idColumn" fx:id="idColumn" maxWidth="50.0" minWidth="30.0" prefWidth="45.0" style="-fx-background-color: #C29292;" text="ID" />
+            <TableColumn id="nameColumn" fx:id="nameColumn" minWidth="130.0" prefWidth="130.0" style="-fx-background-color: #C29292;" text="Имя" />
+            <TableColumn id="Xcolumn" minWidth="35.0" prefWidth="35.0" style="-fx-background-color: #C29292;" text="X" fx:id="xColumn" />
+            <TableColumn id="Ycolumn" fx:id="yColumn" minWidth="35.0" prefWidth="35.0" style="-fx-background-color: #C29292;" text="Y" />
+            <TableColumn id="CreationDateColumn" fx:id="dateColumn" minWidth="149.0" prefWidth="149.0" style="-fx-background-color: #C29292;" text="Дата создания" />
+            <TableColumn id="NumberOfParticipantsColumn" fx:id="numberOfParticipantsColumn" minWidth="120.0" prefWidth="120.0" style="-fx-background-color: #C29292#C29292;" text="Число участников" />
+            <TableColumn id="MusicGenreColumn" fx:id="musicGenreColumn" minWidth="110.0" prefWidth="110.0" style="-fx-background-color: #C29292;" text="Жанр" />
+            <TableColumn id="LabelColumn" fx:id="labelColumn" minWidth="122.0" prefWidth="122.0" style="-fx-background-color: #C29292;" text="Группы лейбла" />
+            <TableColumn id="OwnerColumn" fx:id="ownerColumn" minWidth="143.0" prefWidth="143.0" style="-fx-background-color: #C29292;" text="Владелец" />
+        </columns>
+    </TableView>
+    <GridPane layoutX="14.0" layoutY="465.0" prefHeight="100.0" prefWidth="876.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="171.0" minWidth="10.0" prefWidth="129.2" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="255.00000762939453" minWidth="10.0" prefWidth="197.00000000000003" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="305.0" minWidth="10.0" prefWidth="186.60000000000002" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="319.9999694824219" minWidth="10.0" prefWidth="170.20000000000005" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="316.0" minWidth="10.0" prefWidth="192.60000000000002" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints maxHeight="65.2" minHeight="10.0" prefHeight="43.599999999999994" vgrow="SOMETIMES" />
+         <RowConstraints maxHeight="42.8" minHeight="0.0" prefHeight="37.8" vgrow="SOMETIMES" />
+        </rowConstraints>
+        <Button fx:id="AddButton" mnemonicParsing="false" onAction="#add" prefHeight="37.0" prefWidth="122.0" style="-fx-background-color: #C29292#C29292;" text="Добавить" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+            <font>
+                <Font name="DejaVu Sans Bold" size="14.0" />
+            </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+        </Button>
+        <Button fx:id="AddIfMaxButton" mnemonicParsing="false" onAction="#addIfMax" prefHeight="38.0" prefWidth="193.0" style="-fx-background-color: #C29292;" text="Добавить если макс." GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+            <font>
+                <Font name="DejaVu Sans Bold" size="14.0" />
+            </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+        </Button>
+        <Button fx:id="AddIfMinButton" mnemonicParsing="false" onAction="#addIfMin" prefHeight="38.0" prefWidth="182.0" style="-fx-background-color: #C29292;" text="Добавить если мин." GridPane.columnIndex="2" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+            <font>
+                <Font name="DejaVu Sans Bold" size="14.0" />
+            </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+        </Button>
+        <Button fx:id="RemoveLowerButton" mnemonicParsing="false" onAction="#removeLower" prefHeight="39.0" prefWidth="166.0" style="-fx-background-color: #C29292;" text="Удалить меньшие" GridPane.columnIndex="3" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+            <font>
+                <Font name="DejaVu Sans Bold" size="14.0" />
+            </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+        </Button>
+        <Button fx:id="RemoveByIdButton" mnemonicParsing="false" onAction="#removeById" prefHeight="42.0" prefWidth="154.0" style="-fx-background-color: #C29292;" text="удалить по id" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+            <font>
+                <Font name="DejaVu Sans Bold" size="14.0" />
+            </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+        </Button>
+      <Button fx:id="updateIdButton" mnemonicParsing="false" onAction="#updateId" prefHeight="41.0" prefWidth="154.0" style="-fx-background-color: #C29292;" text="Обновить по Id" GridPane.columnIndex="4" GridPane.halignment="RIGHT" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+         <font>
+            <Font name="DejaVu Sans Bold" size="14.0" />
+         </font>
+      </Button>
+    </GridPane>
+    <GridPane layoutX="14.0" layoutY="538.0" prefHeight="47.0" prefWidth="876.0" AnchorPane.bottomAnchor="10.0">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="777.0" minWidth="10.0" prefWidth="444.0000305175781" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="453.9999694824219" minWidth="10.0" prefWidth="437.9999694824219" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+        <Button fx:id="VisualisationButton" mnemonicParsing="false" onAction="#visualise" style="-fx-background-color: #C29292;" text="Визуализация" GridPane.halignment="LEFT" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+            <font>
+                <Font name="DejaVu Sans Bold" size="14.0" />
+            </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+        </Button>
+        <Button fx:id="ExitButton" mnemonicParsing="false" onAction="#exit" style="-fx-background-color: #C29292;" text="Выход" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="ALWAYS" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+            <font>
+                <Font name="DejaVu Sans Bold" size="14.0" />
+            </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+        </Button>
+    </GridPane>
+    <ComboBox fx:id="languageComboBox" layoutX="745.0" layoutY="64.0" prefWidth="150.0" promptText="Язык" style="-fx-background-color: #C29292#C29292;">
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor></ComboBox>
+</AnchorPane>

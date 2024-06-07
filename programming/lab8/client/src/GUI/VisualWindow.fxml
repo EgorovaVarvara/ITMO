@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+
+<AnchorPane fx:id="anchor" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.VisualWindow">
+   <Line fx:id="yLine" endX="3.0517578125E-5" endY="252.5" fill="#c29292" layoutX="300.0" layoutY="146.0" startX="3.0517578125E-5" startY="-146.0" stroke="#c29292" strokeWidth="3.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="300.0" AnchorPane.topAnchor="0.0" />
+   <Line endX="279.0928955078125" endY="-0.20710676908493042" layoutX="325.0" layoutY="201.0" startX="-325.0" startY="-0.25" stroke="#c29292" strokeWidth="3.0" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="200.0" fx:id="xLine" />
+   <ImageView fx:id="backButton" fitHeight="55.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <image>
+         <Image url="@resources/back.jpg" />
+      </image>
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor>
+   </ImageView>
+</AnchorPane>

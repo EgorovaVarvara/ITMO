@@ -1,0 +1,700 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2024-06-07T15:27:47.911352800Z</date>
+  <millis>1717774067911</millis>
+  <nanos>352800</nanos>
+  <sequence>0</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>connectionUtils.Server</class>
+  <method>run</method>
+  <thread>1</thread>
+  <message>Сервер запущен на порте 2712</message>
+</record>
+<record>
+  <date>2024-06-07T15:27:52.260633600Z</date>
+  <millis>1717774072260</millis>
+  <nanos>633600</nanos>
+  <sequence>1</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>threadUtils.ReceiverTask</class>
+  <method>run</method>
+  <thread>35</thread>
+  <message>Получено сообщение от /192.168.0.8 : 59979 - registration</message>
+</record>
+<record>
+  <date>2024-06-07T15:27:52.260633600Z</date>
+  <millis>1717774072260</millis>
+  <nanos>633600</nanos>
+  <sequence>2</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>threadUtils.Interpreter</class>
+  <method>interpret</method>
+  <thread>33</thread>
+  <message>Получена команда REGISTRATION от /192.168.0.8</message>
+</record>
+<record>
+  <date>2024-06-07T15:27:52.510650800Z</date>
+  <millis>1717774072510</millis>
+  <nanos>650800</nanos>
+  <sequence>3</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>threadUtils.Sender</class>
+  <method>send</method>
+  <thread>32</thread>
+  <message>Отправляется результат на /192.168.0.8</message>
+</record>
+<record>
+  <date>2024-06-07T15:27:52.820806800Z</date>
+  <millis>1717774072820</millis>
+  <nanos>806800</nanos>
+  <sequence>4</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>threadUtils.ReceiverTask</class>
+  <method>run</method>
+  <thread>35</thread>
+  <message>Получено сообщение от /192.168.0.8 : 59979 - show</message>
+</record>
+<record>
+  <date>2024-06-07T15:27:52.821844300Z</date>
+  <millis>1717774072821</millis>
+  <nanos>844300</nanos>
+  <sequence>5</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>threadUtils.Interpreter</class>
+  <method>interpret</method>
+  <thread>33</thread>
+  <message>Получена команда SHOW от /192.168.0.8</message>
+</record>
+<record>
+  <date>2024-06-07T15:27:52.851819900Z</date>
+  <millis>1717774072851</millis>
+  <nanos>819900</nanos>
+  <sequence>6</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>threadUtils.Sender</class>
+  <method>send</method>
+  <thread>32</thread>
+  <message>Отправляется результат на /192.168.0.8</message>
+</record>
+<record>
+  <date>2024-06-07T15:27:53.326089Z</date>
+  <millis>1717774073326</millis>
+  <nanos>89000</nanos>
+  <sequence>7</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>threadUtils.ReceiverTask</class>
+  <method>run</method>
+  <thread>35</thread>
+  <message>Получено сообщение от /192.168.0.8 : 59979 - show</message>
+</record>
+<record>
+  <date>2024-06-07T15:27:53.327167300Z</date>
+  <millis>1717774073327</millis>
+  <nanos>167300</nanos>
+  <sequence>8</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>threadUtils.Interpreter</class>
+  <method>interpret</method>
+  <thread>33</thread>
+  <message>Получена команда SHOW от /192.168.0.8</message>
+</record>
+<record>
+  <date>2024-06-07T15:27:53.329957400Z</date>
+  <millis>1717774073329</millis>
+  <nanos>957400</nanos>
+  <sequence>9</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>threadUtils.Sender</class>
+  <method>send</method>
+  <thread>32</thread>
+  <message>Отправляется результат на /192.168.0.8</message>
+</record>
+<record>
+  <date>2024-06-07T15:27:54.803564200Z</date>
+  <millis>1717774074803</millis>
+  <nanos>564200</nanos>
+  <sequence>10</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>threadUtils.ReceiverTask</class>
+  <method>run</method>
+  <thread>35</thread>
+  <message>Получено сообщение от /192.168.0.8 : 59979 - show</message>
+</record>
+<record>
+  <date>2024-06-07T15:27:54.803564200Z</date>
+  <millis>1717774074803</millis>
+  <nanos>564200</nanos>
+  <sequence>11</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>threadUtils.Interpreter</class>
+  <method>interpret</method>
+  <thread>33</thread>
+  <message>Получена команда SHOW от /192.168.0.8</message>
+</record>
+<record>
+  <date>2024-06-07T15:27:54.803564200Z</date>
+  <millis>1717774074803</millis>
+  <nanos>564200</nanos>
+  <sequence>12</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>threadUtils.Sender</class>
+  <method>send</method>
+  <thread>32</thread>
+  <message>Отправляется результат на /192.168.0.8</message>
+</record>
+<record>
+  <date>2024-06-07T15:27:58.336882500Z</date>
+  <millis>1717774078336</millis>
+  <nanos>882500</nanos>
+  <sequence>13</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>threadUtils.ReceiverTask</class>
+  <method>run</method>
+  <thread>35</thread>
+  <message>Получено сообщение от /192.168.0.8 : 59979 - show</message>
+</record>
+<record>
+  <date>2024-06-07T15:27:58.337870Z</date>
+  <millis>1717774078337</millis>
+  <nanos>870000</nanos>
+  <sequence>14</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>threadUtils.Interpreter</class>
+  <method>interpret</method>
+  <thread>33</thread>
+  <message>Получена команда SHOW от /192.168.0.8</message>
+</record>
+<record>
+  <date>2024-06-07T15:27:58.339874600Z</date>
+  <millis>1717774078339</millis>
+  <nanos>874600</nanos>
+  <sequence>15</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>threadUtils.Sender</class>
+  <method>send</method>
+  <thread>32</thread>
+  <message>Отправляется результат на /192.168.0.8</message>
+</record>
+<record>
+  <date>2024-06-07T15:28:03.337009900Z</date>
+  <millis>1717774083337</millis>
+  <nanos>9900</nanos>
+  <sequence>16</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>threadUtils.ReceiverTask</class>
+  <method>run</method>
+  <thread>35</thread>
+  <message>Получено сообщение от /192.168.0.8 : 59979 - show</message>
+</record>
+<record>
+  <date>2024-06-07T15:28:03.338021600Z</date>
+  <millis>1717774083338</millis>
+  <nanos>21600</nanos>
+  <sequence>17</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>threadUtils.Interpreter</class>
+  <method>interpret</method>
+  <thread>33</thread>
+  <message>Получена команда SHOW от /192.168.0.8</message>
+</record>
+<record>
+  <date>2024-06-07T15:28:03.339032600Z</date>
+  <millis>1717774083339</millis>
+  <nanos>32600</nanos>
+  <sequence>18</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>threadUtils.Sender</class>
+  <method>send</method>
+  <thread>32</thread>
+  <message>Отправляется результат на /192.168.0.8</message>
+</record>
+<record>
+  <date>2024-06-07T15:28:06.078036600Z</date>
+  <millis>1717774086078</millis>
+  <nanos>36600</nanos>
+  <sequence>19</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>threadUtils.ReceiverTask</class>
+  <method>run</method>
+  <thread>35</thread>
+  <message>Получено сообщение от /192.168.0.8 : 59979 - show</message>
+</record>
+<record>
+  <date>2024-06-07T15:28:06.079588Z</date>
+  <millis>1717774086079</millis>
+  <nanos>588000</nanos>
+  <sequence>20</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>threadUtils.Interpreter</class>
+  <method>interpret</method>
+  <thread>33</thread>
+  <message>Получена команда SHOW от /192.168.0.8</message>
+</record>
+<record>
+  <date>2024-06-07T15:28:06.081782400Z</date>
+  <millis>1717774086081</millis>
+  <nanos>782400</nanos>
+  <sequence>21</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>threadUtils.Sender</class>
+  <method>send</method>
+  <thread>32</thread>
+  <message>Отправляется результат на /192.168.0.8</message>
+</record>
+<record>
+  <date>2024-06-07T15:28:08.337118300Z</date>
+  <millis>1717774088337</millis>
+  <nanos>118300</nanos>
+  <sequence>22</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>threadUtils.ReceiverTask</class>
+  <method>run</method>
+  <thread>35</thread>
+  <message>Получено сообщение от /192.168.0.8 : 59979 - show</message>
+</record>
+<record>
+  <date>2024-06-07T15:28:08.337118300Z</date>
+  <millis>1717774088337</millis>
+  <nanos>118300</nanos>
+  <sequence>23</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>threadUtils.Interpreter</class>
+  <method>interpret</method>
+  <thread>33</thread>
+  <message>Получена команда SHOW от /192.168.0.8</message>
+</record>
+<record>
+  <date>2024-06-07T15:28:08.339124700Z</date>
+  <millis>1717774088339</millis>
+  <nanos>124700</nanos>
+  <sequence>24</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>threadUtils.Sender</class>
+  <method>send</method>
+  <thread>32</thread>
+  <message>Отправляется результат на /192.168.0.8</message>
+</record>
+<record>
+  <date>2024-06-07T15:28:11.078498300Z</date>
+  <millis>1717774091078</millis>
+  <nanos>498300</nanos>
+  <sequence>25</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>threadUtils.ReceiverTask</class>
+  <method>run</method>
+  <thread>35</thread>
+  <message>Получено сообщение от /192.168.0.8 : 59979 - show</message>
+</record>
+<record>
+  <date>2024-06-07T15:28:11.080028200Z</date>
+  <millis>1717774091080</millis>
+  <nanos>28200</nanos>
+  <sequence>26</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>threadUtils.Interpreter</class>
+  <method>interpret</method>
+  <thread>33</thread>
+  <message>Получена команда SHOW от /192.168.0.8</message>
+</record>
+<record>
+  <date>2024-06-07T15:28:11.081564Z</date>
+  <millis>1717774091081</millis>
+  <nanos>564000</nanos>
+  <sequence>27</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>threadUtils.Sender</class>
+  <method>send</method>
+  <thread>32</thread>
+  <message>Отправляется результат на /192.168.0.8</message>
+</record>
+<record>
+  <date>2024-06-07T15:28:13.337351400Z</date>
+  <millis>1717774093337</millis>
+  <nanos>351400</nanos>
+  <sequence>28</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>threadUtils.ReceiverTask</class>
+  <method>run</method>
+  <thread>35</thread>
+  <message>Получено сообщение от /192.168.0.8 : 59979 - show</message>
+</record>
+<record>
+  <date>2024-06-07T15:28:13.338351300Z</date>
+  <millis>1717774093338</millis>
+  <nanos>351300</nanos>
+  <sequence>29</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>threadUtils.Interpreter</class>
+  <method>interpret</method>
+  <thread>33</thread>
+  <message>Получена команда SHOW от /192.168.0.8</message>
+</record>
+<record>
+  <date>2024-06-07T15:28:13.339360700Z</date>
+  <millis>1717774093339</millis>
+  <nanos>360700</nanos>
+  <sequence>30</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>threadUtils.Sender</class>
+  <method>send</method>
+  <thread>32</thread>
+  <message>Отправляется результат на /192.168.0.8</message>
+</record>
+<record>
+  <date>2024-06-07T15:28:16.079807100Z</date>
+  <millis>1717774096079</millis>
+  <nanos>807100</nanos>
+  <sequence>31</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>threadUtils.ReceiverTask</class>
+  <method>run</method>
+  <thread>35</thread>
+  <message>Получено сообщение от /192.168.0.8 : 59979 - show</message>
+</record>
+<record>
+  <date>2024-06-07T15:28:16.079807100Z</date>
+  <millis>1717774096079</millis>
+  <nanos>807100</nanos>
+  <sequence>32</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>threadUtils.Interpreter</class>
+  <method>interpret</method>
+  <thread>33</thread>
+  <message>Получена команда SHOW от /192.168.0.8</message>
+</record>
+<record>
+  <date>2024-06-07T15:28:16.080818900Z</date>
+  <millis>1717774096080</millis>
+  <nanos>818900</nanos>
+  <sequence>33</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>threadUtils.Sender</class>
+  <method>send</method>
+  <thread>32</thread>
+  <message>Отправляется результат на /192.168.0.8</message>
+</record>
+<record>
+  <date>2024-06-07T15:28:18.337810500Z</date>
+  <millis>1717774098337</millis>
+  <nanos>810500</nanos>
+  <sequence>34</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>threadUtils.ReceiverTask</class>
+  <method>run</method>
+  <thread>35</thread>
+  <message>Получено сообщение от /192.168.0.8 : 59979 - show</message>
+</record>
+<record>
+  <date>2024-06-07T15:28:18.338816800Z</date>
+  <millis>1717774098338</millis>
+  <nanos>816800</nanos>
+  <sequence>35</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>threadUtils.Interpreter</class>
+  <method>interpret</method>
+  <thread>33</thread>
+  <message>Получена команда SHOW от /192.168.0.8</message>
+</record>
+<record>
+  <date>2024-06-07T15:28:18.339815800Z</date>
+  <millis>1717774098339</millis>
+  <nanos>815800</nanos>
+  <sequence>36</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>threadUtils.Sender</class>
+  <method>send</method>
+  <thread>32</thread>
+  <message>Отправляется результат на /192.168.0.8</message>
+</record>
+<record>
+  <date>2024-06-07T15:28:21.079644Z</date>
+  <millis>1717774101079</millis>
+  <nanos>644000</nanos>
+  <sequence>37</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>threadUtils.ReceiverTask</class>
+  <method>run</method>
+  <thread>35</thread>
+  <message>Получено сообщение от /192.168.0.8 : 59979 - show</message>
+</record>
+<record>
+  <date>2024-06-07T15:28:21.080662600Z</date>
+  <millis>1717774101080</millis>
+  <nanos>662600</nanos>
+  <sequence>38</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>threadUtils.Interpreter</class>
+  <method>interpret</method>
+  <thread>33</thread>
+  <message>Получена команда SHOW от /192.168.0.8</message>
+</record>
+<record>
+  <date>2024-06-07T15:28:21.081661600Z</date>
+  <millis>1717774101081</millis>
+  <nanos>661600</nanos>
+  <sequence>39</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>threadUtils.Sender</class>
+  <method>send</method>
+  <thread>32</thread>
+  <message>Отправляется результат на /192.168.0.8</message>
+</record>
+<record>
+  <date>2024-06-07T15:28:23.338770Z</date>
+  <millis>1717774103338</millis>
+  <nanos>770000</nanos>
+  <sequence>40</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>threadUtils.ReceiverTask</class>
+  <method>run</method>
+  <thread>35</thread>
+  <message>Получено сообщение от /192.168.0.8 : 59979 - show</message>
+</record>
+<record>
+  <date>2024-06-07T15:28:23.338770Z</date>
+  <millis>1717774103338</millis>
+  <nanos>770000</nanos>
+  <sequence>41</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>threadUtils.Interpreter</class>
+  <method>interpret</method>
+  <thread>33</thread>
+  <message>Получена команда SHOW от /192.168.0.8</message>
+</record>
+<record>
+  <date>2024-06-07T15:28:23.339760600Z</date>
+  <millis>1717774103339</millis>
+  <nanos>760600</nanos>
+  <sequence>42</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>threadUtils.Sender</class>
+  <method>send</method>
+  <thread>32</thread>
+  <message>Отправляется результат на /192.168.0.8</message>
+</record>
+<record>
+  <date>2024-06-07T15:28:28.339739200Z</date>
+  <millis>1717774108339</millis>
+  <nanos>739200</nanos>
+  <sequence>43</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>threadUtils.ReceiverTask</class>
+  <method>run</method>
+  <thread>35</thread>
+  <message>Получено сообщение от /192.168.0.8 : 59979 - show</message>
+</record>
+<record>
+  <date>2024-06-07T15:28:28.340737200Z</date>
+  <millis>1717774108340</millis>
+  <nanos>737200</nanos>
+  <sequence>44</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>threadUtils.Interpreter</class>
+  <method>interpret</method>
+  <thread>33</thread>
+  <message>Получена команда SHOW от /192.168.0.8</message>
+</record>
+<record>
+  <date>2024-06-07T15:28:28.341758400Z</date>
+  <millis>1717774108341</millis>
+  <nanos>758400</nanos>
+  <sequence>45</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>threadUtils.Sender</class>
+  <method>send</method>
+  <thread>32</thread>
+  <message>Отправляется результат на /192.168.0.8</message>
+</record>
+<record>
+  <date>2024-06-07T15:28:33.339948Z</date>
+  <millis>1717774113339</millis>
+  <nanos>948000</nanos>
+  <sequence>46</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>threadUtils.ReceiverTask</class>
+  <method>run</method>
+  <thread>35</thread>
+  <message>Получено сообщение от /192.168.0.8 : 59979 - show</message>
+</record>
+<record>
+  <date>2024-06-07T15:28:33.339948Z</date>
+  <millis>1717774113339</millis>
+  <nanos>948000</nanos>
+  <sequence>47</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>threadUtils.Interpreter</class>
+  <method>interpret</method>
+  <thread>33</thread>
+  <message>Получена команда SHOW от /192.168.0.8</message>
+</record>
+<record>
+  <date>2024-06-07T15:28:33.341948100Z</date>
+  <millis>1717774113341</millis>
+  <nanos>948100</nanos>
+  <sequence>48</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>threadUtils.Sender</class>
+  <method>send</method>
+  <thread>32</thread>
+  <message>Отправляется результат на /192.168.0.8</message>
+</record>
+<record>
+  <date>2024-06-07T15:28:38.341954300Z</date>
+  <millis>1717774118341</millis>
+  <nanos>954300</nanos>
+  <sequence>49</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>threadUtils.ReceiverTask</class>
+  <method>run</method>
+  <thread>35</thread>
+  <message>Получено сообщение от /192.168.0.8 : 59979 - show</message>
+</record>
+<record>
+  <date>2024-06-07T15:28:38.341954300Z</date>
+  <millis>1717774118341</millis>
+  <nanos>954300</nanos>
+  <sequence>50</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>threadUtils.Interpreter</class>
+  <method>interpret</method>
+  <thread>33</thread>
+  <message>Получена команда SHOW от /192.168.0.8</message>
+</record>
+<record>
+  <date>2024-06-07T15:28:38.342934900Z</date>
+  <millis>1717774118342</millis>
+  <nanos>934900</nanos>
+  <sequence>51</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>threadUtils.Sender</class>
+  <method>send</method>
+  <thread>32</thread>
+  <message>Отправляется результат на /192.168.0.8</message>
+</record>
+<record>
+  <date>2024-06-07T15:28:43.342416200Z</date>
+  <millis>1717774123342</millis>
+  <nanos>416200</nanos>
+  <sequence>52</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>threadUtils.ReceiverTask</class>
+  <method>run</method>
+  <thread>35</thread>
+  <message>Получено сообщение от /192.168.0.8 : 59979 - show</message>
+</record>
+<record>
+  <date>2024-06-07T15:28:43.342416200Z</date>
+  <millis>1717774123342</millis>
+  <nanos>416200</nanos>
+  <sequence>53</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>threadUtils.Interpreter</class>
+  <method>interpret</method>
+  <thread>33</thread>
+  <message>Получена команда SHOW от /192.168.0.8</message>
+</record>
+<record>
+  <date>2024-06-07T15:28:43.343423700Z</date>
+  <millis>1717774123343</millis>
+  <nanos>423700</nanos>
+  <sequence>54</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>threadUtils.Sender</class>
+  <method>send</method>
+  <thread>32</thread>
+  <message>Отправляется результат на /192.168.0.8</message>
+</record>
+<record>
+  <date>2024-06-07T15:28:48.342881800Z</date>
+  <millis>1717774128342</millis>
+  <nanos>881800</nanos>
+  <sequence>55</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>threadUtils.ReceiverTask</class>
+  <method>run</method>
+  <thread>35</thread>
+  <message>Получено сообщение от /192.168.0.8 : 59979 - show</message>
+</record>
+<record>
+  <date>2024-06-07T15:28:48.343889400Z</date>
+  <millis>1717774128343</millis>
+  <nanos>889400</nanos>
+  <sequence>56</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>threadUtils.Interpreter</class>
+  <method>interpret</method>
+  <thread>33</thread>
+  <message>Получена команда SHOW от /192.168.0.8</message>
+</record>
+<record>
+  <date>2024-06-07T15:28:48.344879300Z</date>
+  <millis>1717774128344</millis>
+  <nanos>879300</nanos>
+  <sequence>57</sequence>
+  <logger>utils.ServerLogger</logger>
+  <level>INFO</level>
+  <class>threadUtils.Sender</class>
+  <method>send</method>
+  <thread>32</thread>
+  <message>Отправляется результат на /192.168.0.8</message>
+</record>
+</log>

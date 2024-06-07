@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="416.0" prefWidth="640.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Enter">
+   <children>
+      <GridPane layoutX="216.0" layoutY="168.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="30.0" prefWidth="207.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="30.4" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="40.8000244140625" minHeight="30.0" prefHeight="30.4" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="32.8000244140625" minHeight="19.99997558593749" prefHeight="30.39999999999999" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="32.8000244140625" minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TextField fx:id="loginField" style="-fx-border-color: C29292; -fx-border-width: 2; -fx-background-color: 000000;" GridPane.halignment="CENTER" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="SOMETIMES">
+               <font>
+                  <Font name="DejaVu Sans Bold" size="14.0" />
+               </font>
+            </TextField>
+            <Label fx:id="loginTitle" prefHeight="18.0" prefWidth="214.0" text="Логин" textFill="#c29292" GridPane.halignment="CENTER" GridPane.hgrow="SOMETIMES" GridPane.valignment="CENTER" GridPane.vgrow="SOMETIMES">
+               <font>
+                  <Font name="DejaVu Sans Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="passwordTitle" prefHeight="18.0" prefWidth="214.0" text="Пароль" textFill="#c29292" GridPane.halignment="CENTER" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="2" GridPane.valignment="CENTER" GridPane.vgrow="SOMETIMES">
+               <font>
+                  <Font name="DejaVu Sans Bold" size="16.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="passwordField" style="-fx-background-color: 000000; -fx-border-color: C29292; -fx-border-width: 2;" GridPane.halignment="CENTER" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="SOMETIMES">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </PasswordField>
+         </children>
+      </GridPane>
+      <GridPane layoutX="262.0" layoutY="301.0" prefHeight="72.0" prefWidth="114.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="130.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="50.39996337890625" minHeight="10.0" prefHeight="46.39996337890625" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="38.79996337890625" minHeight="10.0" prefHeight="25.60003662109375" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button fx:id="authButton" alignment="CENTER" contentDisplay="CENTER" defaultButton="true" graphicTextGap="6.0" mnemonicParsing="false" onAction="#auth" prefHeight="43.0" prefWidth="114.0" style="-fx-background-color: C29292; -fx-border-radius: 0;" text="Войти" wrapText="true" GridPane.halignment="CENTER" GridPane.hgrow="SOMETIMES" GridPane.valignment="CENTER" GridPane.vgrow="SOMETIMES">
+               <font>
+                  <Font name="DejaVu Sans Bold" size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="regButton" alignment="CENTER" ellipsisString="" mnemonicParsing="false" onAction="#registration" prefHeight="34.0" prefWidth="129.0" style="-fx-background-color: 000000;" text="Создать аккаунт" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP" GridPane.halignment="CENTER" GridPane.hgrow="SOMETIMES" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="SOMETIMES">
+               <font>
+                  <Font name="DejaVu Sans Bold" size="10.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </GridPane>
+      <ComboBox fx:id="languageComboBox" layoutX="475.0" layoutY="14.0" prefWidth="150.0" promptText="Язык" style="-fx-background-color: #C29292#C29292;" />
+   </children>
+</AnchorPane>

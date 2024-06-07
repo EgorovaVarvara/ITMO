@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="26108862-ca00-4fe0-ae0b-3ab55891f76e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../lab5/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab5/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/lab5_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/gson_2_10_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/gson_2_10_11.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/12.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab5.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lab5.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/gson-2.10.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/jar_files/json-20240205.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BaseClasses/Coordinates.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BaseClasses/Label.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BaseClasses/LocalDateTimeTypeAdapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BaseClasses/MusicBand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BaseClasses/MusicGenre.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Collection/CollectionManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Collection/IdGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Collection/Validator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commands/AddCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commands/AddIfMaxCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commands/AddIfMinCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commands/ClearCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commands/Command.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commands/ExecuteScriptCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commands/ExitCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commands/FilterLessThanNumberOfParticipantsCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commands/HelpCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commands/InfoCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commands/PrintDescendingCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commands/RemoveByIdCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commands/RemoveLowerCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commands/SaveCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commands/ShowCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commands/SumOfNumberOfParticipantsCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Commands/UpdateIdCommand.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Console/ClientManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Console/CommandManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Console/ConsoleManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Console/ReadManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Console/ReaderWriter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FileManager/FileManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FileManager/FileReaderManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FileManager/FilesStack.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FileManager/Parser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test.json" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 3
+}]]></component>
+  <component name="ProjectId" id="2ee2AMk91IttIyflo77pXeDz0EZ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "Main",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="26108862-ca00-4fe0-ae0b-3ab55891f76e" name="Changes" comment="" />
+      <created>1712250580337</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1712250580337</updated>
+      <workItem from="1712250584601" duration="76000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

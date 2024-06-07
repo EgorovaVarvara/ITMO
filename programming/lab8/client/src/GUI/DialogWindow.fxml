@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="200.0" prefWidth="400.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.DialogWindow">
+   <children>
+      <Label fx:id="titleLabel" layoutX="14.0" layoutY="14.0" prefHeight="20.0" prefWidth="378.0" text="some text" textFill="#c29292" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <font>
+            <Font name="DejaVu Sans Bold" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textField" layoutX="99.0" layoutY="111.0" prefHeight="34.0" prefWidth="210.0" style="-fx-background-color: #000000; -fx-border-color: #C29292; -fx-border-width: 3;" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="95.0" AnchorPane.rightAnchor="95.0">
+         <font>
+            <Font name="DejaVu Sans Bold" size="14.0" />
+         </font>
+      </TextField>
+      <Label fx:id="errorLabel" alignment="CENTER" layoutX="98.0" layoutY="83.0" prefHeight="18.0" prefWidth="203.0" textFill="#944141" AnchorPane.bottomAnchor="100.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="65.0">
+         <font>
+            <Font name="DejaVu Sans Bold" size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="okButton" layoutX="334.0" layoutY="161.0" mnemonicParsing="false" onAction="#send" prefHeight="28.0" prefWidth="55.0" style="-fx-background-color: #C29292;" text="ok" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="10.0">
+         <font>
+            <Font name="DejaVu Sans Bold" size="14.0" />
+         </font>
+      </Button>
+      <ImageView fx:id="backButton" fitHeight="50.0" fitWidth="50.0" layoutX="10.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0">
+         <image>
+            <Image url="@resources/back.jpg" />
+         </image></ImageView>
+   </children>
+</AnchorPane>
