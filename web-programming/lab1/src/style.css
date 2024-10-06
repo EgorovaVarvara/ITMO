@@ -1,0 +1,120 @@
+body {
+    background-color: #bbddfc;
+    color: black;
+    font-family: sans-serif;
+}
+.header {
+    border-style: solid;
+    border-color: black;
+    border-width: 6px;
+    border-radius: 15px;
+    color: black;
+    font-size: 15px;
+    text-align: right;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.form-block {
+    color: black;
+    border: 5px solid black;
+    border-radius: 7px;
+    padding: 1%;
+    float: left;
+    margin-top: 1%;
+    text-align: center;
+    font-size: 20px;
+}
+
+label {
+    display: block;
+}
+
+.x-radio {
+    text-align: left;
+    margin: 10%;
+}
+
+.y-checkbox{
+    label{
+        display: table;
+        align-content: center;
+    }
+    margin: 5%;
+}
+
+.graph{
+    line{
+        stroke: black;
+    }
+    .arrow{
+        fill: black;
+        stroke: black;
+    }
+    text{
+        fill: black;
+    }
+    .area{
+        fill: #0000FF;
+        stroke: #0000FF;
+        fill-opacity: 0.2;
+    }
+}
+
+input {
+    width: 150px;
+    height: 20px;
+    border: 2px solid #000000;
+    border-radius: 3px;
+}
+
+input[type="checkbox"] {
+    cursor: pointer;
+    width: 15px;
+}
+
+
+.data-button {
+    display: block;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    margin-right: 1%;
+    font-size: 15px;
+    border-radius: 7px;
+    border: 2px solid black;
+    color: black;
+    height: 35px;
+    padding: 1px;
+    background-color: white;
+    cursor: pointer;
+}
+.data-button:hover {
+    background-color: #DCDCDC;
+}
+
+.data-button:active {
+    background-color: white;
+}
+
+table:not(.buttons) {
+    margin-left: 4%;
+}
+
+table:not(.buttons) th,td {
+    border: 3px solid #000000;
+    border-radius: 5px;
+    text-align: center;
+}
+
+caption {
+    font-size: 25px;
+    margin: 1%;
+}
+
+.buttons{
+    border: none;
+    text-align: center;
+}
+
+.table-block > table{
+    border-radius: 10px;
+    background-color: rgba(0, 0, 255, 0.15);
+}
