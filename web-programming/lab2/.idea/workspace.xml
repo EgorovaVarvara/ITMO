@@ -10,34 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="81151708-1108-4dc3-9beb-9b963214e4d0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/AreaCheckServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ControllerServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utils/Result.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/server.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/fastcgi_lib.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/server.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/httpd.conf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lab1.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/fastcgi-lib.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main_page.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/script.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style.css" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -194,6 +168,7 @@
       <workItem from="1733903425435" duration="3963000" />
       <workItem from="1733909657696" duration="9979000" />
       <workItem from="1734005905132" duration="4855000" />
+      <workItem from="1734036659130" duration="1454000" />
     </task>
     <servers />
   </component>
