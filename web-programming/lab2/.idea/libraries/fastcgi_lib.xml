@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="fastcgi-lib">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/lib/fastcgi-lib.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

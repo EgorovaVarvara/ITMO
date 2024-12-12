@@ -1,9 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>lab1</title>
+<%@page contentType="text/html; charset=UTF-8" %>
+<html>
+<style>
+    <%@include file="style.css" %>
+</style>
+<head><title>lab2</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="header">
@@ -11,11 +12,11 @@
         Егорова Варвара Александровна
     </h1>
     <h3>Группа: P3223</h3>
-    <h3>Номер варианта:23112</h3>
+    <h3>Номер варианта:23123</h3>
 </div>
 <div class="form-block">
-    <div class="graph">
-        <svg height="300" width="300" xmlns="http://www.w3.org/2000/svg">
+    <div class="graph" id="area">
+        <svg height="300px" width="300px" id="graph" xmlns="http://www.w3.org/2000/svg">
 
             <!-- Оси со стрелками -->
             <line x1="0" x2="300" y1="150" y2="150"></line>
@@ -61,6 +62,19 @@
             <path class="area" d="M 200 150 A 50, 50 0, 0,0, 150, 100 L 150 150 Z"></path>
         </svg>
     </div>
+
+
+    <%
+        //скриптлет
+        String name = "World";
+
+    %>
+
+
+    <%System.out.println("Hello, " + name + "!");%>
+    <p>Hello, <%= name %>!</p>
+
+
     <div id="message"></div>
     <form id="valForm">
         <label for="x">Координата X:</label>
@@ -92,6 +106,10 @@
                 <th><input type="submit" class="data-button" value="Отправить данные"></th>
                 <th><input type="reset" class="data-button" onclick="resetForm()" value="Сбросить данные"></th>
             </tr>
+            <tr>
+                <th colspan="2" style="place-items: center"><input type="button" class="data-button"
+                                                                   value="Сбросить результаты" id="clear_table"></th>
+            </tr>
         </table>
 
 
@@ -100,6 +118,7 @@
 <div class="table-block">
     <table id="result_table" cellspacing="6" cellpadding="15">
         <caption><b>Результаты</b></caption>
+        <thead>
         <tr>
             <th>Координата X</th>
             <th>Координата Y</th>
@@ -108,6 +127,9 @@
             <th>Текущее время</th>
             <th>Время выполнения скрипта (ms)</th>
         </tr>
+        </thead>
+        <tbody id="resultBody">
+        </tbody>
     </table>
 </div>
 <script src="script.js"></script>
