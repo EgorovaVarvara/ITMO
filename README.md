@@ -33,8 +33,9 @@
 - [Лабораторная работа №4](./DataBases/lab4)
 
 <b>Веб-программирование (2 курс, 3 семестр):</b>
-- [Лабораторная работа №1](./web-proggramming/lab1)
+- [Лабораторная работа №1](./web-programming/lab1)
 - [Лабораторная работа №2](./web-programming/lab2)
+- [Лабораторная работа №3](./web-programming/lab3)
 
 <b>Языки программирования (2 курс, 3 семестр):</b>
 - [Лабораторная работа №1 (поворот картинки)](https://github.com/EgorovaVarvara/assigment-image-rotation)
