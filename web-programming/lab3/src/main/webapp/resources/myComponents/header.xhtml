@@ -1,0 +1,14 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:cc="http://xmlns.jcp.org/jsf/composite">
+    <cc:interface>
+        <cc:attribute name="title" required="true"/>
+    </cc:interface>
+
+    <cc:implementation>
+        <header class="header">
+            <p class="text header_text">#{cc.attrs.title}</p>
+            <p class="header_text time"></p>
+        </header>
+    </cc:implementation>
+</ui:composition>

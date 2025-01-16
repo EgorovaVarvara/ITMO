@@ -10,7 +10,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="81151708-1108-4dc3-9beb-9b963214e4d0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab3/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab3/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab3/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab3/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab3/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab3/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab3/src/main/java/beans/RCoordinateBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab3/src/main/java/beans/ResultControllerBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab3/src/main/java/beans/XCoordinateBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab3/src/main/java/beans/YCoordinateBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab3/src/main/java/dataBaseUtils/DAOFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab3/src/main/java/dataBaseUtils/JPAUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab3/src/main/java/dataBaseUtils/ResultDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab3/src/main/java/dataBaseUtils/ResultDAOImplemented.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab3/src/main/java/dataBaseUtils/ResultEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab3/src/main/java/utils/HitChecker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab3/src/main/webapp/WEB-INF/faces-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab3/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab3/src/main/webapp/index.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab3/src/main/webapp/resources/myComponents/head.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab3/src/main/webapp/resources/myComponents/header.xhtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab3/src/main/webapp/resources/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab3/src/main/webapp/resources/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab3/src/main/webapp/resources/timer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab3/src/main/webapp/welcome.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -168,7 +192,10 @@
       <workItem from="1733903425435" duration="3963000" />
       <workItem from="1733909657696" duration="9979000" />
       <workItem from="1734005905132" duration="4855000" />
-      <workItem from="1734036659130" duration="1454000" />
+      <workItem from="1734036659130" duration="2499000" />
+      <workItem from="1734467350939" duration="1526000" />
+      <workItem from="1734525874078" duration="2934000" />
+      <workItem from="1736335190900" duration="34000" />
     </task>
     <servers />
   </component>
