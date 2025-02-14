@@ -36,9 +36,12 @@
 - [Лабораторная работа №1](./web-programming/lab1)
 - [Лабораторная работа №2](./web-programming/lab2)
 - [Лабораторная работа №3](./web-programming/lab3)
+- [Лабораторная работа №4](./web-programming/lab4)
 
 <b>Языки программирования (2 курс, 3 семестр):</b>
 - [Лабораторная работа №1 (поворот картинки)](https://github.com/EgorovaVarvara/assigment-image-rotation)
+
+<b>[Алгоритмы и структуры данных (2 курс, 4 семестр)](./algorythmsAndDataStructures)</b>
 
 
 <b>Математический анализ (1 курс, 1 семестр, базовый уровень):</b>
