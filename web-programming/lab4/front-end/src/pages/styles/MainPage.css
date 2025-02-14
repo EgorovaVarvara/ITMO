@@ -1,0 +1,91 @@
+.main-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px
+}
+
+#results-table-container {
+    height: 300px;
+    overflow-y: auto;
+    overflow-x: auto;
+    border: 1px solid #000000;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 20px;
+}
+
+#results-table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 863px;
+}
+
+#results-table th, #results-table td {
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #000000;
+}
+
+@media (max-width: 863px) {
+    h1 {
+        font-size: 20px;
+        margin: 5px;
+    }
+
+    input, .custom-button, .my-button {
+        font-size: 14px;
+        padding: 8px;
+        margin: 5px;
+    }
+
+    .button-container > * {
+        width: calc(100% - 10px);
+        margin-bottom: 10px;
+        flex-basis: auto;
+    }
+
+    .plot-section {
+        padding: 10px;
+        flex-basis: 100%;
+        box-sizing: border-box;
+    }
+
+    #results-table-container {
+        overflow-x: auto;
+    }
+
+    #results-table {
+        width: 100%;
+        min-width: 863px;
+    }
+}
+@media (min-width: 863px) and (max-width: 1211px) {
+    h1{
+        font-size: 24px;
+        margin: 10px;
+    }
+
+    input, .custom-button, .my-button {
+        font-size: 16px;
+        padding: 10px;
+        margin: 10px;
+    }
+
+    .button-container > * {
+        width: calc(48% - 10px);
+        margin-bottom: 10px;
+        flex-basis: auto;
+    }
+
+    .plot-section {
+        padding: 15px;
+        flex-basis: 50%;
+        box-sizing: border-box;
+    }
+
+    #results-table {
+        border-collapse: collapse;
+        width: 863px;
+    }
+}

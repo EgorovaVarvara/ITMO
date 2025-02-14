@@ -1,0 +1,15 @@
+.logOut-button{
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 10px 20px;
+    background-color: #bbddfc;
+    color: black;
+    border: solid;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.logOut-button:hover{
+    background-color: #6ec4fd
+}
