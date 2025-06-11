@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectResources">
+    <resource url="http://java.sun.com/jsf/core" location="$PROJECT_DIR$" />
+    <resource url="http://java.sun.com/jsf/html" location="$PROJECT_DIR$" />
+    <resource url="http://primefaces.org/ui" location="$PROJECT_DIR$" />
+    <resource url="http://www.w3.org/1999/xhtml" location="$PROJECT_DIR$" />
+    <resource url="http://xmlns.jcp.org/jsf/html" location="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_22" default="true" project-jdk-name="openjdk-21" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>
