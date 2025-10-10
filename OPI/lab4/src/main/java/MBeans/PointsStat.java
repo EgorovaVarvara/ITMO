@@ -1,6 +1,5 @@
 package MBeans;
 
-import dataBaseUtils.ResultDAO;
 import dataBaseUtils.ResultEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -41,8 +40,8 @@ public class PointsStat extends NotificationBroadcasterSupport implements Points
             if (missStreak >= 4) {
                 logger.info("Sending notification about 4 misses");
                 Notification n = new Notification(
-                    "miss.streak.notification", this, sequenceNumber++,
-                    "User made 4 misses in a row"
+                        "miss.streak.notification", this, sequenceNumber++,
+                        "User made 4 misses in a row"
                 );
                 sendNotification(n);
                 missStreak = 0;
@@ -66,18 +65,22 @@ public class PointsStat extends NotificationBroadcasterSupport implements Points
     }
 
     @Override
-    public int getTotalPoints() { return total; }
+    public int getTotalPoints() {
+        return total;
+    }
 
     @Override
-    public int getPointsInArea() { return inArea; }
+    public int getPointsInArea() {
+        return inArea;
+    }
 
     @Override
     public MBeanNotificationInfo[] getNotificationInfo() {
-        String[] types = new String[] { AttributeChangeNotification.ATTRIBUTE_CHANGE };
+        String[] types = new String[]{AttributeChangeNotification.ATTRIBUTE_CHANGE};
         String name = AttributeChangeNotification.class.getName();
         String description = "Miss notification";
         MBeanNotificationInfo info = new MBeanNotificationInfo(types, name, description);
-        return new MBeanNotificationInfo[] { info };
+        return new MBeanNotificationInfo[]{info};
     }
 
 }
