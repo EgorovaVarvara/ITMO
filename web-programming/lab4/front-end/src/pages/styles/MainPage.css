@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    gap: 15px
+    gap: 7px
 }
 
 #results-table-container {

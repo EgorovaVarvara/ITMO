@@ -3,6 +3,7 @@ import {useContext, useEffect, useState} from "react";
 import LogOutButton from "../components/LogOutButton";
 import "../pages/styles/MainPage.css"
 
+
 export default function MainPage() {
     const {currentUser} = useContext(UserContext);
     return (
@@ -19,6 +20,10 @@ export default function MainPage() {
             )}
         </div>)
 }
+
+
+
+
 
 function Page() {
     const {currentUser} = useContext(UserContext);
@@ -69,9 +74,9 @@ function Page() {
     }, [points, r]);
 
     function handleCheck() {
-        const x = document.getElementById("sliderX").value
-        const y = document.getElementById("inputY").value
-        const r = document.getElementById("sliderR").value
+        const x = document.getElementById("selectX").value
+        const y = document.getElementById("sliderY").value
+        const r = document.getElementById("selectR").value
         if (isNaN(x) || x > 3 || x < -5) {
             document.getElementsByName("Xstatus").innerText = "некорректное значение для X"
             return
@@ -92,17 +97,7 @@ function Page() {
     }
 
     const handleChangeY = (event) => {
-        const value = event.target.value;
-        setY(value);
-
-        const numberValue = Number(value);
-        if (isNaN(numberValue)) {
-            setError('Введите числовое значение.');
-        } else if (numberValue < -5 || numberValue > 3) {
-            setError('Значение должно быть в диапазоне от -5 до 3.');
-        } else {
-            setError('');
-        }
+        setY(event.target.value);
     }
 
     const handleChangeR = (event) => {
@@ -182,8 +177,8 @@ function Page() {
             const y = json.y;
 
             draw(x, y, r, json.hit)
-            document.getElementById("sliderX").value = Math.round(x).toString()
-            document.getElementById("inputY").value = Math.round(y).toString()
+            document.getElementById("selectX").value = Math.round(x).toString()
+            document.getElementById("sliderY").value = Math.round(y).toString()
 
             insertTable(json.x, json.y, json.r, json.hit, json.executionTime, json.serverTime);
         });
@@ -207,16 +202,13 @@ function Page() {
         serverTimeCell.innerText = serverTime;
 
         const container = document.getElementById("results-table-container")
-        // setTimeout(() => {
-        //     container.scrollTop = container.scrollHeight;
-        // }, 0);
     }
 
     useEffect(() => {
         const svgElement = document.getElementById("graph");
 
         const click = (event) => {
-            const r = parseFloat(document.getElementById("sliderR").value);
+            const r = parseFloat(document.getElementById("selectR").value);
             const point = svgElement.createSVGPoint();
             point.x = event.clientX;
             point.y = event.clientY;
@@ -265,15 +257,15 @@ function Page() {
                 <svg id="graph" height="500" width="700" xmlns="http://www.w3.org/2000/svg">
                     <svg width="700" height="500">
                         <path d="M 350 250
-             L 350 167
-             A 83 83 0 0 1 433 250
+             L 350 84
+             A 166 166 0 0 1 516 250
              L 350 250"
                               fill="#5b88ff" fillOpacity="0.6"/>
                     </svg>
 
                     <rect id="rect3" x="350" y="250" width="166" height="166" fill="#5b88ff" fillOpacity="0.6"/>
 
-                    <polygon id="triangle" points="350,250 262,250 350,332" fill="#5b88ff" fillOpacity="0.6"/>
+                    <polygon id="triangle" points="350,250 174,250 350,168" fill="#5b88ff" fillOpacity="0.6"/>
 
 
                     <line stroke="#000000" x1="100" x2="600" y1="250" y2="250"></line>
@@ -312,21 +304,41 @@ function Page() {
         </section>
         <div className="selectors">
             <div>
-                <label htmlFor="sliderX">Выберите значение X</label>
-                <p>{x}</p>
-                <input id="sliderX" type="range" min="-5" max="3" step="1" onChange={handleChangeX} value={x}/>
+                <label htmlFor="selectX">Выберите значение X</label>
+                <br></br>
+                <select id="selectX" onChange={handleChangeX} value={x}>
+                    <option value="-3">-3</option>
+                    <option value="-2">-2</option>
+                    <option value="-1">-1</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
             </div>
             <br></br>
             <div>
-                <label htmlFor="inputY">Выберите значение Y</label><br></br>
-                <input id="inputY" type="text" value={y} onChange={handleChangeY}/>
-                {error && <p style={{color: 'red'}}>{error}</p>}
+                <label htmlFor="sliderY">Выберите значение Y</label>
+                <p>{y}</p>
+                <input id="sliderY" type="range" min="-3" max="5" step="1" onChange={handleChangeY} value={y}/>
             </div>
             <br/>
             <div>
-                <label htmlFor="sliderR">Выберите значение R</label>
-                <p>{r}</p>
-                <input id="sliderR" type="range" min="-5" max="3" step="1" onChange={handleChangeR} value={r}/>
+                <label htmlFor="selectR">Выберите значение R</label>
+                <br></br>
+                <select id="selectR" onChange={handleChangeR} value={r}>
+                    <option value="-3">-3</option>
+                    <option value="-2">-2</option>
+                    <option value="-1">-1</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
             </div>
             <h4 id="Xstatus"></h4>
             <h4 id="Ystatus"></h4>
